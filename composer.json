@@ -1,0 +1,40 @@
+{
+  "name": "gbeutner/net-shop",
+  "description": "Bank",
+  "type": "project",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Gunnar Beutner",
+      "email": "gunnar@beutner.name",
+      "role": "Developer"
+    },
+    {
+      "name": "Phil Hutchinson",
+      "email": "phil@volumedia.co.uk",
+      "role": "Developer"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "atlassian/aui",
+        "version": "5.8.13",
+        "dist": {
+          "url": "https://bitbucket.org/atlassian/aui-adg-dist/get/5.8.13.zip",
+          "type": "zip"
+        }
+      }
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+     "components/font-awesome": "~4.3.0",
+     "components/jquery": "~1.11",
+     "twitter/typeahead.js": "~0.11",
+     "components/handlebars.js": "~3.0",
+     "atlassian/aui": "5.8.13",
+     "dompdf/dompdf": "0.7.*"
+  }
+}

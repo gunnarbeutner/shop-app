@@ -1,0 +1,66 @@
+.menu-icon { 
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 5px;
+  height: 40px;
+  color: #444;
+}
+
+.menu-text { 
+  font-size: 12px;
+  color: #444;
+}
+
+.aui-navgroup-secondary {
+  float: right !important;
+}
+
+.user-menu > img { 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aui-header { 
+  /* background: #fd5b25; */
+  background: #fff;
+}
+
+#logo > img { 
+  margin-top: 20px;
+  vertical-align: middle;
+  margin-right: 25px;
+}
+
+body { 
+  background: #f1f1f1;
+}
+
+ul.aui-nav > li > a:hover,
+ul.aui-nav > li > a:active,
+.aui-header .aui-dropdown2-trigger.active, 
+.aui-header a:active, 
+.aui-header a:focus, 
+.aui-header a:hover,
+ui.aui-list-truncate > li > a:hover { 
+  background: #fd5b25;
+}
+
+ul.aui-nav > li > a:hover *,
+ul.aui-nav > li > a:active *,
+.aui-header .aui-dropdown2-trigger.active *,
+.aui-header a:active *,
+.aui-header a:focus *,
+.aui-header a:hover *,
+ui.aui-list-truncate > li > a:hover * {
+  color: white;
+}
+
+.menu-active {
+  background: #fd5b25;
+}
+
+.menu-active * {
+  color: white;
+}
+
