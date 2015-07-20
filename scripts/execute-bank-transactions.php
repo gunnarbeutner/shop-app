@@ -53,6 +53,8 @@ foreach (get_users() as $user_id => $user) {
 	$from = $user['email'];
 	$tx_reference = "Mittagsbestellung (" . implode('; ', $item_names) . ")";
 	
+	set_held_amount($from, 0);
+
 	echo "<- ${from} - ${amount} - ${tx_reference}\n";
 	$status = execute_direct_debit($from, $amount, $tx_reference);
 	
@@ -66,8 +68,8 @@ QUERY;
 		$shop_db->query($query);
 		
 		$transfer_items = array_merge($transfer_items, $user_items);
-		
-		set_held_amount($from, 0);
+	} else {
+		set_held_amount($from, $amount);
 	}
 }
 
