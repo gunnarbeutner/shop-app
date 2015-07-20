@@ -73,7 +73,7 @@ require_once('helpers/article.php');
 <?php
 		if ($payment_method == 'Cash') {
 ?>
-<p><strong>Barzahlungen werden von Marius und Gunnar entgegengenommen. Dies ist unabh&auml;ngig davon, wer die Bestellung durchf&uuml;hrt.</strong></p>
+<p><strong>Barzahlungen werden von Cornelius und Gunnar entgegengenommen. Dies ist unabh&auml;ngig davon, wer die Bestellung durchf&uuml;hrt.</strong></p>
 <?php
 	}
 ?>
@@ -338,96 +338,11 @@ HTML;
 ?>
   
   <p>
-    <button id="dialog-show-button-<?php echo $store['id']; ?>" class="aui-button aui-button-primary">Neue Bestellung</button>
+    <form action="/app/order-store">
+      <input type="hidden" name="store" value="<?php echo $store['id']; ?>">
+      <button class="aui-button aui-button-primary">Neue Bestellung</button>
+    </form>
   </p>
-  
-  <section role="dialog" id="new-order-dialog-<?php echo $store['id']; ?>" class="aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true">
-    <header class="aui-dialog2-header">
-      <h2 class="aui-dialog2-header-main">Neue Bestellung f&uuml;r <?php echo htmlentities($store['name']); ?></h2>
-    </header>	  
-
-    <div class="aui-dialog2-content">
-<?php
-			$uarticles = get_primary_articles($store['id']);
-
-			if (count($uarticles) > 0) {
-?>
-      <h3>Speisekarte</h3>
-      <ul>
-<?php
-				$ugroups = [];
-				foreach ($uarticles as $uarticle_id => $uarticle) {
-					if (in_array($uarticle['group_title'], $ugroups)) {
-						continue;
-					}
-
-					$ugroups[] = $uarticle['group_title'];
-				}
-
-				foreach ($ugroups as $ugroup) {
-?><h3><?php echo htmlentities($ugroup); ?></h3><?php
-					foreach ($uarticles as $uarticle_id => $uarticle) {
-						if ($uarticle['group_title'] != $ugroup) {
-							continue;
-						}
-
-						if ($uarticle['description'] != '') {
-							$description_html = ' (' . htmlentities($uarticle['description']) . ')';
-						} else {
-							$description_html = '';
-						}
-
-?><li><a href="/app/order-article?article=<?php echo $uarticle_id; ?>"><?php echo htmlentities($uarticle['title']); ?></a><span style="font-size: 8pt;"><?php echo $description_html; ?></span></li>
-<?php
-					}
-				}
-?>
-      </ul>
-      <h3>Manuell eingeben</h3>
-<?php
-			}
-?>
-      <form class="aui" method="post" action="/app/order-add">
-        <div class="field-group">
-	      <label for="add-title-<?php echo $store['id']; ?>">Beschreibung</label>
-	      <input class="text article" type="text" name="title" id="add-title-<?php echo $store['id']; ?>" data-store="<?php echo $store['id']; ?>">
-        </div>
-        <div class="field-group">
-	      <label for="add-price-<?php echo $store['id']; ?>">Preis (&euro;)</label>
-	      <input class="text small-field" type="text" name="price" id="add-price-<?php echo $store['id']; ?>">
-        </div>
-        <div class="buttons-container">
-          <div class="buttons">
-			<input type="hidden" name="store" value="<?php echo $store['id']; ?>">
-			<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-            <button type="submit" class="aui-button">
-  		      <i class="fa fa-check"></i> Hinzuf&uuml;gen
-            </button>
-          </div>
-	    </div>
-      </form>
-    </div>
-	
-	<!-- Dialog footer -->
-    <footer class="aui-dialog2-footer">
-        <!-- Actions to render on the right of the footer -->
-        <div class="aui-dialog2-footer-actions">
-            <button id="dialog-close-button-<?php echo $store['id']; ?>" class="aui-button aui-button-link">Abbrechen</button>
-        </div>
-    </footer>
-  </section>
-
-  <script type="text/javascript">
-    AJS.$("#dialog-show-button-<?php echo $store['id']; ?>").click(function() {
-      AJS.dialog2("#new-order-dialog-<?php echo $store['id']; ?>").show();
-    });
-
-    // Hides the dialog
-    AJS.$("#dialog-close-button-<?php echo $store['id']; ?>").click(function(e) {
-      e.preventDefault();
-      AJS.dialog2("#new-order-dialog-<?php echo $store['id']; ?>").hide();
-    });
-  </script>
   
 <?php
 		}

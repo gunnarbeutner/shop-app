@@ -92,7 +92,7 @@ function get_article_info($article_id) {
 SELECT `id`, `title`, `description`, `price`, `article_group_id`
 FROM `articles`
 WHERE `id` = ${article_quoted} OR `parent_article_id` = ${article_quoted}
-ORDER BY `title` ASC, `price` ASC
+ORDER BY `price` DESC
 QUERY;
 
 	$articles = [];
