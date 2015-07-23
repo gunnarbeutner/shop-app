@@ -21,6 +21,8 @@
 
 require_once('helpers/csrf.php');
 
+$csrf_token = csrf_token();
+
 ?>
 
 <h1>Auftragsliste</h1>
@@ -46,9 +48,6 @@ foreach ($params['stores'] as $store_id => $store) {
 	<th>Lastschrift</th>
  </tr>
 <?php
-
-		$csrf_token = csrf_token();
-
 		$sum = 0;
 		
 		foreach ($items as $item) {
