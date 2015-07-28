@@ -20,10 +20,13 @@
  */
 
 require_once('helpers/session.php');
+require_once('helpers/user.php');
+require_once('helpers/order.php');
 
 $username = get_user_name();
 $email = get_user_email();
 $gravatar_url = "https://www.gravatar.com/avatar/" . md5(strtolower($email)) . "?s=35&amp;d=mm&amp;r=g";
+$ext_info = get_user_ext_info($email);
 
 ?>
 
@@ -66,6 +69,7 @@ $gravatar_url = "https://www.gravatar.com/avatar/" . md5(strtolower($email)) . "
               <span class="menu-text">
                 <?php echo htmlentities($username); ?>
               </span>
+              <span class="menu-text">(<?php echo format_number($ext_info['balance']); ?>&euro;)</span>
             </a>
 
             <!-- .aui-dropdown2 -->
