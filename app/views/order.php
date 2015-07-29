@@ -77,7 +77,9 @@ require_once('helpers/article.php');
 <?php
 	}
 ?>
-  
+
+  <p style="display:flex;align-items:center;"><img src="/images/oreo.png" height="100px"> F&uuml;r jede Bestellung, die bargeldlos bezahlt wird, gibt es heute gratis 2 Oreos.</p>  
+
   <section role="dialog" id="payment-method-dialog" class="aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true">
     <header class="aui-dialog2-header">
       <h2 class="aui-dialog2-header-main">Zahlungsmethode</h2>
