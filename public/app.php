@@ -96,6 +96,8 @@ if ($format == 'pdf') {
 	ob_start();
 }
 
+$page_layout = 'portrait';
+
 require_once('views/layout.php');
 
 if ($format == 'pdf') {
@@ -104,6 +106,7 @@ if ($format == 'pdf') {
 
 	$dompdf = new DOMPDF();
 	$dompdf->getOptions()->setIsRemoteEnabled(true);
+	$dompdf->set_paper('a4', $page_layout);
 	$dompdf->load_html($html);
 	$dompdf->render();
 	echo $dompdf->output();

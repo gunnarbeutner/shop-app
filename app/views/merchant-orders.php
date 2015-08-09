@@ -23,6 +23,39 @@ require_once('helpers/csrf.php');
 
 $csrf_token = csrf_token();
 
+if ($format == 'pdf') {
+	$page_layout = 'landscape';
+
+?>
+<style type="text/css">
+  table {
+    border-spacing: 0.5rem;
+    font-size: 18pt;
+  }
+
+  td {
+    border-bottom: 1px dashed;
+  }
+
+  #table-checkbox {
+    width: 30px;
+  }
+
+  #table-user {
+    width: 200px;
+  }
+
+  #table-article {
+    width: 570px;
+  }
+
+  #table-price {
+    width: 200px;
+  }
+</style>
+<?php
+}
+
 ?>
 
 <h1>Auftragsliste</h1>
@@ -42,10 +75,15 @@ foreach ($params['stores'] as $store_id => $store) {
 
 <table class="aui zebra" id="stores">
   <tr>
-    <th>Benutzer</th>
-    <th>Beschreibung</th>
-	<th>Preis (&euro;)</th>
-	<th>Lastschrift</th>
+<?php if ($format == 'pdf') { ?>
+    <td id="table-checkbox">&nbsp;</td>
+<?php } ?>
+    <th id="table-user">Benutzer</th>
+    <th id="table-article">Beschreibung</th>
+    <th id="table-price">Preis (&euro;)</th>
+<?php if ($format != 'pdf') { ?>
+    <th>Lastschrift</th>
+<?php } ?>
  </tr>
 <?php
 		$sum = 0;
@@ -53,10 +91,27 @@ foreach ($params['stores'] as $store_id => $store) {
 		foreach ($items as $item) {
 			$html = <<<HTML
   <tr>
+HTML;
+
+			if ($format == 'pdf') {
+				$html .= <<<HTML
+    <td><div style="width: 18pt; height: 18pt; border: 1px solid #000;"></div></td>
+HTML;
+			}
+			$html .= <<<HTML
     <td title="%s">%s</td>
     <td>%s</td>
     <td>%s</td>
+HTML;
+
+
+			if ($format != 'pdf') {
+				$html .= <<<HTML
     <td>%s</td>
+HTML;
+			}
+
+			$html .= <<<HTML
   </tr>
 
 HTML;
