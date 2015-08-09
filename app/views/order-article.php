@@ -22,11 +22,21 @@
 require_once('helpers/csrf.php');
 require_once('helpers/order.php');
 
+$store = get_stores()[$params['store_id']];
+
 ?>
 
 <h1>Neue Bestellung</h1>
 
 <?php
+$service_fee = $store['service_charge_amount'];
+if (bccomp($service_fee, '0') != 0) {
+?>
+
+<p>F&uuml;r diesen Laden f&auml;llt eine Liefergeb&uuml;hr in H&ouml;he von <?php echo format_number($service_fee); ?>&euro; an, die zwischen allen Bestellern aufgeteilt wird: <?php echo $store['service_charge_description']; ?></p>
+
+<?php
+}
 
 foreach ($params['groups'] as $group_id => $group) {
 	$count = 0;
@@ -66,7 +76,7 @@ foreach ($params['groups'] as $group_id => $group) {
 		}
 
 		if (bccomp($article['price'], '0') != 0) {
-			$price = ' - ' . format_number($article['price']) . ' &euro;';
+			$price = ' - ' . format_number($article['price']) . '&euro;';
 		} else {
 			$price = '';
 		}

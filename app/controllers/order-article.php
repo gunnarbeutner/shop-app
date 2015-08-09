@@ -27,7 +27,7 @@ require_once('helpers/article.php');
 class OrderarticleController {
 	public function get() {
 		if (!get_order_status()) {
-			$params = [ 'message' => 'Bestelländerungenaktuell nicht mehr möglich.' ];
+			$params = [ 'message' => 'Bestelländerungen aktuell nicht mehr möglich.' ];
 			return [ 'error', $params ];
 		}
 
@@ -35,7 +35,8 @@ class OrderarticleController {
 
 		$params = [
 			'article' => get_article_info($article_id),
-			'groups' => get_article_groups()
+			'groups' => get_article_groups(),
+			'store_id' => get_article_attr($article_id, 'store_id')
 		];
 		return [ 'order-article', $params ];
 	}

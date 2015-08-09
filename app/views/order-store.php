@@ -32,6 +32,15 @@ $csrf_token = csrf_token();
 <h1>Neue Bestellung f&uuml;r <?php echo htmlentities($store['name']); ?></h1>
 
 <?php
+$service_fee = $store['service_charge_amount'];
+if (bccomp($service_fee, '0') != 0) {
+?>
+
+<p>F&uuml;r diesen Laden f&auml;llt eine Liefergeb&uuml;hr in H&ouml;he von <?php echo format_number($service_fee); ?>&euro; an, die zwischen allen Bestellern aufgeteilt wird: <?php echo $store['service_charge_description']; ?></p>
+
+<?php
+}
+
 $uarticles = get_primary_articles($store_id);
 
 if (count($uarticles) > 0) {
@@ -89,6 +98,6 @@ if (count($uarticles) > 0) {
             </button>
           </div>
 	    </div>
-      </form>
-    </div>
+    </form>
+  </div>
 

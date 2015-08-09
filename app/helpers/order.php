@@ -290,7 +290,7 @@ FROM order_items
 WHERE `order_id` = ${order_quoted}
 GROUP BY `store_id`) AS a
 QUERY;
-	return $shop_db->query($query)->fetch()['amount'];
+	return $shop_db->query($query)->fetch(PDO::FETCH_ASSOC)['amount'];
 }
 
 function remove_item($uid, $item_id) {
@@ -300,13 +300,24 @@ function remove_item($uid, $item_id) {
 	$item_quoted = $shop_db->quote($item_id);
 
 	$query = <<<QUERY
+SELECT `store_id`
+FROM `order_items`
+WHERE `id` = ${item_quoted}
+QUERY;
+
+	$row = $shop_db->query($query)->fetch(PDO::FETCH_ASSOC);
+
+	$query = <<<QUERY
 DELETE FROM `order_items`
 WHERE `order_id`=${order_quoted} AND `id` = ${item_quoted}
 QUERY;
 	$shop_db->query($query);
+
+	if ($row)
+		update_service_charges($row['store_id']);
 }
 
-function add_item($uid, $store_id, $title, $price) {
+function add_item($uid, $store_id, $title, $price, $skip_fee = false) {
 	global $shop_db;
 
 	$order_quoted = $shop_db->quote(get_current_order($uid)['id']);
@@ -321,7 +332,12 @@ VALUES
 (${order_quoted}, ${store_quoted}, ${title_quoted}, ${price_quoted})
 QUERY;
 	$shop_db->query($query);
-	return $shop_db->lastInsertId();
+	$id = $shop_db->lastInsertId();
+
+	if (!$skip_fee)
+		update_service_charges($store_id);
+
+	return $id;
 }
 
 function get_votes() {
@@ -436,11 +452,13 @@ QUERY;
 	}
 	
 	if ($store['min_order_count'] > 0) {
+		$service_charge_description_quoted = $shop_db->quote($store['service_charge_description']);
+
 		$query = <<<QUERY
 SELECT COUNT(oi.`id`) AS cnt
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
-WHERE o.`date` = ${order_date_quoted} AND oi.`store_id` = ${store_quoted}
+WHERE o.`date` = ${order_date_quoted} AND oi.`store_id` = ${store_quoted} AND oi.`title` != ${service_charge_description_quoted}
 QUERY;
 		$cnt = $shop_db->query($query)->fetch(PDO::FETCH_ASSOC)['cnt'];
 		
@@ -512,14 +530,81 @@ function get_best_store() {
 	return $best_store_id;
 }
 
+function update_service_charges($store_id) {
+	global $shop_db;
+
+	$stores = get_stores();
+	$store = $stores[$store_id];
+
+	$order_date_quoted = $shop_db->quote(get_current_order_date());
+	$title_quoted = $shop_db->quote($store['service_charge_description']);
+
+	$query = <<<QUERY
+DELETE oi FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
+WHERE o.`date` = ${order_date_quoted}
+AND oi.`title` = ${title_quoted}
+QUERY;
+
+	$shop_db->query($query);
+
+	$query = <<<QUERY
+SELECT DISTINCT u.`id` AS user_id, u.`email` AS user_email
+FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
+LEFT JOIN `users` u ON u.`id`=o.`user_id`
+WHERE o.`date` = ${order_date_quoted}
+QUERY;
+	$users = $shop_db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+
+	$query = <<<QUERY
+SELECT u.`id` AS user_id, u.`name` AS user_name, u.`email` AS user_email, oi.`title`, oi.`price`, oi.`store_id`, oi.`order_id`, oi.`direct_debit_done`
+FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
+LEFT JOIN `users` u ON u.`id`=o.`user_id`
+WHERE o.`date` = ${order_date_quoted}
+QUERY;
+	$items = $shop_db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+
+	$service_fee = $store['service_charge_amount'];
+	if (bccomp($service_fee, '0') == 0)
+		return;
+
+	foreach ($users as $user) {
+		$user_id = $user['user_id'];
+		foreach ($stores as $store_id => $store) {
+			$amount = '0';
+			$total_amount = '0';
+			foreach ($items as $item) {
+				if ($item['store_id'] != $store_id)
+					continue;
+
+				$total_amount = bcadd($total_amount, $item['price']);
+
+				if ($item['user_id'] != $user_id)
+					continue;
+
+				$amount = bcadd($amount, $item['price']);
+			}
+
+			if (bccomp($amount, '0') == 0)
+				continue;
+
+			$fee = bcmul(bcdiv($amount, $total_amount), $service_fee);
+			if (bccomp($fee, $service_fee) < 0)
+				$fee = bcadd($fee, '0.01', 2);
+			add_item($user_id, $store_id, $store['service_charge_description'], $fee, true);
+		}
+	}
+}
+
 function get_current_merchant_order() {
 	global $shop_db;
 
 	$store_status = get_store_status();
-	
+
 	$order_date_quoted = $shop_db->quote(get_current_order_date());
-	
-	
+
 	$query = <<<QUERY
 SELECT DISTINCT u.`id` AS user_id, u.`email` AS user_email
 FROM `order_items` oi
@@ -555,6 +640,8 @@ QUERY;
 			}
 			
 			$found_user_items = false;
+
+			$amount = 0;
 
 			foreach ($items as $item) {
 				if ($item['store_id'] != $store_id) {
