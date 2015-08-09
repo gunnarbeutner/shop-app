@@ -435,13 +435,14 @@ QUERY;
 	$store_id = $store['id'];
 	$store_quoted = $shop_db->quote($store_id);
 	$order_date_quoted = $shop_db->quote(get_current_order_date());
+	$service_charge_description_quoted = $shop_db->quote($store['service_charge_description']);
 
 	if ($store['min_order_volume'] > 0) {
 		$query = <<<QUERY
 SELECT SUM(oi.`price`) AS vol
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
-WHERE o.`date` = ${order_date_quoted} AND oi.`store_id` = ${store_quoted}
+WHERE o.`date` = ${order_date_quoted} AND oi.`store_id` = ${store_quoted} AND oi.`title` != ${service_charge_description_quoted}
 QUERY;
 		$vol = $shop_db->query($query)->fetch(PDO::FETCH_ASSOC)['vol'];
 
@@ -452,8 +453,6 @@ QUERY;
 	}
 	
 	if ($store['min_order_count'] > 0) {
-		$service_charge_description_quoted = $shop_db->quote($store['service_charge_description']);
-
 		$query = <<<QUERY
 SELECT COUNT(oi.`id`) AS cnt
 FROM `order_items` oi
@@ -467,7 +466,7 @@ QUERY;
 		else
 			$status = 'probably';
 	}
-	
+
 	return $status;
 }
 
@@ -491,8 +490,8 @@ function get_store_status() {
 			$first = true;
 			foreach ($merchants[$merchant_id] as $o_store_id) {
 				if ($first) {
-					$store_status = get_store_restriction_status($o_store_id);
-					if ($store_status = 'guaranteed') {
+					$store_status = get_store_restriction_status($stores[$o_store_id]);
+					if ($store_status == 'guaranteed') {
 						$store_status = 'probably';
 					}
 					$status[$o_store_id] = $store_status;
@@ -538,12 +537,14 @@ function update_service_charges($store_id) {
 
 	$order_date_quoted = $shop_db->quote(get_current_order_date());
 	$title_quoted = $shop_db->quote($store['service_charge_description']);
+	$store_quoted = $shop_db->quote($store_id);
 
 	$query = <<<QUERY
 DELETE oi FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE o.`date` = ${order_date_quoted}
 AND oi.`title` = ${title_quoted}
+AND oi.`store_id` = ${store_quoted}
 QUERY;
 
 	$shop_db->query($query);
@@ -572,7 +573,10 @@ QUERY;
 
 	foreach ($users as $user) {
 		$user_id = $user['user_id'];
-		foreach ($stores as $store_id => $store) {
+		foreach ($stores as $ustore_id => $store) {
+			if ($store_id != $ustore_id)
+				continue;
+
 			$amount = '0';
 			$total_amount = '0';
 			foreach ($items as $item) {
