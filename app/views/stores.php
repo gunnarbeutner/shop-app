@@ -29,9 +29,10 @@ require_once('helpers/order.php');
 <table class="aui zebra" id="stores">
   <tr>
     <th>Name</th>
-	<th>Mindestbestellmenge</th>
-	<th>Mindestumsatz (&euro;)</th>
-	<th>Anbieter</th>
+    <th>Mindestbestellmenge</th>
+    <th>Mindestumsatz (&euro;)</th>
+    <th>Liefergeb&uuml;hr (&euro;)</th>
+    <th>Anbieter</th>
     <th>Aktionen</th>
  </tr>
 <?php
@@ -63,6 +64,7 @@ ACTIONS;
     <td>%s</td>
     <td>%s</td>
     <td>%s</td>
+    <td>%s</td>
     <td title="%s">%s</td>
     <td>
 $actions
@@ -81,7 +83,8 @@ HTML;
 		
 		printf($html,
 		    htmlentities($store['name']),
-			htmlentities($store['min_order_count']), format_number($store['min_order_volume']),
+		    htmlentities($store['min_order_count']), format_number($store['min_order_volume']),
+		    format_number($store['service_charge_amount']),
 		    $merchant_email, $merchant_name);
 	}
 ?>
