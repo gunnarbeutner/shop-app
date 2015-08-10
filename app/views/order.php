@@ -73,7 +73,7 @@ require_once('helpers/article.php');
 <?php
 		if ($payment_method == 'Cash') {
 ?>
-<p><strong>Barzahlungen werden von Cornelius und Gunnar entgegengenommen. Dies ist unabh&auml;ngig davon, wer die Bestellung durchf&uuml;hrt.</strong></p>
+<p><strong>Barzahlungen werden von Marius und Gunnar entgegengenommen. Dies ist unabh&auml;ngig davon, wer die Bestellung durchf&uuml;hrt.</strong></p>
 <?php
 	}
 ?>
