@@ -284,11 +284,11 @@ function get_max_order_amount($uid) {
 	$order_quoted = $shop_db->quote(get_current_order($uid)['id']);
 
 	$query = <<<QUERY
-SELECT MAX(a.amount) AS amount, store_id FROM (
+SELECT a.amount AS amount, a.store_id FROM (
 SELECT SUM(price) AS amount, store_id
 FROM order_items
 WHERE `order_id` = ${order_quoted} AND fee = 0
-GROUP BY `store_id`) AS a
+GROUP BY `store_id`) AS a ORDER BY amount DESC LIMIT 1
 QUERY;
 
 	$row = $shop_db->query($query)->fetch(PDO::FETCH_ASSOC);
