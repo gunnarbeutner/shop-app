@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 
 /*
@@ -20,12 +19,25 @@
  * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-require_once(__DIR__ . '/../config.php');
+require_once('helpers/csrf.php');
 require_once('helpers/order.php');
-require_once('helpers/store.php');
 
-set_order_status(false);
+?>
 
-foreach (get_stores() as $store_id => $store) {
-	set_status_message($store_id, 'Die Bestellung wurde noch nicht an den Laden weitergegeben.');
-}
+<h1>Status f&uuml;r <?php echo htmlentities($params['store']['name']); ?></h1>
+
+<form class="aui" method="post" action="/app/store-status-msg">
+  <div class="field-group">
+    <label for="add-title-<?php echo $store_id; ?>">Status</label>
+    <input class="text" type="text" name="text">
+  </div>
+  <div class="buttons-container">
+    <div class="buttons">
+      <input type="hidden" name="store" value="<?php echo $params['store']['id']; ?>">
+      <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
+      <button type="submit" class="aui-button">
+        <i class="fa fa-check"></i> Aktualisieren
+      </button>
+    </div>
+  </div>
+</form>

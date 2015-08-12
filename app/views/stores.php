@@ -59,6 +59,14 @@ ACTIONS;
       </form>
 ACTIONS;
 		}
+
+		$actions .= <<<ACTIONS
+      <form class="aui" method="get" action="/app/store-status-msg">
+		<input type="hidden" name="store" value="${store_id}"></input>
+        <input class="submit button" type="submit" value="Statustext bearbeiten"></input>
+      </form>
+ACTIONS;
+
 		$html = <<<HTML
   <tr>
     <td>%s</td>

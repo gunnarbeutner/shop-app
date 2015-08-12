@@ -25,7 +25,7 @@ function get_stores() {
 	global $shop_db;
 
 	$query = <<<QUERY
-SELECT v.`id`, v.`name`, v.`description`, v.`merchant_id`, v.`min_order_count`, v.`min_order_volume`, v.`service_charge_amount`, v.`service_charge_description`, m.`name` AS merchant_name, m.`email` AS merchant_email
+SELECT v.`id`, v.`name`, v.`description`, v.`merchant_id`, v.`min_order_count`, v.`min_order_volume`, v.`service_charge_amount`, v.`service_charge_description`, v.`status_message`, m.`name` AS merchant_name, m.`email` AS merchant_email
 FROM `stores` v
 LEFT JOIN `users` m ON m.`id`=v.`merchant_id`
 ORDER BY v.`id` ASC
@@ -51,6 +51,20 @@ function set_merchant($store_id, $merchant_id) {
 	$query = <<<QUERY
 UPDATE `stores`
 SET `merchant_id`=${merchant_quoted}
+WHERE `id`=${store_quoted}
+QUERY;
+	$shop_db->query($query);
+}
+
+function set_status_message($store_id, $text) {
+	global $shop_db;
+	
+	$store_quoted = $shop_db->quote($store_id);
+	$text_quoted = $shop_db->quote($text);
+	
+	$query = <<<QUERY
+UPDATE `stores`
+SET `status_message`=${text_quoted}
 WHERE `id`=${store_quoted}
 QUERY;
 	$shop_db->query($query);

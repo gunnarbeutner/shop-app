@@ -1,8 +1,7 @@
-#!/usr/bin/env php
 <?php
 
 /*
- * Shop
+  * Shop
  * Copyright (C) 2015 Gunnar Beutner
  *
  * This program is free software; you can redistribute it and/or
@@ -20,12 +19,40 @@
  * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-require_once(__DIR__ . '/../config.php');
-require_once('helpers/order.php');
+require_once('helpers/session.php');
 require_once('helpers/store.php');
+require_once('helpers/csrf.php');
 
-set_order_status(false);
+class StorestatusmsgController {
+	public function get() {
+		verify_user();
+		
+		if (!get_user_attr(get_user_email(), 'merchant')) {
+			$params = [ 'message' => 'Zugriff verweigert.' ];
+			return [ 'error', $params ];
+		}
 
-foreach (get_stores() as $store_id => $store) {
-	set_status_message($store_id, 'Die Bestellung wurde noch nicht an den Laden weitergegeben.');
+		$params = [
+			'store' => get_stores()[$_GET['store']]
+		];
+		return [ 'store-status-msg', $params ];
+	}
+
+	public function post() {
+		verify_csrf_token();
+
+		if (!get_user_attr(get_user_email(), 'merchant')) {
+			$params = [ 'message' => 'Zugriff verweigert.' ];
+			return [ 'error', $params ];
+		}
+		
+		$store_id = $_POST['store'];
+		$text = $_POST['text'];
+
+		set_status_message($store_id, $text);
+
+		header('Location: /app/stores');
+		die();
+	}
 }
+

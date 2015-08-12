@@ -362,6 +362,15 @@ HTML;
   
 <?php
 		}
+
+		if (!$params['order_status'] && $store['status_message'] != '') {
+?>
+
+<h3>Status</h3>
+
+<p><strong><?php echo $store['status_message']; ?></strong></p>
+<?php
+		}
 	}
 ?>
 <script type="text/javascript">
