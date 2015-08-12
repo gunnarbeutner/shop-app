@@ -29,9 +29,6 @@ require_once('helpers/order.php');
 <table class="aui zebra" id="stores">
   <tr>
     <th>Name</th>
-    <th>Mindestbestellmenge</th>
-    <th>Mindestumsatz (&euro;)</th>
-    <th>Liefergeb&uuml;hr (&euro;)</th>
     <th>Anbieter</th>
     <th>Aktionen</th>
  </tr>
@@ -42,36 +39,39 @@ require_once('helpers/order.php');
 	foreach ($params['stores'] as $store_id => $store) {
 		if ($store['merchant_email'] != get_user_email()) {
 			$actions = <<<ACTIONS
-      <form class="aui" method="post" action="/app/merchant-status">
-		<input type="hidden" name="store" value="${store_id}"></input>
-		<input type="hidden" name="status" value="1"></input>
-        <input type="hidden" name="csrf_token" value="${csrf_token}"></input>
-        <input class="submit button" type="submit" value="Als Anbieter setzen"></input>
-      </form>
+      <div style="float: left; padding-right: 10px;">
+        <form class="aui" method="post" action="/app/merchant-status">
+          <input type="hidden" name="store" value="${store_id}"></input>
+          <input type="hidden" name="status" value="1"></input>
+          <input type="hidden" name="csrf_token" value="${csrf_token}"></input>
+          <input class="submit button" type="submit" value="Als Anbieter setzen"></input>
+        </form>
+      </div>
 ACTIONS;
 		} else {
 			$actions = <<<ACTIONS
-      <form class="aui" method="post" action="/app/merchant-status">
-		<input type="hidden" name="store" value="${store_id}"></input>
-		<input type="hidden" name="status" value="0"></input>
-		<input type="hidden" name="csrf_token" value="${csrf_token}"></input>
-        <input class="submit button" type="submit" value="Als Anbieter entfernen"></input>
-      </form>
+      <div style="float: left; padding-right: 10px;">
+        <form class="aui" method="post" action="/app/merchant-status">
+          <input type="hidden" name="store" value="${store_id}"></input>
+          <input type="hidden" name="status" value="0"></input>
+          <input type="hidden" name="csrf_token" value="${csrf_token}"></input>
+          <input class="submit button" type="submit" value="Als Anbieter entfernen"></input>
+        </form>
+      </div>
 ACTIONS;
 		}
 
 		$actions .= <<<ACTIONS
-      <form class="aui" method="get" action="/app/store-status-msg">
-		<input type="hidden" name="store" value="${store_id}"></input>
-        <input class="submit button" type="submit" value="Statustext bearbeiten"></input>
-      </form>
+      <div style="float: left;">
+        <form class="aui" method="get" action="/app/store-edit">
+          <input type="hidden" name="store" value="${store_id}"></input>
+          <input class="submit button" type="submit" value="Bearbeiten"></input>
+        </form>
+      </div>
 ACTIONS;
 
 		$html = <<<HTML
   <tr>
-    <td>%s</td>
-    <td>%s</td>
-    <td>%s</td>
     <td>%s</td>
     <td title="%s">%s</td>
     <td>
@@ -91,8 +91,6 @@ HTML;
 		
 		printf($html,
 		    htmlentities($store['name']),
-		    htmlentities($store['min_order_count']), format_number($store['min_order_volume']),
-		    format_number($store['service_charge_amount']),
 		    $merchant_email, $merchant_name);
 	}
 ?>

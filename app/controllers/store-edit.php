@@ -23,7 +23,7 @@ require_once('helpers/session.php');
 require_once('helpers/store.php');
 require_once('helpers/csrf.php');
 
-class StorestatusmsgController {
+class StoreeditController {
 	public function get() {
 		verify_user();
 		
@@ -35,7 +35,7 @@ class StorestatusmsgController {
 		$params = [
 			'store' => get_stores()[$_GET['store']]
 		];
-		return [ 'store-status-msg', $params ];
+		return [ 'store-edit', $params ];
 	}
 
 	public function post() {
@@ -47,9 +47,14 @@ class StorestatusmsgController {
 		}
 		
 		$store_id = $_POST['store'];
-		$text = $_POST['text'];
 
-		set_status_message($store_id, $text);
+		set_store_attr($store_id, 'description', $_POST['description']);
+		set_store_attr($store_id, 'status_message', $_POST['text']);
+		set_store_attr($store_id, 'min_order_count', $_POST['min_order_count']);
+		set_store_attr($store_id, 'min_order_volume', $_POST['min_order_volume']);
+		set_store_attr($store_id, 'service_charge_amount', $_POST['service_charge_amount']);
+		set_store_attr($store_id, 'service_charge_description', $_POST['service_charge_description']);
+		set_store_attr($store_id, 'rebate_percent', $_POST['rebate_percent']);
 
 		header('Location: /app/stores');
 		die();

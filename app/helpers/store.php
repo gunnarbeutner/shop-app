@@ -56,16 +56,17 @@ QUERY;
 	$shop_db->query($query);
 }
 
-function set_status_message($store_id, $text) {
+function set_store_attr($store_id, $attr, $value) {
 	global $shop_db;
-	
+
 	$store_quoted = $shop_db->quote($store_id);
-	$text_quoted = $shop_db->quote($text);
-	
+	$value_quoted = $shop_db->quote($value);
+
 	$query = <<<QUERY
 UPDATE `stores`
-SET `status_message`=${text_quoted}
+SET `$attr`=${value_quoted}
 WHERE `id`=${store_quoted}
 QUERY;
+
 	$shop_db->query($query);
 }
