@@ -302,7 +302,7 @@ HTML;
 <?php
 
 			foreach ($items as $item) {
-				if ($item['title'] != $store['service_charge_description']) {
+				if (!$item['fee']) {
 					$remove_button = <<<HTML
         <form method="post" action="/app/order-remove" style="display: inline;">
           <input type="hidden" name="item" value="${item['id']}">

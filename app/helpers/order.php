@@ -212,7 +212,7 @@ QUERY;
 	}
 
 	$query = <<<QUERY
-SELECT `id`, `store_id`, `title`, `price`
+SELECT `id`, `store_id`, `title`, `price`, `fee`
 FROM `order_items`
 WHERE `order_id`=${order_quoted}
 QUERY;
@@ -284,13 +284,16 @@ function get_max_order_amount($uid) {
 	$order_quoted = $shop_db->quote(get_current_order($uid)['id']);
 
 	$query = <<<QUERY
-SELECT MAX(a.amount) AS amount FROM (
-SELECT SUM(price) AS amount
+SELECT MAX(a.amount) AS amount, store_id FROM (
+SELECT SUM(price) AS amount, store_id
 FROM order_items
-WHERE `order_id` = ${order_quoted}
+WHERE `order_id` = ${order_quoted} AND fee = 0
 GROUP BY `store_id`) AS a
 QUERY;
-	return $shop_db->query($query)->fetch(PDO::FETCH_ASSOC)['amount'];
+
+	$row = $shop_db->query($query)->fetch(PDO::FETCH_ASSOC);
+	$store = get_stores()[$row['store_id']];
+	return bcadd($row['amount'], $store['service_charge_amount']);
 }
 
 function remove_item($uid, $item_id) {
@@ -317,24 +320,25 @@ QUERY;
 		update_service_charges($row['store_id']);
 }
 
-function add_item($uid, $store_id, $title, $price, $skip_fee = false) {
+function add_item($uid, $store_id, $title, $price, $is_fee = false) {
 	global $shop_db;
 
 	$order_quoted = $shop_db->quote(get_current_order($uid)['id']);
 	$store_quoted = $shop_db->quote($store_id);
 	$title_quoted = $shop_db->quote($title);
 	$price_quoted = $shop_db->quote($price);
+	$fee_quoted = $shop_db->quote($is_fee);
 
 	$query = <<<QUERY
 INSERT INTO `order_items`
-(`order_id`, `store_id`, `title`, `price`)
+(`order_id`, `store_id`, `title`, `price`, `fee`)
 VALUES
-(${order_quoted}, ${store_quoted}, ${title_quoted}, ${price_quoted})
+(${order_quoted}, ${store_quoted}, ${title_quoted}, ${price_quoted}, ${fee_quoted})
 QUERY;
 	$shop_db->query($query);
 	$id = $shop_db->lastInsertId();
 
-	if (!$skip_fee)
+	if (!$is_fee)
 		update_service_charges($store_id);
 
 	return $id;
