@@ -239,7 +239,22 @@ HTML;
 ?>
 <p>F&uuml;r diesen Laden f&auml;llt eine Liefergeb&uuml;hr in H&ouml;he von <?php echo format_number($service_fee); ?>&euro; an, die zwischen allen Bestellern aufgeteilt wird: <?php echo $store['service_charge_description']; ?></p>
 <?php
-}
+		}
+
+		$rebate_pct = $store['rebate_percent'];
+		if (bccomp($rebate_pct, '0') != 0) {
+?>
+<p>F&uuml;r diesen Laden gibt es heute auf alle Artikel
+
+<?php
+			if (bccomp($service_fee, '0') != 0) {
+?> (ausgenommen Liefergeb&uuml;hren <?php
+			}
+
+?> <?php echo $rebate_pct; ?>% Rabatt.</p>
+<?php
+		}
+
 		$up_button = ($index != 1 && $index <= count($params['order']['store_prio']));
 		$down_button = ($index != count($stores) && $index < count($params['order']['store_prio']));
 		
@@ -302,7 +317,7 @@ HTML;
 <?php
 
 			foreach ($items as $item) {
-				if (!$item['fee']) {
+				if (!$item['fee'] && !$item['rebate']) {
 					$remove_button = <<<HTML
         <form method="post" action="/app/order-remove" style="display: inline;">
           <input type="hidden" name="item" value="${item['id']}">

@@ -77,7 +77,7 @@ foreach (get_stores() as $store_id => $store) {
 	$amount = 0;
 	
 	foreach ($transfer_items as $item) {
-		if ($item['store_id'] != $store_id) {
+		if ($item['store_id'] != $store_id || $item['rebate']) {
 			continue;
 		}
 		

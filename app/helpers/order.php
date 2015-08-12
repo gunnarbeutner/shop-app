@@ -212,7 +212,7 @@ QUERY;
 	}
 
 	$query = <<<QUERY
-SELECT `id`, `store_id`, `title`, `price`, `fee`
+SELECT `id`, `store_id`, `title`, `price`, `fee`, `rebate`
 FROM `order_items`
 WHERE `order_id`=${order_quoted}
 QUERY;
@@ -316,11 +316,13 @@ WHERE `order_id`=${order_quoted} AND `id` = ${item_quoted}
 QUERY;
 	$shop_db->query($query);
 
-	if ($row)
+	if ($row) {
 		update_service_charges($row['store_id']);
+		update_rebate($uid, $row['store_id']);
+	}
 }
 
-function add_item($uid, $store_id, $title, $price, $is_fee = false) {
+function add_item($uid, $store_id, $title, $price, $is_fee = false, $is_rebate = false) {
 	global $shop_db;
 
 	$order_quoted = $shop_db->quote(get_current_order($uid)['id']);
@@ -328,18 +330,21 @@ function add_item($uid, $store_id, $title, $price, $is_fee = false) {
 	$title_quoted = $shop_db->quote($title);
 	$price_quoted = $shop_db->quote($price);
 	$fee_quoted = $shop_db->quote($is_fee);
+	$rebate_quoted = $shop_db->quote($is_rebate);
 
 	$query = <<<QUERY
 INSERT INTO `order_items`
-(`order_id`, `store_id`, `title`, `price`, `fee`)
+(`order_id`, `store_id`, `title`, `price`, `fee`, `rebate`)
 VALUES
-(${order_quoted}, ${store_quoted}, ${title_quoted}, ${price_quoted}, ${fee_quoted})
+(${order_quoted}, ${store_quoted}, ${title_quoted}, ${price_quoted}, ${fee_quoted}, ${rebate_quoted})
 QUERY;
 	$shop_db->query($query);
 	$id = $shop_db->lastInsertId();
 
-	if (!$is_fee)
+	if (!$is_fee && !$is_rebate) {
 		update_service_charges($store_id);
+		update_rebate($uid, $store_id);
+	}
 
 	return $id;
 }
@@ -606,6 +611,46 @@ QUERY;
 	}
 }
 
+function update_rebate($uid, $store_id) {
+	global $shop_db;
+
+	$stores = get_stores();
+	$store = $stores[$store_id];
+
+	$uid_quoted = $shop_db->quote($uid);
+	$order_date_quoted = $shop_db->quote(get_current_order_date());
+	$store_quoted = $shop_db->quote($store_id);
+
+	$query = <<<QUERY
+DELETE oi FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
+WHERE o.`date` = ${order_date_quoted}
+AND o.`user_id` = ${uid_quoted}
+AND oi.`store_id` = ${store_quoted}
+AND oi.`rebate` = 1
+QUERY;
+
+	$shop_db->query($query);
+
+	$query = <<<QUERY
+SELECT SUM(oi.price) AS amount
+FROM order_items oi
+LEFT JOIN orders o ON o.id=oi.order_id
+WHERE o.`date` = ${order_date_quoted}
+AND o.`user_id` = ${uid_quoted}
+AND oi.`store_id` = ${store_quoted}
+AND oi.`rebate` = 0
+AND oi.`fee` = 0
+QUERY;
+	$amount = $shop_db->query($query)->fetch(PDO::FETCH_ASSOC)['amount'];
+
+	$rebate_pct = $store['rebate_percent'];
+	$rebate_amount = bcdiv(bcmul($amount, $rebate_pct), -100);
+
+	if (bccomp($rebate_amount, '0') != 0)
+		add_item($uid, $store_id, 'Rabatt (' . $rebate_pct . '%)', $rebate_amount, false, true);
+}
+
 function get_current_merchant_order() {
 	global $shop_db;
 
@@ -623,7 +668,7 @@ QUERY;
 	$users = $shop_db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
 	$query = <<<QUERY
-SELECT u.`name` AS user_name, u.`email` AS user_email, oi.`title`, oi.`price`, oi.`store_id`, oi.`order_id`, oi.`direct_debit_done`
+SELECT u.`name` AS user_name, u.`email` AS user_email, oi.`title`, oi.`price`, oi.`store_id`, oi.`order_id`, oi.`direct_debit_done`, oi.`rebate`
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=o.`user_id`

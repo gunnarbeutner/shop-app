@@ -29,7 +29,7 @@ require_once('helpers/order.php');
 <form class="aui" method="post" action="/app/store-status-msg">
   <div class="field-group">
     <label for="add-title-<?php echo $store_id; ?>">Status</label>
-    <input class="text" type="text" name="text">
+    <textarea class="textarea" type="text" name="text"><?php echo htmlentities($params['store']['status_message']); ?></textarea>
   </div>
   <div class="buttons-container">
     <div class="buttons">

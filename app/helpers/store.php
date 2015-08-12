@@ -25,7 +25,7 @@ function get_stores() {
 	global $shop_db;
 
 	$query = <<<QUERY
-SELECT v.`id`, v.`name`, v.`description`, v.`merchant_id`, v.`min_order_count`, v.`min_order_volume`, v.`service_charge_amount`, v.`service_charge_description`, v.`status_message`, m.`name` AS merchant_name, m.`email` AS merchant_email
+SELECT v.`id`, v.`name`, v.`description`, v.`merchant_id`, v.`min_order_count`, v.`min_order_volume`, v.`service_charge_amount`, v.`service_charge_description`, v.`status_message`, v.`rebate_percent`, m.`name` AS merchant_name, m.`email` AS merchant_email
 FROM `stores` v
 LEFT JOIN `users` m ON m.`id`=v.`merchant_id`
 ORDER BY v.`id` ASC
