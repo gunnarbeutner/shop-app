@@ -55,6 +55,7 @@ class StoreeditController {
 		set_store_attr($store_id, 'service_charge_amount', $_POST['service_charge_amount']);
 		set_store_attr($store_id, 'service_charge_description', $_POST['service_charge_description']);
 		set_store_attr($store_id, 'rebate_percent', $_POST['rebate_percent']);
+		set_store_attr($store_id, 'tracking_id', $_POST['tracking_id']);
 
 		header('Location: /app/stores');
 		die();

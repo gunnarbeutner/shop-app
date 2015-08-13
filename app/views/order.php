@@ -184,7 +184,7 @@ require_once('helpers/article.php');
 				
   <p>Beschreibung: %s</p>
   <p title="%s">Anbieter: %s</p>
-  %s
+  <p>%s</p>
   <p>Ladenstatus: %s <span class="aui-icon aui-icon-small aui-iconfont-help tooltip" title="%s"></span></p>
 HTML;
 
@@ -209,8 +209,6 @@ HTML;
 		
 		$status = $params['store_status'][$store['id']];
 		
-		$vote_html_template = '<p>%s</p>';
-		
 		switch ($status) {
 			case 'guaranteed':
 				$status_name = '<strong>Garantierte Bestellung</strong>';
@@ -227,12 +225,10 @@ HTML;
 				break;
 		}
 		
-		$vote_html = sprintf($vote_html_template, $vote_info);
-		
 		printf($html, $prio,
 			htmlentities($store['name']), $store['description'],
 			htmlentities($store['merchant_email']), htmlentities($store['merchant_name']),
-			$vote_html, $status_name, $status_popup);
+			$vote_info, $status_name, $status_popup);
 
 		$service_fee = $store['service_charge_amount'];
 		if (bccomp($service_fee, '0') != 0) {
@@ -385,6 +381,16 @@ HTML;
 
 <p><strong><?php echo $store['status_message']; ?></strong></p>
 <?php
+			if ($store['tracking_id'] != 0) {
+?>
+<br>
+
+<div style='background-color:#666;'><a id='ltw-home-url' href='http://locatoweb.com'>LocaToWeb - Real time GPS tracking</a>
+<iframe id='ltw-embed-frame' frameborder='0' style='width:100%;height:600px;'></iframe>
+<script>var ltwtrackurl='single/<?php echo htmlentities($store['tracking_id']); ?>';</script>
+<script src='//az664202.vo.msecnd.net/scripts/embed-1.0.9.min.js'></script></div>
+<?php
+			}
 		}
 	}
 ?>

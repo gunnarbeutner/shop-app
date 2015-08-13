@@ -56,6 +56,10 @@ require_once('helpers/order.php');
     <input class="text" type="text" name="rebate_percent" value="<?php echo htmlentities($params['store']['rebate_percent']); ?>">
     <div class="description">&Auml;nderungen des Rabattsatzes m&uuml;ssen mit Gunnar oder Marius abgesprochen werden.</div>
   </div>
+  <div class="field-group">
+    <label for="tracking_id">Tracking-ID</label>
+    <input class="text" type="text" name="tracking_id" value="<?php echo htmlentities($params['store']['tracking_id']); ?>">
+  </div>
   <div class="buttons-container">
     <div class="buttons">
       <input type="hidden" name="store" value="<?php echo $params['store']['id']; ?>">

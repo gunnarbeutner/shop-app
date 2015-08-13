@@ -27,5 +27,6 @@ require_once('helpers/store.php');
 set_order_status(false);
 
 foreach (get_stores() as $store_id => $store) {
-	set_status_message($store_id, 'Die Bestellung wurde noch nicht an den Laden weitergegeben.');
+	set_store_attr($store_id, 'status_message', 'Die Bestellung wurde noch nicht an den Laden weitergegeben.');
+	set_store_attr($store_id, 'tracking_id', '');
 }
