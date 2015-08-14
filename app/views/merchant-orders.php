@@ -87,8 +87,22 @@ foreach ($params['stores'] as $store_id => $store) {
  </tr>
 <?php
 		$sum = 0;
+		$sum_fee = 0;
+		$sum_rebate = 0;
 		
 		foreach ($items as $item) {
+			if ($item['rebate']) {
+				$sum_rebate = bcadd($sum_rebate, $item['price']);
+				continue;
+			}
+
+			if ($item['fee']) {
+				$sub_fee = bcadd($sum_fee, $item['price']);
+				continue;
+			}
+
+			$sum = bcadd($sum, $item['price']);
+
 			$html = <<<HTML
   <tr>
 HTML;
@@ -126,13 +140,19 @@ HTML;
 				htmlentities($item['user_email']), htmlentities($item['user_name']),
 				htmlentities($item['title']), format_number($item['price']),
 				$direct_debit_status);
-			
-			$sum = bcadd($sum, $item['price']);
 		}
 ?>
 </table>
 
-<p>Summe (&euro;): <?php echo format_number($sum); ?></p>
+<p>Summe ohne Rabatte/Trinkgeld (&euro;): <?php echo format_number($sum); ?></p>
+
+<?php if (bccomp($sum_fee, '0') != 0) { ?>
+<p>Liefergeb&uuml;hr/Trinkgeld (&euro;): <?php echo format_number($sum_fee); ?>
+<?php } ?>
+
+<?php if (bccomp($sum_rebate, '0') != 0) { ?>
+<p>Interne Rabatte (&euro;): <?php echo format_number($sum_rebate); ?>
+<?php } ?>
 
 <br />
 

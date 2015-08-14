@@ -452,6 +452,7 @@ SELECT SUM(oi.`price`) AS vol
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE o.`date` = ${order_date_quoted} AND oi.`store_id` = ${store_quoted} AND oi.`title` != ${service_charge_description_quoted}
+AND oi.`fee` = 0 AND oi.`rebate` = 0
 QUERY;
 		$vol = $shop_db->query($query)->fetch(PDO::FETCH_ASSOC)['vol'];
 
@@ -467,6 +468,7 @@ SELECT COUNT(oi.`id`) AS cnt
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE o.`date` = ${order_date_quoted} AND oi.`store_id` = ${store_quoted} AND oi.`title` != ${service_charge_description_quoted}
+AND oi.`fee` = 0 AND oi.`rebate` = 0
 QUERY;
 		$cnt = $shop_db->query($query)->fetch(PDO::FETCH_ASSOC)['cnt'];
 		
