@@ -23,6 +23,7 @@
 require_once(__DIR__ . '/../config.php');
 require_once('helpers/store.php');
 require_once('helpers/user.php');
+require_once('helpers/order.php');
 require_once('helpers/mail.php');
 
 $stores = get_stores();
@@ -63,7 +64,35 @@ QUERY;
 
 	$first_name = explode(' ', $user['name'], 2)[0];
 	$shop_brand = SHOP_BRAND;
-	$shop_url = 'https://' . SHOP_DOMAIN . '/';
+
+	$email = $user['email'];
+
+	$token = get_user_attr($email, 'login_token');
+
+	if ($token == '') {
+		$token = reset_login_token($email);
+	}
+
+	$shop_url = "https://" . SHOP_DOMAIN . "/app/login?account=" . urlencode($email) . "&token=" . urlencode($token);
+
+	$ext_info = get_user_ext_info($email);
+
+	if (bccomp($ext_info['balance'], '-10') == -1) {
+		$amount = format_number($ext_info['balance'], false);
+
+		$bank_info = <<<MESSAGE
+
+Dein Guthaben beträgt aktuell ${amount}€. Bitte überweise den fälligen Betrag an:
+
+Kontoinhaber: ${ext_info['tgt_owner']}
+IBAN: ${ext_info['tgt_iban']}
+Kreditinstitut: ${ext_info['tgt_org']}
+Verwendungszweck: ${ext_info['tgt_reference']}
+
+MESSAGE;
+	} else {
+		$bank_info = "";
+	}
 
 	$subject = "Mittagsbestellung";
 	$message = <<<MESSAGE
@@ -74,7 +103,7 @@ Heute im Angebot gibt es:
 ${store_list_text}
 
 Bestellungen können wie immer unter ${shop_url} aufgegeben werden.
-
+$bank_info
 Gruß
 ${shop_brand}
 MESSAGE;
