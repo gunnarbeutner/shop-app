@@ -670,7 +670,7 @@ QUERY;
 	$users = $shop_db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
 	$query = <<<QUERY
-SELECT u.`name` AS user_name, u.`email` AS user_email, oi.`title`, oi.`price`, oi.`store_id`, oi.`order_id`, oi.`direct_debit_done`, oi.`rebate`
+SELECT u.`name` AS user_name, u.`email` AS user_email, oi.`title`, oi.`price`, oi.`store_id`, oi.`order_id`, oi.`direct_debit_done`, oi.`rebate`, oi.`fee`
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=o.`user_id`

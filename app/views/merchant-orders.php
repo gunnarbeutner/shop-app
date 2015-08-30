@@ -97,7 +97,7 @@ foreach ($params['stores'] as $store_id => $store) {
 			}
 
 			if ($item['fee']) {
-				$sub_fee = bcadd($sum_fee, $item['price']);
+				$sum_fee = bcadd($sum_fee, $item['price']);
 				continue;
 			}
 
@@ -144,14 +144,14 @@ HTML;
 ?>
 </table>
 
-<p>Summe ohne Rabatte/Trinkgeld (&euro;): <?php echo format_number($sum); ?></p>
+<p>Summe ohne Rabatte/Liefergeb&uuml;hr (&euro;): <?php echo format_number($sum); ?></p>
 
 <?php if (bccomp($sum_fee, '0') != 0) { ?>
-<p>Liefergeb&uuml;hr/Trinkgeld (&euro;): <?php echo format_number($sum_fee); ?>
+<p>Liefergeb&uuml;hr/Trinkgeld (&euro;): <?php echo format_number($sum_fee); ?></p>
 <?php } ?>
 
 <?php if (bccomp($sum_rebate, '0') != 0) { ?>
-<p>Interne Rabatte (&euro;): <?php echo format_number($sum_rebate); ?>
+<p>Interne Rabatte (&euro;): <?php echo format_number($sum_rebate); ?></p>
 <?php } ?>
 
 <br />
