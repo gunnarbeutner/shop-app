@@ -24,5 +24,5 @@ require_once(__DIR__ . '/../config.php');
 require_once('helpers/db.php');
 require_once('helpers/order.php');
 
-$shop_db->query("UPDATE `stores` SET `merchant_id`=NULL");
+$shop_db->query("UPDATE `stores` SET `merchant_id`=NULL, rebate_percent=0");
 set_order_status(true);
