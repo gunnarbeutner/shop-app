@@ -65,7 +65,7 @@ $bank_token = hash_hmac('sha256', ((int)time() - (int)time() % 86400) . $email, 
       <div class="aui-navgroup-secondary">
         <ul class="aui-nav __skate" resolved="">
           <li>
-            <a href="https://banking.beutner.name/app/login?account=<?php echo urlencode($email); ?>&token=<?php echo $bank_token; ?>" target="_blank">
+            <a href="<?php echo SHOP_BANK_URL; ?>/app/login?account=<?php echo urlencode($email); ?>&token=<?php echo $bank_token; ?>" target="_blank">
               <i class="fa fa-bank menu-icon"></i>
               <span class="menu-text">Bank</span>
             </a>
