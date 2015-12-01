@@ -65,10 +65,10 @@ require_once('helpers/article.php');
 <?php
 		}
 ?>
-  <p>
+<!--  <p>
 	Bestellungen f&uuml;r Ihren Account werden <?php echo $payment_method_prefix; ?> <?php echo htmlentities($payment_method_friendly); ?>
 	bezahlt. Dies kann <a href="#" id="payment-method-link">hier</a> ge&auml;ndert werden.
-  </p>
+  </p>-->
 
 <?php
 		if ($payment_method == 'Cash') {
@@ -183,7 +183,7 @@ require_once('helpers/article.php');
   <p>Beschreibung: %s</p>
   <p title="%s">Anbieter: %s</p>
   <p>%s</p>
-  <p>Ladenstatus: %s <span class="aui-icon aui-icon-small aui-iconfont-help tooltip" title="%s"></span></p>
+  <p style="%s">Ladenstatus: %s <span class="aui-icon aui-icon-small aui-iconfont-help tooltip" title="%s"></span></p>
 HTML;
 
 		if (isset($params['votes'][$store['id']])) {
@@ -206,7 +206,12 @@ HTML;
 		}
 		
 		$status = $params['store_status'][$store['id']];
-		
+
+		$status_css = "";
+
+		if ((int)date('Gi') < 1045 || (int)date('Gi') > 1330)
+			$status_css = "display: none;";
+
 		switch ($status) {
 			case 'guaranteed':
 				$status_name = '<strong>Garantierte Bestellung</strong>';
@@ -226,7 +231,7 @@ HTML;
 		printf($html, $prio,
 			htmlentities($store['name']), $store['description'],
 			htmlentities($store['merchant_email']), htmlentities($store['merchant_name']),
-			$vote_info, $status_name, $status_popup);
+			$vote_info, $status_css, $status_name, $status_popup);
 
 		$service_fee = $store['service_charge_amount'];
 		if (bccomp($service_fee, '0') != 0) {

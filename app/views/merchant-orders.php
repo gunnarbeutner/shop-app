@@ -61,6 +61,10 @@ if ($format == 'pdf') {
 <h1>Auftragsliste</h1>
 
 <?php
+function cmp_item($a, $b) {
+	return strcmp($a['title'], $b['title']);
+}
+
 foreach ($params['stores'] as $store_id => $store) {
 	$items = [];
 	foreach ($params['order'] as $item) {
@@ -68,6 +72,9 @@ foreach ($params['stores'] as $store_id => $store) {
 			$items[] = $item;
 		}
 	}
+
+
+	usort($items, 'cmp_item');
 	
 	if (count($items) > 0) {
 ?>

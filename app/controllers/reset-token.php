@@ -29,7 +29,7 @@ class ResettokenController {
 
 		$token = reset_login_token(get_user_email());
 		$_SESSION['token'] = $token;
-		setcookie('SHOPTOKEN', $token, time() + 60 * 60 * 24 * 30);
+		setcookie('SHOPTOKEN', $token, time() + 60 * 60 * 24 * 365);
 		
 		return [ 'reset-token-success', null ];
 	}

@@ -42,22 +42,23 @@ foreach (get_users() as $user_id => $user) {
 		$user_items[] = $item;
 	}
 	
-	if (bccomp($amount, '0') == 0)
-			continue;
-	
-	$item_names = [];
-	foreach ($user_items as $item) {
-		$item_names[] = $item['title'];
-	}
-	
-	$from = $user['email'];
-	$tx_reference = "Mittagsbestellung (" . implode('; ', $item_names) . ")";
-	
-	set_held_amount($from, 0);
+	if (bccomp($amount, '0') != 0) {
+		$item_names = [];
+		foreach ($user_items as $item) {
+			$item_names[] = $item['title'];
+		}
+		
+		$from = $user['email'];
+		$tx_reference = "Mittagsbestellung (" . implode('; ', $item_names) . ")";
+		
+		set_held_amount($from, 0);
 
-	echo "<- ${from} - ${amount} - ${tx_reference}\n";
-	$status = execute_direct_debit($from, $amount, $tx_reference);
-	
+		echo "<- ${from} - ${amount} - ${tx_reference}\n";
+		$status = execute_direct_debit($from, $amount, $tx_reference);
+	} else {
+		$status = true;
+	}
+
 	if ($status) {
 		$order_quoted = $shop_db->quote($user_items[0]['order_id']);
 		$query = <<<QUERY

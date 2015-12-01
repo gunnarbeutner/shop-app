@@ -22,7 +22,7 @@
 class LogoutController {
 	public function get() {
 		session_destroy();
-		setcookie('SHOPTOKEN', '0', time() + 60 * 60 * 24 * 30);
+		setcookie('SHOPTOKEN', '0', time() + 60 * 60 * 24 * 365);
 		header('Location: /app/login');
 		die();
 	}

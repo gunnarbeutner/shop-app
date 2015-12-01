@@ -165,8 +165,8 @@ QUERY;
 	$_SESSION['name'] = $row['name'];
 	$_SESSION['token'] = $row['login_token'];
 	
-	setcookie('SHOPUSER', $row['email'], time() + 60 * 60 * 24 * 30);
-	setcookie('SHOPTOKEN', $row['login_token'], time() + 60 * 60 * 24 * 30);
+	setcookie('SHOPUSER', $row['email'], time() + 60 * 60 * 24 * 365);
+	setcookie('SHOPTOKEN', $row['login_token'], time() + 60 * 60 * 24 * 365);
 }
 
 function send_login_token($email) {

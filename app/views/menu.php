@@ -27,6 +27,7 @@ $username = get_user_name();
 $email = get_user_email();
 $gravatar_url = "https://www.gravatar.com/avatar/" . md5(strtolower($email)) . "?s=35&amp;d=mm&amp;r=g";
 $ext_info = get_user_ext_info($email);
+$bank_token = hash_hmac('sha256', ((int)time() - (int)time() % 86400) . $email, BANK_MAC_SECRET);
 
 ?>
 
@@ -63,6 +64,12 @@ $ext_info = get_user_ext_info($email);
       </div>
       <div class="aui-navgroup-secondary">
         <ul class="aui-nav __skate" resolved="">
+          <li>
+            <a href="https://banking.beutner.name/app/login?account=<?php echo urlencode($email); ?>&token=<?php echo $bank_token; ?>" target="_blank">
+              <i class="fa fa-bank menu-icon"></i>
+              <span class="menu-text">Bank</span>
+            </a>
+          </li>
           <li>
             <a href="#" aria-haspopup="true" class="aui-dropdown2-trigger aui-alignment-target aui-alignment-element-attached-top aui-alignment-element-attached-right aui-alignment-target-attached-bottom aui-alignment-target-attached-right user-menu" data-container="#aui-hnav-example" aria-controls="dropdown2-nav2" aria-expanded="false" resolved="">
               <img src="<?php echo($gravatar_url); ?>" class="menu-icon" alt="<?php echo htmlentities($username); ?>"/>
