@@ -19,18 +19,28 @@
  * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-http_response_code(503);
+require_once('helpers/session.php');
+require_once('helpers/user.php');
 
-?>
+class UserinfoController {
+	public function get() {
+		if (!get_user_attr(get_user_email(), 'admin')) {
+			$params = [ 'message' => 'Zugriff verweigert.' ];
+			return [ 'error', $params ];
+		}
 
-<h1>Fehler</h1>
+		$jid = $_GET['jid'];
+        $email = email_from_jid($jid);
 
-<p>Es ist ein Fehler aufgetreten: <?php echo htmlentities($params['message']); ?></p>
+        if (!$email) {
+			$params = [ 'message' => 'Ungültige JID.' ];
+			return [ 'error', $params ];
+        }
 
-<p>
-<?php if (!isset($params['back']) || $params['back']) { ?>
-<a href="javascript:history.back();">Zur&uuml;ck</a>
-<?php } else { ?>
-<a href="/app/order">Zur Bestell&uuml;bersicht</a>
-<?php } ?>
-</p>
+		$params = [
+            'email' => $email,
+            'ext_info' => get_user_ext_info($email)
+		];
+		return [ 'user-info', $params ];
+	}
+}

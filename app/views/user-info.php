@@ -19,18 +19,11 @@
  * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-http_response_code(503);
+ob_clean();
+
+header('Content-type: application/json');
+echo json_encode($params);
+ob_end_flush();
+exit(0);
 
 ?>
-
-<h1>Fehler</h1>
-
-<p>Es ist ein Fehler aufgetreten: <?php echo htmlentities($params['message']); ?></p>
-
-<p>
-<?php if (!isset($params['back']) || $params['back']) { ?>
-<a href="javascript:history.back();">Zur&uuml;ck</a>
-<?php } else { ?>
-<a href="/app/order">Zur Bestell&uuml;bersicht</a>
-<?php } ?>
-</p>

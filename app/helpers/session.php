@@ -88,6 +88,25 @@ QUERY;
 		return $row['email'];
 }
 
+function email_from_jid($jid) {
+	global $shop_db;
+
+	$jid_quoted = $shop_db->quote($jid);
+
+	$query = <<<QUERY
+SELECT `email`
+FROM `users`
+WHERE `jid`=${jid_quoted}
+QUERY;
+
+	$row = $shop_db->query($query)->fetch();
+
+	if ($row === false)
+		return false;
+	else
+		return $row['email'];
+}
+
 function get_user_attr($email, $attr) {
 	global $shop_db;
 
