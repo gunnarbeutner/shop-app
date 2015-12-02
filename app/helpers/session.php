@@ -192,3 +192,22 @@ MESSAGE;
 
 	mail($email, $subject, $message, implode("\r\n", $headers));
 }
+
+if (isset($headers['HTTP_AUTHORIZATION'])) {
+    $credentials = base64_decode( substr($_SERVER['HTTP_AUTHORIZATION'],6) );
+    list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(':', $credentials);
+}
+
+if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW'])) {
+    $email = $_SERVER['PHP_AUTH_USER'];
+    $password = $_SERVER['PHP_AUTH_PW'];
+    $upassword = get_user_attr($email, 'login_token');
+
+    if ($password != $upassword) {
+        header('WWW-Authenticate: Basic realm="' . SHOP_BRAND . '"');
+        header('HTTP/1.0 401 Unauthorized');
+        die();
+    }
+
+    set_user_session($email);
+}
