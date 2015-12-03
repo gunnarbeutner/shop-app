@@ -46,12 +46,21 @@ class UserinfoController {
             if (!$store['merchant_id'])
                 continue;
             $current_items = [];
-            foreach (get_current_order(get_user_attr($email, 'id'))['items'] as $item) {
+            $current_order = get_current_order(get_user_attr($email, 'id'));
+            foreach ($current_order['items'] as $item) {
                 if ($item['store_id'] == $store['id'])
                     $current_items[] = $item;
             }
+            $priority = 0;
+            foreach ($current_order['store_prio'] as $prio_info) {
+                if ($prio_info['store_id'] == $store['id']) {
+                    $priority = $prio_info['index'];
+                    break;
+                }
+            }
             $current_stores[$store['id']] = [
                 'name' => $store['name'],
+                'priority' => $priority,
                 'status' => $store['status_message'],
                 'has_order' => has_order_for_shop($email, $store['id']),
                 'current_orders' => $current_items,

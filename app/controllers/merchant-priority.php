@@ -25,12 +25,21 @@ require_once('helpers/order.php');
 
 class MerchantpriorityController {
 	public function post() {
-		verify_csrf_token();
+        if (!get_user_attr(get_user_email(), 'admin') || !isset($_REQUEST['email']))
+            verify_csrf_token();
 
-		$store_id = $_POST['store'];
-		$direction = $_POST['direction'];
-		
-		change_store_priority(get_user_id(), $store_id, $direction);
+		$store_id = $_REQUEST['store'];
+		$direction = $_REQUEST['direction'];
+
+        $email = get_user_email();
+
+        if (get_user_attr($email, 'admin') && isset($_REQUEST['email'])) {
+            $email = $_REQUEST['email'];
+        }
+
+        $uid = get_user_attr($email, 'id');
+
+		change_store_priority($uid, $store_id, $direction);
 
 		header('Location: /app/order');
 		die();
