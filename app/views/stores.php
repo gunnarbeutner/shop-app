@@ -37,9 +37,24 @@ require_once('helpers/order.php');
 	$csrf_token = csrf_token();
 
 	foreach ($params['stores'] as $store_id => $store) {
-		if ($store['merchant_email'] != get_user_email()) {
-			$actions = <<<ACTIONS
+		$actions = <<<ACTIONS
       <div style="float: left; padding-right: 10px;">
+        <form class="aui" method="get" action="/app/store-edit">
+          <input type="hidden" name="store" value="${store_id}"></input>
+          <input class="submit button" type="submit" value="Bearbeiten"></input>
+        </form>
+      </div>
+      <div style="float: left; padding-right: 10px;">
+        <form class="aui" method="get" action="/app/store-edit-status">
+          <input type="hidden" name="store" value="${store_id}"></input>
+          <input class="submit button" type="submit" value="Status setzen"></input>
+        </form>
+      </div>
+ACTIONS;
+
+		if ($store['merchant_email'] != get_user_email()) {
+			$actions .= <<<ACTIONS
+      <div style="float: left;">
         <form class="aui" method="post" action="/app/merchant-status">
           <input type="hidden" name="store" value="${store_id}"></input>
           <input type="hidden" name="status" value="1"></input>
@@ -49,8 +64,8 @@ require_once('helpers/order.php');
       </div>
 ACTIONS;
 		} else {
-			$actions = <<<ACTIONS
-      <div style="float: left; padding-right: 10px;">
+			$actions .= <<<ACTIONS
+      <div style="float: left;">
         <form class="aui" method="post" action="/app/merchant-status">
           <input type="hidden" name="store" value="${store_id}"></input>
           <input type="hidden" name="status" value="0"></input>
@@ -60,15 +75,6 @@ ACTIONS;
       </div>
 ACTIONS;
 		}
-
-		$actions .= <<<ACTIONS
-      <div style="float: left;">
-        <form class="aui" method="get" action="/app/store-edit">
-          <input type="hidden" name="store" value="${store_id}"></input>
-          <input class="submit button" type="submit" value="Bearbeiten"></input>
-        </form>
-      </div>
-ACTIONS;
 
 		$html = <<<HTML
   <tr>

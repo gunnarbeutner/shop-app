@@ -751,3 +751,24 @@ ON DUPLICATE KEY UPDATE `status`=VALUES(`status`)
 QUERY;
 	$shop_db->query($query);
 }
+
+function has_order_for_shop($email, $store_id) {
+    if (get_order_status()) {
+        $uid = get_user_attr($email, 'id');
+        $items = get_current_order($uid)['items'];
+        foreach ($items as $item) {
+            if ($item['store_id'] == $store_id) {
+                return true;
+            }
+        }
+    } else {
+        $items = get_current_merchant_order();
+        foreach ($items as $item) {
+            if ($item['store_id'] == $store_id && $item['user_email'] == $email) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+

@@ -21,6 +21,8 @@
 
 require_once('helpers/session.php');
 require_once('helpers/user.php');
+require_once('helpers/order.php');
+require_once('helpers/store.php');
 
 class UserinfoController {
 	public function get() {
@@ -37,8 +39,32 @@ class UserinfoController {
 			return [ 'error', $params ];
         }
 
+        $stores = get_stores();
+
+        $current_stores = [];
+        foreach ($stores as $store) {
+            if (!$store['merchant_id'])
+                continue;
+            $current_items = [];
+            foreach (get_current_order(get_user_attr($email, 'id'))['items'] as $item) {
+                if ($item['store_id'] == $store['id'])
+                    $current_items[] = $item;
+            }
+            $current_stores[$store['id']] = [
+                'name' => $store['name'],
+                'status' => $store['status_message'],
+                'has_order' => has_order_for_shop($email, $store['id']),
+                'current_orders' => $current_items,
+                'recent_orders' => get_recent_orders(get_user_attr($email, 'id'), $store['id'])
+            ];
+        }
+
 		$params = [
             'email' => $email,
+            'reminders' => get_user_attr($email, 'order_reminders') != "0",
+            'order_status' => get_order_status(),
+            'login_token' => get_user_attr($email, 'login_token'),
+            'current_stores' => $current_stores,
             'ext_info' => get_user_ext_info($email)
 		];
 		return [ 'user-info', $params ];

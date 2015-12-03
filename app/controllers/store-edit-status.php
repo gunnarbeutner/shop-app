@@ -21,9 +21,11 @@
 
 require_once('helpers/session.php');
 require_once('helpers/store.php');
+require_once('helpers/user.php');
+require_once('helpers/order.php');
 require_once('helpers/csrf.php');
 
-class StoreeditController {
+class StoreeditstatusController {
 	public function get() {
 		verify_user();
 		
@@ -35,7 +37,7 @@ class StoreeditController {
 		$params = [
 			'store' => get_stores()[$_GET['store']]
 		];
-		return [ 'store-edit', $params ];
+		return [ 'store-edit-status', $params ];
 	}
 
 	public function post() {
@@ -47,14 +49,19 @@ class StoreeditController {
 		}
 		
 		$store_id = $_POST['store'];
+        $text = $_POST['text'];
+        $broadcast = $_POST['broadcast'];
 
-		set_store_attr($store_id, 'description', $_POST['description']);
-		set_store_attr($store_id, 'min_order_count', $_POST['min_order_count']);
-		set_store_attr($store_id, 'min_order_volume', $_POST['min_order_volume']);
-		set_store_attr($store_id, 'service_charge_amount', $_POST['service_charge_amount']);
-		set_store_attr($store_id, 'service_charge_description', $_POST['service_charge_description']);
-		set_store_attr($store_id, 'rebate_percent', $_POST['rebate_percent']);
-		set_store_attr($store_id, 'tracking_id', $_POST['tracking_id']);
+		set_store_attr($store_id, 'status_message', $text);
+
+        if ($broadcast == 'yes') {
+            foreach (get_users() as $user_id => $user) {
+                if (!has_order_for_shop($user['email'], $store_id))
+                    continue;
+ 
+                send_jabber_message($user['email'], mb_convert_encoding("Der Status für " . get_stores()[$store_id]['name'] . " hat sich geändert: " . $text, 'iso-8859-1'));
+            }
+        }
 
 		header('Location: /app/stores');
 		die();

@@ -26,7 +26,7 @@ function get_users() {
 	global $shop_db;
 
 	$query = <<<QUERY
-SELECT `id`, `name`, `email`, `promotional_mails`, `held_amount`
+SELECT `id`, `name`, `email`, `promotional_mails`, `order_reminders`, `held_amount`
 FROM `users`
 QUERY;
 	$users = [];
@@ -126,3 +126,21 @@ function get_user_ext_info($email) {
 
 	return json_decode($json, true);
 }
+
+function send_jabber_message($email, $message) {
+    $jid = get_user_attr($email, 'jid');
+    $request = xmlrpc_encode_request("notify", array($jid, $message));
+    $context = stream_context_create(array('http' => array(
+        'method' => "POST",
+        'header' => "Content-Type: text/xml",
+        'content' => $request
+    )));
+    $file = file_get_contents('http://localhost:9777/RPC2', false, $context);
+    $response = xmlrpc_decode($file);
+    if ($response && xmlrpc_is_fault($response)) {
+        trigger_error("xmlrpc: $response[faultString] ($response[faultCode])");
+    } else {
+        print_r($response);
+    }
+}
+

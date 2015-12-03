@@ -25,16 +25,17 @@ require_once('helpers/order.php');
 
 class OrderaddController {
 	public function post() {
-		verify_csrf_token();
+        if (!get_user_attr(get_user_email(), 'admin') || !isset($_REQUEST['email']))
+    		verify_csrf_token();
 
 		if (!get_order_status()) {
 			$params = [ 'message' => 'Bestelländerungen aktuell nicht mehr möglich.' ];
 			return [ 'error', $params ];
 		}
 		
-		$store_id = $_POST['store'];
-		$title = $_POST['title'];
-		$price = str_replace(',', '.', $_POST['price']);
+		$store_id = $_REQUEST['store'];
+		$title = $_REQUEST['title'];
+		$price = str_replace(',', '.', $_REQUEST['price']);
 
 		if ($title == '') {
 			$params = [ 'message' => 'Die Artikelbeschreibung darf nicht leer sein.' ];
@@ -45,12 +46,20 @@ class OrderaddController {
 			$params = [ 'message' => 'Der Betrag muss positiv sein.' ];
 			return [ 'error', $params ];
 		}
+
+        $email = get_user_email();
+
+        if (get_user_attr($email, 'admin') && isset($_REQUEST['email'])) {
+            $email = $_REQUEST['email'];
+        }
+
+        $uid = get_user_attr($email, 'id');
+
+		$item_id = add_item($uid, $store_id, $title, $price);
 		
-		$item_id = add_item(get_user_id(), $store_id, $title, $price);
-		
-		$amount = get_max_order_amount(get_user_id());
-		if (!set_held_amount(get_user_email(), $amount)) {
-			remove_item(get_user_id(), $item_id);
+		$amount = get_max_order_amount($uid);
+		if (!set_held_amount($email, $amount)) {
+			remove_item($uid, $item_id);
 			
 			$params = [ 'message' => 'Umsatzanfrage bei der Bank fehlgeschlagen. Bitte Kontodeckung überprüfen.' ];
 			return [ 'error', $params ];

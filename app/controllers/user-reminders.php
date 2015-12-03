@@ -23,40 +23,19 @@ require_once('helpers/session.php');
 require_once('helpers/store.php');
 require_once('helpers/csrf.php');
 
-class StoreeditController {
-	public function get() {
-		verify_user();
-		
-		if (!get_user_attr(get_user_email(), 'merchant')) {
-			$params = [ 'message' => 'Zugriff verweigert.' ];
-			return [ 'error', $params ];
-		}
-
-		$params = [
-			'store' => get_stores()[$_GET['store']]
-		];
-		return [ 'store-edit', $params ];
-	}
-
+class UserremindersController {
 	public function post() {
-		verify_csrf_token();
-
-		if (!get_user_attr(get_user_email(), 'merchant')) {
+		if (!get_user_attr(get_user_email(), 'admin')) {
 			$params = [ 'message' => 'Zugriff verweigert.' ];
 			return [ 'error', $params ];
 		}
-		
-		$store_id = $_POST['store'];
 
-		set_store_attr($store_id, 'description', $_POST['description']);
-		set_store_attr($store_id, 'min_order_count', $_POST['min_order_count']);
-		set_store_attr($store_id, 'min_order_volume', $_POST['min_order_volume']);
-		set_store_attr($store_id, 'service_charge_amount', $_POST['service_charge_amount']);
-		set_store_attr($store_id, 'service_charge_description', $_POST['service_charge_description']);
-		set_store_attr($store_id, 'rebate_percent', $_POST['rebate_percent']);
-		set_store_attr($store_id, 'tracking_id', $_POST['tracking_id']);
+		$email = $_REQUEST['email'];
+		$flag = $_REQUEST['flag'];
 
-		header('Location: /app/stores');
+        set_user_attr($email, 'order_reminders', $flag);
+
+		header('Location: /');
 		die();
 	}
 }

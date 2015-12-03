@@ -32,10 +32,6 @@ require_once('helpers/order.php');
     <textarea class="textarea" name="description"><?php echo htmlentities($params['store']['description']); ?></textarea>
   </div>
   <div class="field-group">
-    <label for="text">Status</label>
-    <textarea class="textarea" name="text"><?php echo htmlentities($params['store']['status_message']); ?></textarea>
-  </div>
-  <div class="field-group">
     <label for="min_order_count">Mindestbestell-anzahl</label>
     <input class="text" type="text" name="min_order_count" value="<?php echo htmlentities($params['store']['min_order_count']); ?>">
   </div>

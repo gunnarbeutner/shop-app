@@ -70,3 +70,25 @@ QUERY;
 
 	$shop_db->query($query);
 }
+
+function get_recent_orders($uid, $store_id) {
+    global $shop_db;
+
+    $uid_quoted = $shop_db->quote($uid);
+    $store_quoted = $shop_db->quote($store_id);
+
+    $query = <<<QUERY
+SELECT oi.title, oi.price, o.date
+FROM order_items oi
+LEFT JOIN orders o ON o.id=oi.order_id
+WHERE o.user_id = ${uid_quoted} AND oi.store_id = ${store_quoted} AND oi.rebate = 0 AND oi.fee = 0
+GROUP BY title
+ORDER BY oi.id DESC
+LIMIT 5
+QUERY;
+	$items = [];
+	foreach ($shop_db->query($query)->fetchAll(PDO::FETCH_ASSOC) as $row) {
+		$items[] = $row;
+	}
+	return $items;
+}
