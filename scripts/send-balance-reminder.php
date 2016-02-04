@@ -34,11 +34,19 @@ foreach ($users as $user_id => $user) {
     if (bccomp($balance, '-15') >= 0)
         continue;
 
-	$first_name = explode(' ', $user['name'], 2)[0];
+    $first_name = explode(' ', $user['name'], 2)[0];
 
     $debt_formatted = format_number(bcmul($balance, '-1'), false);
 
-    $message = "Hallo ${first_name}! Du hast noch ${debt_formatted} EUR Schulden. Bitte zahle doch bei Gelegenheit etwas ein. :)";
+    $message = <<<MESSAGE
+Hallo ${first_name}! Du hast noch ${debt_formatted} EUR Schulden. Bitte überweise das Geld an:
+
+Kontoinhaber: ${ext_info['tgt_owner']}
+IBAN: ${ext_info['tgt_iban']}
+BIC: ${ext_info['tgt_bic']}
+Kreditinstitut: ${ext_info['tgt_org']}
+Verwendungszweck: ${ext_info['tgt_reference']}
+MESSAGE;
 
     send_jabber_message($user['email'], mb_convert_encoding($message, 'iso-8859-1'));
 }
