@@ -76,9 +76,9 @@ foreach ($params['stores'] as $store_id => $store) {
 
 	usort($items, 'cmp_item');
 	
-	if (count($items) > 0) {
+	if (count($items) > 0 && (!isset($_REQUEST['store']) || $_REQUEST['store'] == $store['id'])) {
 ?>
-<p>Laden: <?php echo htmlentities($store['name']); ?></p>
+<p>Laden: <a href="/app/merchant-orders?store=<?php echo $store['id']; ?>"><?php echo htmlentities($store['name']); ?></a></p>
 
 <table class="aui zebra" id="stores">
   <tr>
