@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.25, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: shop
+-- Host: 10.10.0.29    Database: lunch_shop
 -- ------------------------------------------------------
--- Server version	5.6.25-0ubuntu0.15.04.1
+-- Server version	5.5.47-0+deb7u1-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `article_groups` (
   `required` int(11) NOT NULL DEFAULT '0',
   `yorder` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,7 +52,7 @@ CREATE TABLE `articles` (
   KEY `fk_article_group_idx` (`article_group_id`),
   CONSTRAINT `fk_article_group` FOREIGN KEY (`article_group_id`) REFERENCES `article_groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_store` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=291 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,8 +69,10 @@ CREATE TABLE `order_items` (
   `title` mediumtext NOT NULL,
   `price` decimal(12,5) NOT NULL,
   `direct_debit_done` int(11) NOT NULL DEFAULT '0',
+  `fee` int(11) NOT NULL DEFAULT '0',
+  `rebate` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`,`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=299 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,7 +88,7 @@ CREATE TABLE `order_status` (
   `status` enum('Open','Closed') DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `date_UNIQUE` (`date`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +106,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`id`),
   KEY `fk_orders_users_idx` (`user_id`),
   CONSTRAINT `fk_orders_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=252 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,10 +141,15 @@ CREATE TABLE `stores` (
   `merchant_id` int(11) DEFAULT NULL,
   `min_order_count` int(11) NOT NULL DEFAULT '3',
   `min_order_volume` decimal(12,5) NOT NULL DEFAULT '10.00000',
+  `service_charge_amount` decimal(12,5) NOT NULL DEFAULT '0.00000',
+  `service_charge_description` mediumtext,
+  `status_message` mediumtext,
+  `rebate_percent` int(11) NOT NULL DEFAULT '0',
+  `tracking_id` varchar(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_users_idx` (`merchant_id`),
   CONSTRAINT `fk_users` FOREIGN KEY (`merchant_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,15 +163,18 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL,
+  `jid` varchar(128) DEFAULT NULL,
   `login_token` varchar(64) DEFAULT NULL,
   `admin` int(11) NOT NULL DEFAULT '0',
   `merchant` int(11) NOT NULL DEFAULT '0',
   `payment_method` enum('Direct Debit','Transfer','Cash') NOT NULL DEFAULT 'Direct Debit',
   `promotional_mails` int(11) NOT NULL DEFAULT '1',
+  `order_reminders` int(11) NOT NULL DEFAULT '0',
   `held_amount` decimal(12,5) NOT NULL DEFAULT '0.00000',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `jid_UNIQUE` (`jid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -176,4 +186,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-30  6:47:14
+-- Dump completed on 2016-03-22 12:48:12
