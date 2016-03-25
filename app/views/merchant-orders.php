@@ -78,7 +78,12 @@ foreach ($params['stores'] as $store_id => $store) {
 	
 	if (count($items) > 0 && (!isset($_REQUEST['store']) || $_REQUEST['store'] == $store['id'])) {
 ?>
-<p>Laden: <a href="/app/merchant-orders?store=<?php echo $store['id']; ?>"><?php echo htmlentities($store['name']); ?></a></p>
+<p>
+  Laden: <a href="/app/merchant-orders?store=<?php echo $store['id']; ?>"><?php echo htmlentities($store['name']); ?></a>
+<?php if ($format != 'pdf') { ?>
+  (<a href="/app/merchant-orders.pdf?store=<?php echo $store['id']; ?>" target="_blank">PDF-Download</a>)
+<?php } ?>
+</p>
 
 <table class="aui zebra" id="stores">
   <tr>
