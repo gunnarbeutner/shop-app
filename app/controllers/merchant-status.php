@@ -42,7 +42,7 @@ class MerchantstatusController {
 			$merchant = null;
 		}
 		
-		if (count_orders($store_id) > 0) {
+		if ($merchant === null && count_orders($store_id) > 0) {
 			$params = [ 'message' => 'Anbieter kann nicht geändert werden. Für den Laden gibt es bereits Bestellungen.' ];
 			return [ 'error', $params ];
 		}
