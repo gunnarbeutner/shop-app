@@ -2,11 +2,15 @@
 
 A small self-service shop system for lunch orders in the office.
 
-Features:
+## Features:
 
  * Support for multiple merchants and stores
  * Order priorities
  * Automated direct debit (via bank-app)
+
+## Screenshots
+
+![Shop Screenshot](doc/shop-app.png)
 
 ## Requirements
 
