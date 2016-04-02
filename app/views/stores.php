@@ -101,3 +101,9 @@ HTML;
 	}
 ?>
 </table>
+
+<p>
+  <form action="/app/store-new">
+    <button class="aui-button aui-button-primary">Neuer Laden</button>
+  </form>
+</p>

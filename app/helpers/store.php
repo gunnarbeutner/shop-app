@@ -91,3 +91,19 @@ QUERY;
 	}
 	return $items;
 }
+
+function new_store($name, $description) {
+    global $shop_db;
+
+    $name_quoted = $shop_db->quote($name);
+    $description_quoted = $shop_db->quote($description);
+
+    $query = <<<QUERY
+INSERT INTO stores
+(name, description)
+VALUES
+(${name_quoted}, ${description_quoted})
+QUERY;
+
+    $shop_db->query($query);
+}
