@@ -227,6 +227,25 @@ QUERY;
 	return $order;
 }
 
+function get_item($item_id) {
+    global $shop_db;
+
+	$item_quoted = $shop_db->quote($item_id);
+
+	$query = <<<QUERY
+SELECT o.`user_id`, oi.`store_id`, oi.`title`, oi.`price`, oi.`fee`, oi.`rebate`
+FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
+WHERE oi.`id`=${item_quoted}
+QUERY;
+	$row = $shop_db->query($query)->fetch(PDO::FETCH_ASSOC);
+	if ($row === false) {
+		return false;
+	} else {
+		return $row;
+	}
+}
+
 function change_store_priority($uid, $store_id, $direction) {
 	global $shop_db;
 
@@ -670,7 +689,7 @@ QUERY;
 	$users = $shop_db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
 	$query = <<<QUERY
-SELECT u.`name` AS user_name, u.`email` AS user_email, oi.`title`, oi.`price`, oi.`store_id`, oi.`order_id`, oi.`direct_debit_done`, oi.`rebate`, oi.`fee`
+SELECT u.`name` AS user_name, u.`email` AS user_email, oi.`id`, oi.`title`, oi.`price`, oi.`store_id`, oi.`order_id`, oi.`direct_debit_done`, oi.`rebate`, oi.`fee`
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=o.`user_id`
@@ -772,3 +791,16 @@ function has_order_for_shop($email, $store_id) {
     return false;
 }
 
+function is_direct_debit_done() {
+	$direct_debit_done = false;
+	$order = get_current_merchant_order();
+
+	foreach ($order as $item) {
+		if ($item['direct_debit_done']) {
+			$direct_debit_done = true;
+			break;
+		}
+	}
+
+    return $direct_debit_done;
+}

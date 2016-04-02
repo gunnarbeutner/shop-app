@@ -32,14 +32,32 @@ class OrderremoveController {
 			return [ 'error', $params ];
 		}
 
-		$item_id = $_POST['item'];
+		$item_id = $_REQUEST['item'];
+        $item = get_item($item_id);
 
-		remove_item(get_user_id(), $item_id);
+        if (!$item) {
+            $params = [ 'message' => 'Die angegebene Item-ID ist ungültig.' ];
+            return [ 'error', $params ];
+        }
 
-		$amount = get_max_order_amount(get_user_id());
-		set_held_amount(get_user_email(), $amount);
-		
-		header('Location: /app/order');
+        $uid = $item['user_id'];
+
+        if ($uid != get_user_id() && (!get_user_attr(get_user_email(), 'merchant') || is_direct_debit_done())) {
+            $params = [ 'message' => 'Sie können diese Bestellung nicht ändern.' ];
+            return [ 'error', $params ];
+        }
+
+		remove_item($uid, $item_id);
+
+		$amount = get_max_order_amount($uid);
+		set_held_amount(email_from_uid($uid), $amount);
+	
+        if ($uid != get_user_id()) {
+		    header('Location: /app/merchant-orders');
+        } else {
+	    	header('Location: /app/order');
+        }
+
 		die();
 	}
 }

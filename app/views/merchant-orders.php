@@ -95,6 +95,7 @@ foreach ($params['stores'] as $store_id => $store) {
     <th id="table-price">Preis (&euro;)</th>
 <?php if ($format != 'pdf') { ?>
     <th>Lastschrift</th>
+    <th>Aktionen</th>
 <?php } ?>
  </tr>
 <?php
@@ -128,6 +129,7 @@ HTML;
     <td title="%s">%s</td>
     <td>%s</td>
     <td>%s</td>
+    <td>%s</td>
 HTML;
 
 
@@ -147,11 +149,36 @@ HTML;
 			} else {
 				$direct_debit_status = '<span class="aui-icon aui-icon-small aui-iconfont-remove" style="color: red;"></span> Noch nicht ausgef&uuml;hrt';
 			}
-			
+
+			if (!$item['direct_debit_done']) {
+				$order_buttons = <<<HTML
+        <div style="float: left; padding-right: 10px;">
+          <form method="get" action="/app/order-edit" style="display: inline;">
+            <input type="hidden" name="item" value="${item['id']}">
+            <button type="submit" class="aui-button">
+              <i class="fa fa-edit"></i> Bearbeiten
+            </button>
+          </form>
+        </div>
+
+        <div style="float: left;">
+          <form method="post" action="/app/order-remove" style="display: inline;">
+            <input type="hidden" name="item" value="${item['id']}">
+            <input type="hidden" name="csrf_token" value="${csrf_token}">
+            <button type="submit" class="aui-button">
+              <i class="fa fa-remove"></i> Entfernen
+            </button>
+          </form>
+        </div>
+HTML;
+			} else {
+				$order_buttons = '';
+			}
+
 			printf($html,
 				htmlentities($item['user_email']), htmlentities($item['user_name']),
 				htmlentities($item['title']), format_number($item['price']),
-				$direct_debit_status);
+				$direct_debit_status, $order_buttons);
 		}
 ?>
 </table>

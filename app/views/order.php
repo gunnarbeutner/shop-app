@@ -317,22 +317,33 @@ HTML;
 
 			foreach ($items as $item) {
 				if (!$item['fee'] && !$item['rebate']) {
-					$remove_button = <<<HTML
-        <form method="post" action="/app/order-remove" style="display: inline;">
-          <input type="hidden" name="item" value="${item['id']}">
-          <input type="hidden" name="csrf_token" value="${csrf_token}">
-          <button type="submit" class="aui-button">
-            <i class="fa fa-remove"></i> Entfernen
-          </button>
-        </form>
+					$order_buttons = <<<HTML
+        <div style="float: left; padding-right: 10px;">
+          <form method="get" action="/app/order-edit" style="display: inline;">
+            <input type="hidden" name="item" value="${item['id']}">
+            <button type="submit" class="aui-button">
+              <i class="fa fa-edit"></i> Bearbeiten
+            </button>
+          </form>
+        </div>
+
+        <div style="float: left;">
+          <form method="post" action="/app/order-remove" style="display: inline;">
+            <input type="hidden" name="item" value="${item['id']}">
+            <input type="hidden" name="csrf_token" value="${csrf_token}">
+            <button type="submit" class="aui-button">
+              <i class="fa fa-remove"></i> Entfernen
+            </button>
+          </form>
+        </div>
 HTML;
 				} else {
-					$remove_button = '';
+					$order_buttons = '';
 				}
 
 				$actions = <<<HTML
       <div class="aui-buttons">
-        ${remove_button}
+        ${order_buttons}
       </div>
 HTML;
 

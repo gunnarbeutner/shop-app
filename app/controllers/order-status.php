@@ -35,17 +35,7 @@ class OrderstatusController {
 		
 		$status = $_POST['status'];
 
-		$direct_debit_done = false;
-		$order = get_current_merchant_order();
-
-		foreach ($order as $item) {
-			if ($item['direct_debit_done']) {
-				$direct_debit_done = true;
-				break;
-			}
-		}
-
-		if ($status && $direct_debit_done) {
+		if ($status && is_direct_debit_done()) {
 			$params = [ 'message' => 'Die Bestellung kann nicht mehr geöffnet werden, da bereits die Lastschriften ausgeführt wurden.' ];
 			return [ 'error', $params ];
 		}
