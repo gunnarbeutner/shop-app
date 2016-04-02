@@ -7,6 +7,7 @@ A small self-service shop system for lunch orders in the office.
  * Support for multiple merchants and stores
  * Order priorities
  * Automated direct debit (via bank-app)
+ * Jabber service
 
 ## Screenshots
 

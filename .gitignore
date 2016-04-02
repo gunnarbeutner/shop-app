@@ -1,4 +1,5 @@
 config.php
+lunchbot.ini
 vendor
 components
 composer.lock
