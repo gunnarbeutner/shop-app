@@ -42,6 +42,8 @@ class OrderarticleController {
 	}
 
 	public function post() {
+        global $shop_db;
+
 		verify_csrf_token();
 
 		if (!get_order_status()) {
@@ -72,17 +74,29 @@ class OrderarticleController {
 			$articles[] = $_POST['comment'];
 		}
 
+        $email = get_user_email();
+
+        if (get_user_attr($email, 'merchant') && isset($_REQUEST['email'])) {
+            $email = $_REQUEST['email'];
+        }
+
+        $uid = get_user_attr($email, 'id');
+
 		$title = implode('; ', $articles);
 
-		$item_id = add_item(get_user_id(), $store_id, $title, $amount);
+        $shop_db->query("BEGIN");
+
+		$item_id = add_item($uid, $store_id, $title, $amount);
 		
-		$amount = get_max_order_amount(get_user_id());
-		if (!set_held_amount(get_user_email(), $amount)) {
-			remove_item(get_user_id(), $item_id);
+		$amount = get_max_order_amount($uid);
+		if (!set_held_amount($email, $amount)) {
+            $shop_db->query("ROLLBACK");
 			
 			$params = [ 'message' => 'Umsatzanfrage bei der Bank fehlgeschlagen. Bitte Kontodeckung überprüfen.' ];
 			return [ 'error', $params ];
 		}
+
+        $shop_db->query("COMMIT");
 
 		header('Location: /app/order');
 		die();

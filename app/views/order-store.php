@@ -81,13 +81,19 @@ if (count($uarticles) > 0) {
 }
 ?>
       <form class="aui" method="post" action="/app/order-add">
+<?php if (get_user_attr(get_user_email(), 'merchant')) { ?>
         <div class="field-group">
-	      <label for="add-title-<?php echo $store_id; ?>">Beschreibung</label>
-	      <input class="text article" type="text" name="title" id="add-title-<?php echo $store_id; ?>" data-store="<?php echo $store_id; ?>">
+	      <label for="add-email">Benutzer</label>
+	      <input class="text address" type="text" name="email" id="add-email" value="<?php echo htmlentities(get_user_email()); ?>">
+        </div>
+<?php } ?>
+        <div class="field-group">
+	      <label for="add-title">Beschreibung</label>
+	      <input class="text article" type="text" name="title" id="add-title" data-store="<?php echo $store_id; ?>">
         </div>
         <div class="field-group">
-	      <label for="add-price-<?php echo $store_id; ?>">Preis (&euro;)</label>
-	      <input class="text small-field" type="text" name="price" id="add-price-<?php echo $store_id; ?>">
+	      <label for="add-price">Preis (&euro;)</label>
+	      <input class="text small-field" type="text" name="price" id="add-price">
         </div>
         <div class="buttons-container">
           <div class="buttons">

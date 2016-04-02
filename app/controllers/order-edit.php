@@ -39,6 +39,7 @@ class OrdereditController {
         }
 
 		$params = [
+            'email' => email_from_uid($item['user_id']),
 			'item_id' => $item_id,
             'item' => $item
 		];
@@ -46,6 +47,8 @@ class OrdereditController {
 	}
 
 	public function post() {
+        global $shop_db;
+
         if (!get_user_attr(get_user_email(), 'admin') || !isset($_REQUEST['email']))
     		verify_csrf_token();
 
@@ -62,10 +65,25 @@ class OrdereditController {
             return [ 'error', $params ];
         }
 
-        $uid = $old_item['user_id'];
+        $old_uid = $old_item['user_id'];
+        $old_email = get_user_attr($old_uid, 'id');
 
-        if ($uid != get_user_id() && (!get_user_attr(get_user_email(), 'merchant') || is_direct_debit_done())) {
+        if ($old_uid != get_user_id() && (!get_user_attr(get_user_email(), 'merchant') || is_direct_debit_done())) {
             $params = [ 'message' => 'Sie können diese Bestellung nicht ändern.' ];
+            return [ 'error', $params ];
+        }
+
+        $email = $_REQUEST['email'];
+
+        $uid = get_user_attr($email, 'id');
+
+        if (!$uid) {
+            $params = [ 'message' => 'Ungültiger Benutzer.' ];
+            return [ 'error', $params ];
+        }
+
+        if ($uid != get_user_id() && !get_user_attr(get_user_email(), 'merchant')) {
+            $params = [ 'message' => 'Sie können keine Bestellungen für andere Benutzer anlegen.' ];
             return [ 'error', $params ];
         }
 
@@ -84,16 +102,24 @@ class OrdereditController {
 
         $email = email_from_uid($uid);
 
-        remove_item($uid, $old_item_id);
+        $shop_db->query("BEGIN");
+
+        remove_item($old_uid, $old_item_id);
+
+		$amount = get_max_order_amount($old_uid);
+		set_held_amount($old_email, $amount);
+
 		$item_id = add_item($uid, $old_item['store_id'], $title, $price);
 		
 		$amount = get_max_order_amount($uid);
 		if (!set_held_amount($email, $amount)) {
-			remove_item($uid, $item_id);
+            $shop_db->query("ROLLBACK");
 			
 			$params = [ 'message' => 'Umsatzanfrage bei der Bank fehlgeschlagen. Bitte Kontodeckung überprüfen.' ];
 			return [ 'error', $params ];
 		}
+
+        $shop_db->query("COMMIT");
 
         if ($uid != get_user_id) {
 		    header('Location: /app/merchant-orders');

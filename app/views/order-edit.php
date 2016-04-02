@@ -25,6 +25,7 @@ require_once('helpers/store.php');
 
 $item_id = $params['item_id'];
 $item = $params['item'];
+$email = $params['email'];
 $store_id = $item['store_id'];
 $title = $item['title'];
 $price = format_number($item['price'], false);
@@ -36,6 +37,12 @@ $csrf_token = csrf_token();
 <h1>Bestellung bearbeiten</h1>
 
 <form class="aui" method="post" action="/app/order-edit">
+<?php if (get_user_attr(get_user_email(), 'merchant')) { ?>
+  <div class="field-group">
+    <label for="edit-email">Benutzer</label>
+    <input class="text address" type="text" name="email" id="edit-email" value="<?php echo htmlentities($email); ?>">
+  </div>
+<?php } ?>
   <div class="field-group">
     <label for="edit-title-<?php echo $store_id; ?>">Beschreibung</label>
     <input class="text article" type="text" name="title" id="edit-title" value="<?php echo htmlentities($title); ?>">

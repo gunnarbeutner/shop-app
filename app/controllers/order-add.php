@@ -49,7 +49,7 @@ class OrderaddController {
 
         $email = get_user_email();
 
-        if (get_user_attr($email, 'admin') && isset($_REQUEST['email'])) {
+        if (get_user_attr($email, 'merchant') && isset($_REQUEST['email'])) {
             $email = $_REQUEST['email'];
         }
 
