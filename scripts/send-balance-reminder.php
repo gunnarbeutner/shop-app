@@ -43,7 +43,6 @@ Hallo ${first_name}! Du hast noch ${debt_formatted} EUR Schulden. Bitte überwei
 
 Kontoinhaber: ${ext_info['tgt_owner']}
 IBAN: ${ext_info['tgt_iban']}
-BIC: ${ext_info['tgt_bic']}
 Kreditinstitut: ${ext_info['tgt_org']}
 Verwendungszweck: ${ext_info['tgt_reference']}
 MESSAGE;
