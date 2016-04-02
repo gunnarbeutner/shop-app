@@ -54,6 +54,12 @@ $bank_token = hash_hmac('sha256', ((int)time() - (int)time() % 86400) . $email, 
             </a>
           </li>
           <li>
+            <a href="/app/reports">
+              <i class="fa fa-area-chart menu-icon"></i>
+              <span class="menu-text">Statistiken</span>
+            </a>
+          </li>
+          <li>
             <a href="/app/merchant-orders">
               <i class="fa fa-list menu-icon"></i>
               <span class="menu-text">Auftragsliste</span>
