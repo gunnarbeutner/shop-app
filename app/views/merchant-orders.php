@@ -129,12 +129,12 @@ HTML;
     <td title="%s">%s</td>
     <td>%s</td>
     <td>%s</td>
-    <td>%s</td>
 HTML;
 
 
 			if ($format != 'pdf') {
 				$html .= <<<HTML
+    <td>%s</td>
     <td>%s</td>
 HTML;
 			}
