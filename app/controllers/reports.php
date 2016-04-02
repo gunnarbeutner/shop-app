@@ -26,8 +26,10 @@ class ReportsController {
     static $reports = [
       'numordersbystores' => 'Anzahl Bestellungen, gruppiert nach Läden',
       'numordersbyusers' => 'Anzahl Bestellungen, gruppiert nach Kunden',
+      'numordersbyday' => 'Anzahl Bestellungen, gruppiert nach Wochentag',
       'revenuebystores' => 'Umsatz in Euro, gruppiert nach Läden',
       'revenuebyusers' => 'Umsatz in Euro, gruppiert nach Kunden',
+      'revenuebyday' => 'Umsatz in Euro, gruppiert nach Wochentag',
       'feesbystores' => 'Lieferpauschale/Trinkgeld in Euro, gruppiert nach Läden'
     ];
 
@@ -75,6 +77,15 @@ GROUP BY o.`user_id`
 ORDER BY `y` DESC
 LIMIT 20
 SQL;
+            } else if ($report == 'numordersbyday') {
+                $query = <<<SQL
+SELECT ELT(WEEKDAY(o.`date`)+1, 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag') AS `x`, COUNT(oi.`id`) as `y`
+FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
+WHERE oi.`fee` = 0 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
+GROUP BY WEEKDAY(o.`date`)
+ORDER BY `y` DESC
+SQL;
             } else if ($report == 'revenuebystores') {
                 $query = <<<SQL
 SELECT s.`name` AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
@@ -94,6 +105,15 @@ WHERE oi.`fee` = 0 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
 GROUP BY o.`user_id`
 ORDER BY `y` DESC
 LIMIT 20
+SQL;
+            } else if ($report == 'revenuebyday') {
+                $query = <<<SQL
+SELECT ELT(WEEKDAY(o.`date`)+1, 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag') AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
+FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
+WHERE oi.`fee` = 0 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
+GROUP BY WEEKDAY(o.`date`)
+ORDER BY `y` DESC
 SQL;
             } else if ($report == 'feesbystores') {
                 $query = <<<SQL
