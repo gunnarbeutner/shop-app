@@ -48,6 +48,7 @@ class StoreeditController {
 		
 		$store_id = $_POST['store'];
 
+		set_store_attr($store_id, 'name', $_POST['name']);
 		set_store_attr($store_id, 'description', $_POST['description']);
 		set_store_attr($store_id, 'min_order_count', $_POST['min_order_count']);
 		set_store_attr($store_id, 'min_order_volume', $_POST['min_order_volume']);

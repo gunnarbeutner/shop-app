@@ -28,6 +28,10 @@ require_once('helpers/order.php');
 
 <form class="aui" method="post" action="/app/store-edit">
   <div class="field-group">
+    <label for="name">Name</label>
+    <input class="text" type="text" name="name" value="<?php echo htmlentities($params['store']['name']); ?>">
+  </div>
+  <div class="field-group">
     <label for="description">Beschreibung</label>
     <textarea class="textarea" name="description"><?php echo htmlentities($params['store']['description']); ?></textarea>
   </div>
