@@ -44,6 +44,26 @@ QUERY;
 	return $articles;
 }
 
+function get_articles($store_id) {
+	global $shop_db;
+
+	$store_quoted = $shop_db->quote($store_id);
+
+	$query = <<<QUERY
+SELECT a.`id`, a.`title`, a.`description`, a.`price`, a.`article_group_id`, a.`parent_article_id`
+FROM `articles` a
+WHERE a.`store_id` = ${store_quoted}
+ORDER BY `title` ASC
+QUERY;
+
+	$articles = [];
+	foreach ($shop_db->query($query)->fetchAll(PDO::FETCH_ASSOC) as $article) {
+		$articles[$article['id']] = $article;
+	}
+
+	return $articles;
+}
+
 function get_primary_articles($store_id) {
 	global $shop_db;
 
@@ -83,13 +103,26 @@ QUERY;
 	}
 }
 
+function get_article($article_id) {
+	global $shop_db;
+
+	$article_quoted = $shop_db->quote($article_id);
+
+	$query = <<<QUERY
+SELECT `id`, `title`, `description`, `price`, `store_id`, `article_group_id`, `parent_article_id`
+FROM `articles`
+WHERE `id` = ${article_quoted}
+QUERY;
+    return $shop_db->query($query)->fetch(PDO::FETCH_ASSOC);
+}
+
 function get_article_info($article_id) {
 	global $shop_db;
 
 	$article_quoted = $shop_db->quote($article_id);
 
 	$query = <<<QUERY
-SELECT `id`, `title`, `description`, `price`, `article_group_id`
+SELECT `id`, `title`, `description`, `price`, `store_id`, `article_group_id`, `parent_article_id`
 FROM `articles`
 WHERE `id` = ${article_quoted} OR `parent_article_id` = ${article_quoted}
 ORDER BY `price` DESC
@@ -118,4 +151,44 @@ QUERY;
 	}
 
 	return $groups;
+}
+
+function set_article_attr($store_id, $attr, $value) {
+	global $shop_db;
+
+	$store_quoted = $shop_db->quote($store_id);
+	$value_quoted = $shop_db->quote($value);
+
+	$query = <<<QUERY
+UPDATE `articles`
+SET `$attr`=${value_quoted}
+WHERE `id`=${store_quoted}
+QUERY;
+
+	$shop_db->query($query);
+}
+
+function new_article($title, $description, $price, $store_id, $group_id, $parent_id) {
+    global $shop_db;
+
+    $title_quoted = $shop_db->quote($title);
+    $description_quoted = $shop_db->quote($description);
+    $price_quoted = $shop_db->quote($price);
+    $store_quoted = $shop_db->quote($store_id);
+    $group_quoted = $shop_db->quote($group_id);
+
+    if ($parent_id == '') {
+        $parent_quoted = 'NULL';
+    } else {
+        $parent_quoted = $shop_db->quote($parent_id);
+    }
+
+    $query = <<<QUERY
+INSERT INTO articles
+(title, description, price, store_id, article_group_id, parent_article_id)
+VALUES
+(${title_quoted}, ${description_quoted}, ${price_quoted}, ${store_quoted}, ${group_quoted}, ${parent_quoted})
+QUERY;
+
+    $shop_db->query($query);
 }

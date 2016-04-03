@@ -32,6 +32,13 @@ if ($params['store']['rebate_user_id'] != '') {
 
 <h1>Laden bearbeiten: <?php echo htmlentities($params['store']['name']); ?></h1>
 
+<p>
+  <form action="/app/menu-tree">
+    <input type="hidden" name="store" value="<?php echo $params['store']['id']; ?>">
+    <button class="aui-button aui-button-primary">Men&uuml; bearbeiten</button>
+  </form>
+</p>
+
 <form class="aui" method="post" action="/app/store-edit">
   <div class="field-group">
     <label for="name">Name</label>

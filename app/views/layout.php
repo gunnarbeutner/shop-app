@@ -23,6 +23,8 @@ require_once('helpers/session.php');
 
 $app_url = 'https://' . SHOP_DOMAIN;
 
+$nl = $_REQUEST['nl'] == '1';
+
 ?><!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -43,6 +45,9 @@ $app_url = 'https://' . SHOP_DOMAIN;
   <link rel="apple-touch-startup-image" href="<?php echo $app_url; ?>/favicon.ico">
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
+<?php if ($nl) { ?>
+<body style="background-color: transparent;">
+<?php } else { ?>
 <body class="aui-page-focused aui-page-focused-xlarge">
   <div id="page">
   <?php
@@ -55,11 +60,14 @@ $app_url = 'https://' . SHOP_DOMAIN;
     <div class="aui-page-panel" role="main">
       <div class="aui-page-panel-inner">
         <div class="aui-page-panel-content">
+<?php } ?>
 <?php require_once('../app/views/' . $view . '.php'); ?>
+<?php if (!$nl) { ?>
         </div>
       </div>
     </div>
   </div>
+<?php } ?>
 
   <script src="/vendor/twitter/typeahead.js/dist/typeahead.bundle.min.js" type="text/javascript"></script>
   <script src="/vendor/components/handlebars.js/handlebars.min.js" type="text/javascript"></script>
