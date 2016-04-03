@@ -42,6 +42,14 @@ HTML;
 ?>
     </select>
   </div>
+  <div class="field-group">
+    <label for="date-begin">Startzeitpunkt</label>
+    <input type="date" class="date" id="date-begin" name="date-begin" value="<?php echo $params['mindate']; ?>">
+  </div>
+  <div class="field-group">
+    <label for="date-end">Endzeitpunkt</label>
+    <input type="date" class="date" id="date-end" name="date-end" value="<?php echo date('Y-m-d'); ?>">
+  </div>
   <div class="buttons-container">
     <div class="buttons">
       <button type="submit" class="aui-button">
@@ -79,6 +87,8 @@ HTML;
   display: none;
 }
 </style>
+
+<p>Zeitraum von <?php echo htmlentities($params['date-begin']); ?> bis <?php echo htmlentities($params['date-end']); ?>.</p>
 
 <svg id="chart"></svg>
 

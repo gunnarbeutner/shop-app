@@ -52,6 +52,19 @@ class ReportsController {
         $data = null;
 
         $report = $_REQUEST['report'];
+        $date_begin = $_REQUEST['date-begin'];
+        $date_end = $_REQUEST['date-end'];
+
+        $mindate = $shop_db->query("SELECT MIN(date) AS mindate FROM orders")->fetch(PDO::FETCH_ASSOC)['mindate'];
+
+        if ($date_begin == '')
+            $date_begin = $mindate;
+
+        if ($date_end == '')
+            $date_end = date('Y-m-d');
+
+        $date_begin_quoted = $shop_db->quote($date_begin);
+        $date_end_quoted = $shop_db->quote($date_end);
 
         if ($report != '') {
             if (!array_key_exists($report, ReportsController::$reports)) {
@@ -63,8 +76,10 @@ class ReportsController {
                 $query = <<<SQL
 SELECT s.`name` AS `x`, COUNT(oi.`id`) as `y`
 FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `stores` s ON s.`id`=oi.`store_id`
 WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`store_id`
 ORDER BY `y` DESC
 SQL;
@@ -75,6 +90,7 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=o.`user_id`
 WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY o.`user_id`
 ORDER BY `y` DESC
 LIMIT 20
@@ -83,8 +99,10 @@ SQL;
                 $query = <<<SQL
 SELECT u.`name` AS `x`, COUNT(oi.`id`) as `y`
 FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=oi.`merchant_id`
 WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`merchant_id`
 ORDER BY `y` DESC
 LIMIT 20
@@ -95,6 +113,7 @@ SELECT ELT(WEEKDAY(o.`date`)+1, 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY WEEKDAY(o.`date`)
 ORDER BY WEEKDAY(o.`date`) ASC
 SQL;
@@ -102,8 +121,10 @@ SQL;
                 $query = <<<SQL
 SELECT s.`name` AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
 FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `stores` s ON s.`id`=oi.`store_id`
 WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`store_id`
 ORDER BY `y` DESC
 SQL;
@@ -114,6 +135,7 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=o.`user_id`
 WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY o.`user_id`
 ORDER BY `y` DESC
 LIMIT 20
@@ -122,8 +144,10 @@ SQL;
                 $query = <<<SQL
 SELECT u.`name` AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
 FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=oi.`merchant_id`
 WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`merchant_id`
 ORDER BY `y` DESC
 LIMIT 20
@@ -134,17 +158,18 @@ SELECT ELT(WEEKDAY(o.`date`)+1, 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY WEEKDAY(o.`date`)
 ORDER BY WEEKDAY(o.`date`) ASC
-SQL;
-SQL;
 SQL;
             } else if ($report == 'feesbystores') {
                 $query = <<<SQL
 SELECT s.`name` AS `x`, SUM(oi.`fee`) as `y`
 FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `stores` s ON s.`id`=oi.`store_id`
 WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`store_id`
 HAVING `y` > 0
 ORDER BY `y` DESC
@@ -156,6 +181,9 @@ SQL;
         }
 
         $params = [
+            'mindate' => $mindate,
+            'date-begin' => $date_begin,
+            'date-end' => $date_end,
             'reports' => ReportsController::$reports,
             'id' => $report,
             'data' => $data
