@@ -71,6 +71,7 @@ CREATE TABLE `order_items` (
   `direct_debit_done` int(11) NOT NULL DEFAULT '0',
   `fee` decimal(12,5) NOT NULL DEFAULT '0',
   `rebate` decimal(12,5) NOT NULL DEFAULT '0',
+  `merchant_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`,`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

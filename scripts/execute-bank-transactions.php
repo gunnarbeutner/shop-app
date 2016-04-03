@@ -55,6 +55,8 @@ foreach (get_users() as $user_id => $user) {
         set_order_item_attr($item['id'], 'rebate', $item_rebate);
         $amount = bcadd($amount, $item_rebate);
 
+        set_order_item_attr($item['id'], 'merchant_id', $stores[$item['store_id']]['merchant_id']);
+
         if (bccomp($item_rebate, '0') != 0) {
             $rebate_user = $stores[$item['store_id']]['rebate_user_id'];
             if (!array_key_exists($rebate_user, $rebates)) {

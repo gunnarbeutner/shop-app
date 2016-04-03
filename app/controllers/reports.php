@@ -26,9 +26,11 @@ class ReportsController {
     static $reports = [
       'numordersbystores' => 'Anzahl Bestellungen, gruppiert nach Läden',
       'numordersbyusers' => 'Anzahl Bestellungen, gruppiert nach Kunden',
+      'numordersbymerchants' => 'Anzahl Bestellungen, gruppiert nach Händlern',
       'numordersbyday' => 'Anzahl Bestellungen, gruppiert nach Wochentag',
       'revenuebystores' => 'Umsatz in Euro, gruppiert nach Läden',
       'revenuebyusers' => 'Umsatz in Euro, gruppiert nach Kunden',
+      'revenuebymerchants' => 'Umsatz in Euro, gruppiert nach Händlern',
       'revenuebyday' => 'Umsatz in Euro, gruppiert nach Wochentag',
       'feesbystores' => 'Lieferpauschale/Trinkgeld in Euro, gruppiert nach Läden'
     ];
@@ -77,6 +79,16 @@ GROUP BY o.`user_id`
 ORDER BY `y` DESC
 LIMIT 20
 SQL;
+            } else if ($report == 'numordersbymerchants') {
+                $query = <<<SQL
+SELECT u.`name` AS `x`, COUNT(oi.`id`) as `y`
+FROM `order_items` oi
+LEFT JOIN `users` u ON u.`id`=oi.`merchant_id`
+WHERE oi.`direct_debit_done` = 1
+GROUP BY oi.`merchant_id`
+ORDER BY `y` DESC
+LIMIT 20
+SQL;
             } else if ($report == 'numordersbyday') {
                 $query = <<<SQL
 SELECT ELT(WEEKDAY(o.`date`)+1, 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag') AS `x`, COUNT(oi.`id`) as `y`
@@ -103,6 +115,16 @@ LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=o.`user_id`
 WHERE oi.`direct_debit_done` = 1
 GROUP BY o.`user_id`
+ORDER BY `y` DESC
+LIMIT 20
+SQL;
+            } else if ($report == 'revenuebymerchants') {
+                $query = <<<SQL
+SELECT u.`name` AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
+FROM `order_items` oi
+LEFT JOIN `users` u ON u.`id`=oi.`merchant_id`
+WHERE oi.`direct_debit_done` = 1
+GROUP BY oi.`merchant_id`
 ORDER BY `y` DESC
 LIMIT 20
 SQL;
