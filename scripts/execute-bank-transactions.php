@@ -106,7 +106,7 @@ foreach ($rebates as $rebate_user => $rebate_amount) {
     $tx_reference = 'Rabatte für Mittagsbestellungen';
 
     echo "<- ${from} - ${amount} - ${tx_reference}\n";
-    execute_direct_debit($from, $amount, $tx_reference);
+    execute_direct_debit($from, $amount, $tx_reference, true);
 }
 
 foreach ($stores as $store_id => $store) {
