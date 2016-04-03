@@ -160,14 +160,28 @@ require_once('helpers/article.php');
 		if ($store === null || $store['id'] != $id) {
 			continue;
 		}
-		
+
+        $sum = '0';
+
 		$items = [];
 		foreach ($params['order']['items'] as $item) {
 			if ($item['store_id'] != $store['id']) {
 				continue;
 			}
+            $sum = bcadd($sum, $item['price']);
 			$items[] = $item;
 		}
+
+        $fee = bcmul(get_store_fee_multiplier($store['id'], true), $sum);
+        if (bccomp($fee, '0') != 0) {
+            $sum = bcadd($sum, $fee);
+            $items[] = [ 'title' => $store['service_charge_description'], 'price' => $fee, 'protected' => true ];
+        }
+
+        $rebate = bcmul(get_store_rebate_multiplier($store['id']), $sum);
+        if (bccomp($fee, '0') != 0) {
+            $items[] = [ 'title' => 'Rabatt (' . $store['rebate_percent'] . '%)', 'price' => $rebate, 'protected' => true ];
+        }
 
 		$index++;
 
@@ -243,14 +257,7 @@ HTML;
 		$rebate_pct = $store['rebate_percent'];
 		if (bccomp($rebate_pct, '0') != 0) {
 ?>
-<p>F&uuml;r diesen Laden gibt es heute auf alle Artikel
-
-<?php
-			if (bccomp($service_fee, '0') != 0) {
-?> (ausgenommen Liefergeb&uuml;hren <?php
-			}
-
-?> <?php echo $rebate_pct; ?>% Rabatt.</p>
+<p>F&uuml;r diesen Laden gibt es heute auf alle Artikel <?php echo $rebate_pct; ?>% Rabatt.</p>
 <?php
 		}
 
@@ -316,7 +323,7 @@ HTML;
 <?php
 
 			foreach ($items as $item) {
-				if (!$item['fee'] && !$item['rebate']) {
+				if (!array_key_exists('protected', $item) || !$item['protected']) {
 					$order_buttons = <<<HTML
         <div style="float: left; padding-right: 10px;">
           <form method="get" action="/app/order-edit" style="display: inline;">

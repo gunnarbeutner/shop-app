@@ -62,7 +62,7 @@ class ReportsController {
 SELECT s.`name` AS `x`, COUNT(oi.`id`) as `y`
 FROM `order_items` oi
 LEFT JOIN `stores` s ON s.`id`=oi.`store_id`
-WHERE oi.`fee` = 0 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
+WHERE oi.`direct_debit_done` = 1
 GROUP BY oi.`store_id`
 ORDER BY `y` DESC
 SQL;
@@ -72,7 +72,7 @@ SELECT u.`name` AS `x`, COUNT(oi.`id`) as `y`
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=o.`user_id`
-WHERE oi.`fee` = 0 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
+WHERE oi.`direct_debit_done` = 1
 GROUP BY o.`user_id`
 ORDER BY `y` DESC
 LIMIT 20
@@ -82,7 +82,7 @@ SQL;
 SELECT ELT(WEEKDAY(o.`date`)+1, 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag') AS `x`, COUNT(oi.`id`) as `y`
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
-WHERE oi.`fee` = 0 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
+WHERE oi.`direct_debit_done` = 1
 GROUP BY WEEKDAY(o.`date`)
 ORDER BY `y` DESC
 SQL;
@@ -91,7 +91,7 @@ SQL;
 SELECT s.`name` AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
 FROM `order_items` oi
 LEFT JOIN `stores` s ON s.`id`=oi.`store_id`
-WHERE oi.`fee` = 0 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
+WHERE oi.`direct_debit_done` = 1
 GROUP BY oi.`store_id`
 ORDER BY `y` DESC
 SQL;
@@ -101,7 +101,7 @@ SELECT u.`name` AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=o.`user_id`
-WHERE oi.`fee` = 0 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
+WHERE oi.`direct_debit_done` = 1
 GROUP BY o.`user_id`
 ORDER BY `y` DESC
 LIMIT 20
@@ -111,17 +111,18 @@ SQL;
 SELECT ELT(WEEKDAY(o.`date`)+1, 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag') AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
-WHERE oi.`fee` = 0 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
+WHERE oi.`direct_debit_done` = 1
 GROUP BY WEEKDAY(o.`date`)
 ORDER BY `y` DESC
 SQL;
             } else if ($report == 'feesbystores') {
                 $query = <<<SQL
-SELECT s.`name` AS `x`, SUM(oi.`price`) as `y`
+SELECT s.`name` AS `x`, SUM(oi.`fee`) as `y`
 FROM `order_items` oi
 LEFT JOIN `stores` s ON s.`id`=oi.`store_id`
-WHERE oi.`fee` = 1 AND oi.`rebate` = 0 AND oi.`direct_debit_done` = 1
+WHERE oi.`direct_debit_done` = 1
 GROUP BY oi.`store_id`
+HAVING `y` > 0
 ORDER BY `y` DESC
 LIMIT 20
 SQL;

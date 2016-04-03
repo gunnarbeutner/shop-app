@@ -35,16 +35,17 @@ if (bccomp($service_fee, '0') != 0) {
 
 <p>F&uuml;r diesen Laden f&auml;llt eine Liefergeb&uuml;hr in H&ouml;he von <?php echo format_number($service_fee); ?>&euro; an, die zwischen allen Bestellern aufgeteilt wird: <?php echo $store['service_charge_description']; ?></p>
 
+<?php
+}
+?>
+
 <form class="aui" method="post" action="/app/order-article">
 <?php if (get_user_attr(get_user_email(), 'merchant')) { ?>
         <div class="field-group">
 	      <label for="add-email">Benutzer</label>
 	      <input class="text address" type="text" name="email" id="add-email" value="<?php echo htmlentities(get_user_email()); ?>">
         </div>
-<?php } ?>
-
-<?php
-}
+<?php }
 
 foreach ($params['groups'] as $group_id => $group) {
 	$count = 0;

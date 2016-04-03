@@ -37,8 +37,19 @@ foreach (get_users() as $user_id => $user) {
 		if ($item['user_email'] != $user['email'] || $item['direct_debit_done']) {
 			continue;
 		}
-		
-		$amount = bcadd($amount, $item['price']);
+
+		$item_price = $item['price'];
+        $item_fee = bcmul(get_store_fee_multiplier($item['store_id'], false), $item['price']);
+        $item_rebate = bcmul(get_store_rebate_multiplier($item['store_id']), bcadd($item_price, $item_fee));
+
+        $amount = bcadd($amount, $item_price);
+
+        set_order_item_attr($item['id'], 'fee', $item_fee);
+        $amount = bcadd($amount, $item_fee);
+
+        set_order_item_attr($item['id'], 'rebate', $item_rebate);
+        $amount = bcadd($amount, $item_rebate);
+
 		$user_items[] = $item;
 	}
 	
@@ -59,7 +70,7 @@ foreach (get_users() as $user_id => $user) {
 		$status = true;
 	}
 
-	if ($status) {
+	if ($status && count($user_items) > 0) {
 		$order_quoted = $shop_db->quote($user_items[0]['order_id']);
 		$query = <<<QUERY
 UPDATE `order_items`
@@ -78,11 +89,12 @@ foreach (get_stores() as $store_id => $store) {
 	$amount = 0;
 	
 	foreach ($transfer_items as $item) {
-		if ($item['store_id'] != $store_id || $item['rebate']) {
+		if ($item['store_id'] != $store_id) {
 			continue;
 		}
 		
 		$amount = bcadd($amount, $item['price']);
+        $amount = bcadd($amount, bcmul(get_store_fee_multiplier($store_id, false), $item['price']));
 	}
 	
 	if (bccomp($amount, '0') == 0)

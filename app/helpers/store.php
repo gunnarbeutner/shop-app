@@ -81,7 +81,7 @@ function get_recent_orders($uid, $store_id) {
 SELECT oi.title, oi.price, o.date
 FROM order_items oi
 LEFT JOIN orders o ON o.id=oi.order_id
-WHERE o.user_id = ${uid_quoted} AND oi.store_id = ${store_quoted} AND oi.rebate = 0 AND oi.fee = 0
+WHERE o.user_id = ${uid_quoted} AND oi.store_id = ${store_quoted}
 ORDER BY oi.id DESC
 LIMIT 5
 QUERY;

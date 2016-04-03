@@ -102,18 +102,8 @@ foreach ($params['stores'] as $store_id => $store) {
 		$sum = 0;
 		$sum_fee = 0;
 		$sum_rebate = 0;
-		
+
 		foreach ($items as $item) {
-			if ($item['rebate']) {
-				$sum_rebate = bcadd($sum_rebate, $item['price']);
-				continue;
-			}
-
-			if ($item['fee']) {
-				$sum_fee = bcadd($sum_fee, $item['price']);
-				continue;
-			}
-
 			$sum = bcadd($sum, $item['price']);
 
 			$html = <<<HTML
@@ -180,6 +170,9 @@ HTML;
 				htmlentities($item['title']), format_number($item['price']),
 				$direct_debit_status, $order_buttons);
 		}
+
+		$sum_fee = bcmul(get_store_fee_multiplier($store_id, false), $sum);
+		$sum_rebate = bcmul(get_store_rebate_multiplier($store_id), bcadd($sum, $sum_fee));
 ?>
 </table>
 
