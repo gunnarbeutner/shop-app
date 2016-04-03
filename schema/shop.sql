@@ -69,8 +69,8 @@ CREATE TABLE `order_items` (
   `title` mediumtext NOT NULL,
   `price` decimal(12,5) NOT NULL,
   `direct_debit_done` int(11) NOT NULL DEFAULT '0',
-  `fee` int(11) NOT NULL DEFAULT '0',
-  `rebate` int(11) NOT NULL DEFAULT '0',
+  `fee` decimal(12,5) NOT NULL DEFAULT '0',
+  `rebate` decimal(12,5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`,`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -145,6 +145,7 @@ CREATE TABLE `stores` (
   `service_charge_description` mediumtext,
   `status_message` mediumtext,
   `rebate_percent` int(11) NOT NULL DEFAULT '0',
+  `rebate_user_id` int(11) DEFAULT NULL,
   `tracking_id` varchar(16) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_users_idx` (`merchant_id`),
