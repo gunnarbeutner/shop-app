@@ -22,6 +22,12 @@
 require_once('helpers/csrf.php');
 require_once('helpers/order.php');
 
+if ($params['store']['rebate_user_id'] != '') {
+    $rebate_user = email_from_uid($params['store']['rebate_user_id']);
+} else {
+    $rebate_user = '';
+}
+
 ?>
 
 <h1>Laden bearbeiten: <?php echo htmlentities($params['store']['name']); ?></h1>
@@ -54,7 +60,11 @@ require_once('helpers/order.php');
   <div class="field-group">
     <label for="rebate_percent">Rabatt (%)</label>
     <input class="text" type="text" name="rebate_percent" value="<?php echo htmlentities($params['store']['rebate_percent']); ?>">
-    <div class="description">&Auml;nderungen des Rabattsatzes m&uuml;ssen mit Gunnar oder Marius abgesprochen werden.</div>
+  </div>
+  <div class="field-group">
+    <label for="rebate_user">Rabatt-Benutzer</label>
+    <input class="text address" type="text" name="rebate_user" value="<?php echo htmlentities($rebate_user); ?>">
+    <div class="description">Diesem Benutzer werden die Rabatte in Rechnung gestellt.</div>
   </div>
   <div class="field-group">
     <label for="tracking_id">Tracking-ID</label>

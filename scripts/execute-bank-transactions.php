@@ -25,9 +25,14 @@ require_once('helpers/order.php');
 require_once('helpers/db.php');
 require_once('helpers/store.php');
 
+set_order_status(false);
+
 $order = get_current_merchant_order();
 
+$stores = get_stores();
+
 $transfer_items = [];
+$rebates = [];
 
 foreach (get_users() as $user_id => $user) {
 	$amount = 0;
@@ -49,6 +54,14 @@ foreach (get_users() as $user_id => $user) {
 
         set_order_item_attr($item['id'], 'rebate', $item_rebate);
         $amount = bcadd($amount, $item_rebate);
+
+        if (bccomp($item_rebate, '0') != 0) {
+            $rebate_user = $stores[$item['store_id']]['rebate_user_id'];
+            if (!array_key_exists($rebate_user, $rebates)) {
+                $rebates[$rebate_user] = '0';
+            }
+            $rebates[$rebate_user] = bcadd($rebates[$rebate_user], $item_rebate);
+        }
 
 		$user_items[] = $item;
 	}
@@ -85,7 +98,16 @@ QUERY;
 	}
 }
 
-foreach (get_stores() as $store_id => $store) {
+foreach ($rebates as $rebate_user => $rebate_amount) {
+    $amount = bcmul('-1', $rebate_amount);
+    $from = email_from_uid($rebate_user);
+    $tx_reference = 'Rabatte für Mittagsbestellungen';
+
+    echo "<- ${from} - ${amount} - ${tx_reference}\n";
+    execute_direct_debit($from, $amount, $tx_reference);
+}
+
+foreach ($stores as $store_id => $store) {
 	$amount = 0;
 	
 	foreach ($transfer_items as $item) {

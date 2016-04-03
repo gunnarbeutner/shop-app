@@ -48,6 +48,17 @@ class StoreeditController {
 		
 		$store_id = $_POST['store'];
 
+        if (bccomp($_POST['rebate_percent'], '0') != 0) {
+            $rebate_user = get_user_attr($_POST['rebate_user'], 'id');
+
+            if (!$rebate_user) {
+                $params = [ 'message' => 'Rabatt-Benutzer ist ungültig.' ];
+                return [ 'error', $params ];
+            }
+        } else {
+            $rebate_user = '';
+        }
+
 		set_store_attr($store_id, 'name', $_POST['name']);
 		set_store_attr($store_id, 'description', $_POST['description']);
 		set_store_attr($store_id, 'min_order_count', $_POST['min_order_count']);
@@ -55,6 +66,7 @@ class StoreeditController {
 		set_store_attr($store_id, 'service_charge_amount', $_POST['service_charge_amount']);
 		set_store_attr($store_id, 'service_charge_description', $_POST['service_charge_description']);
 		set_store_attr($store_id, 'rebate_percent', $_POST['rebate_percent']);
+		set_store_attr($store_id, 'rebate_user_id', $rebate_user);
 		set_store_attr($store_id, 'tracking_id', $_POST['tracking_id']);
 
 		header('Location: /app/stores');

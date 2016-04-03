@@ -179,7 +179,7 @@ require_once('helpers/article.php');
         }
 
         $rebate = bcmul(get_store_rebate_multiplier($store['id']), $sum);
-        if (bccomp($fee, '0') != 0) {
+        if (bccomp($rebate, '0') != 0) {
             $items[] = [ 'title' => 'Rabatt (' . $store['rebate_percent'] . '%)', 'price' => $rebate, 'protected' => true ];
         }
 

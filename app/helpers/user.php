@@ -63,11 +63,12 @@ function set_held_amount($email, $amount) {
 	return $ok;
 }
 
-function execute_direct_debit($from, $amount, $reference) {
+function execute_direct_debit($from, $amount, $reference, $ignore_limits = false) {
 	$fields = [
 		'from' => $from,
 		'amount' => $amount,
-		'reference' => $reference
+		'reference' => $reference,
+        'ignore_limits' => $ignore_limits ? '1' : '0'
 	];
 	
 	$ch = curl_init();
