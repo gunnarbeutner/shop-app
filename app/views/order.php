@@ -374,6 +374,13 @@ HTML;
 					htmlentities($item['title']), format_number($item['price']));
 			}
 ?>
+    <tr style="border-top: 2px solid black;">
+      <td><b>Summe</b></td>
+      <td><b><?php echo format_number(bcadd($sum, $rebate)); ?></b></td>
+<?php if ($params['order_status']) { ?>
+      <td></td>
+<?php } ?>
+    </tr>
   </table>
 <?php
 		} else if (!$params['order_status']) {
