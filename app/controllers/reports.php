@@ -96,7 +96,7 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE oi.`direct_debit_done` = 1
 GROUP BY WEEKDAY(o.`date`)
-ORDER BY `y` DESC
+ORDER BY WEEKDAY(o.`date`) ASC
 SQL;
             } else if ($report == 'revenuebystores') {
                 $query = <<<SQL
@@ -135,7 +135,9 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE oi.`direct_debit_done` = 1
 GROUP BY WEEKDAY(o.`date`)
-ORDER BY `y` DESC
+ORDER BY WEEKDAY(o.`date`) ASC
+SQL;
+SQL;
 SQL;
             } else if ($report == 'feesbystores') {
                 $query = <<<SQL
