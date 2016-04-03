@@ -27,7 +27,7 @@ class OrderremoveController {
 	public function post() {
 		verify_csrf_token();
 
-		if (!get_order_status()) {
+		if (!get_order_status() && !get_user_attr(get_user_email(), 'merchant')) {
 			$params = [ 'message' => 'Bestelländerungen aktuell nicht mehr möglich.' ];
 			return [ 'error', $params ];
 		}
