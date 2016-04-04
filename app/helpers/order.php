@@ -717,7 +717,13 @@ QUERY;
         }
     }
 
-    $mult = bcdiv(get_stores()[$store_id]['service_charge_amount'], $total, 5);
+    $total_fee = get_stores()[$store_id]['service_charge_amount'];
+
+    if (bccomp($total_fee, '0') == 0) {
+        return 0;
+    }
+
+    $mult = bcdiv($total_fee, $total, 5);
     $mult = bcadd($mult, '0.0005', 5);
     return bcdiv($mult, '1.0', 4);
 }
