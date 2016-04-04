@@ -38,8 +38,15 @@ foreach ($users as $user_id => $user) {
 
     $debt_formatted = format_number(bcmul($balance, '-1'), false);
 
+    $days = (int)floor((time() - (int)$ext_info['last_positive']) / 86400);
+
+    if ($days < 3)
+        continue;
+
     $message = <<<MESSAGE
-Hallo ${first_name}! Du hast noch ${debt_formatted} EUR Schulden. Bitte überweise das Geld an:
+Hallo ${first_name}!
+
+Du bist seit ${days} Tagen im Minus. Aktuell hast du ${debt_formatted} EUR Schulden. Bitte überweise das Geld baldmöglichst an:
 
 Kontoinhaber: ${ext_info['tgt_owner']}
 IBAN: ${ext_info['tgt_iban']}
