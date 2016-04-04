@@ -169,7 +169,6 @@ CREATE TABLE `users` (
   `login_token` varchar(64) DEFAULT NULL,
   `admin` int(11) NOT NULL DEFAULT '0',
   `merchant` int(11) NOT NULL DEFAULT '0',
-  `payment_method` enum('Direct Debit','Transfer','Cash') NOT NULL DEFAULT 'Direct Debit',
   `promotional_mails` int(11) NOT NULL DEFAULT '1',
   `order_reminders` int(11) NOT NULL DEFAULT '0',
   `held_amount` decimal(12,5) NOT NULL DEFAULT '0.00000',

@@ -38,22 +38,7 @@ require_once('helpers/article.php');
 
 	$csrf_token = csrf_token();
 
-	$payment_method = get_user_attr(get_user_email(), 'payment_method');
-
 	if ($params['order_status']) {
-		
-		$payment_method_prefix = 'per';
-		
-		switch ($payment_method) {
-			case 'Direct Debit':
-				$payment_method_friendly = 'NETWAYS-Lastschrift';
-				break;
-			case 'Cash':
-				$payment_method_friendly = 'Bargeld';
-				$payment_method_prefix = 'mit';
-				break;
-		}
-		
 		$hour = date('G');
 		$minute = intval(date('i'));
 ?>
@@ -64,66 +49,6 @@ require_once('helpers/article.php');
   Bei Bestellschluss wird pro Benutzer jedoch nur bei einem Laden eine Bestellung aufgegeben.</strong></p>
 <?php
 		}
-?>
-<!--  <p>
-	Bestellungen f&uuml;r Ihren Account werden <?php echo $payment_method_prefix; ?> <?php echo htmlentities($payment_method_friendly); ?>
-	bezahlt. Dies kann <a href="#" id="payment-method-link">hier</a> ge&auml;ndert werden.
-  </p>-->
-
-<?php
-		if ($payment_method == 'Cash') {
-?>
-<p><strong>Barzahlungen werden von Marius und Gunnar entgegengenommen. Dies ist unabh&auml;ngig davon, wer die Bestellung durchf&uuml;hrt.</strong></p>
-<?php
-	}
-?>
-
-  <section role="dialog" id="payment-method-dialog" class="aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true">
-    <header class="aui-dialog2-header">
-      <h2 class="aui-dialog2-header-main">Zahlungsmethode</h2>
-	</header>	  
-
-	<div class="aui-dialog2-content">
-      <form class="aui" method="post" action="/app/payment-method">
-        <div class="field-group">
-	      <label for="payment-method">Zahlungsmethode</label>
-		  <select class="select" name="payment-method" id="payment-method">
-			<option value="Direct Debit"<?php if ($payment_method == 'Direct Debit') { echo ' selected="selected"'; } ?>>NETWAYS-Lastschrift</option>
-			<option value="Cash"<?php if ($payment_method == 'Cash') { echo ' selected="selected"'; } ?>>Bargeld</option>
-		  </select>
-        </div>
-        <div class="buttons-container">
-          <div class="buttons">
-			<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-            <button type="submit" class="aui-button">
-  		      <i class="fa fa-check"></i> Speichern
-            </button>
-          </div>
-	    </div>
-      </form>
-	</div>
-	
-	<!-- Dialog footer -->
-    <footer class="aui-dialog2-footer">
-        <!-- Actions to render on the right of the footer -->
-        <div class="aui-dialog2-footer-actions">
-            <button id="payment-method-close-button" class="aui-button aui-button-link">Abbrechen</button>
-        </div>
-    </footer>
-  </section>
-
-  <script type="text/javascript">
-    AJS.$("#payment-method-link").click(function() {
-      AJS.dialog2("#payment-method-dialog").show();
-    });
-
-    // Hides the dialog
-    AJS.$("#payment-method-close-button").click(function(e) {
-      e.preventDefault();
-      AJS.dialog2("#payment-method-dialog").hide();
-    });
-  </script>
-<?php
 	} else {
 ?>
 <p>F&uuml;r heute werden leider keine neuen Bestellungen mehr angenommen.</p>
