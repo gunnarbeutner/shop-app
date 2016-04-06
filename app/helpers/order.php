@@ -723,9 +723,9 @@ QUERY;
         return 0;
     }
 
-    $mult = bcdiv($total_fee, $total, 5);
-    $mult = bcadd($mult, '0.0005', 5);
-    return bcdiv($mult, '1.0', 4);
+    $mult = bcdiv($total_fee, $total, 10);
+    $mult = bcadd($mult, '0.000000005', 10);
+    return bcdiv($mult, '1.0', 9);
 }
 
 function get_store_rebate_multiplier($store_id) {
