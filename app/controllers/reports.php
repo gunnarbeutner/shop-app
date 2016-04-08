@@ -29,7 +29,6 @@ class ReportsController {
       'numordersbymerchants' => 'Anzahl Bestellungen, gruppiert nach Händlern',
       'numordersbyday' => 'Anzahl Bestellungen, gruppiert nach Wochentag',
       'revenuebystores' => 'Umsatz in Euro, gruppiert nach Läden',
-      'revenuebyusers' => 'Umsatz in Euro, gruppiert nach Kunden',
       'revenuebymerchants' => 'Umsatz in Euro, gruppiert nach Händlern',
       'revenuebyday' => 'Umsatz in Euro, gruppiert nach Wochentag',
       'feesbystores' => 'Lieferpauschale/Trinkgeld in Euro, gruppiert nach Läden'
@@ -127,18 +126,6 @@ WHERE oi.`direct_debit_done` = 1
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`store_id`
 ORDER BY `y` DESC
-SQL;
-            } else if ($report == 'revenuebyusers') {
-                $query = <<<SQL
-SELECT u.`name` AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
-FROM `order_items` oi
-LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
-LEFT JOIN `users` u ON u.`id`=o.`user_id`
-WHERE oi.`direct_debit_done` = 1
-AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
-GROUP BY o.`user_id`
-ORDER BY `y` DESC
-LIMIT 20
 SQL;
             } else if ($report == 'revenuebymerchants') {
                 $query = <<<SQL
