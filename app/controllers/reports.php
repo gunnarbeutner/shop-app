@@ -28,9 +28,11 @@ class ReportsController {
       'numordersbyusers' => 'Anzahl Bestellungen, gruppiert nach Kunden',
       'numordersbymerchants' => 'Anzahl Bestellungen, gruppiert nach Händlern',
       'numordersbyday' => 'Anzahl Bestellungen, gruppiert nach Wochentag',
+      'numordersbymonth' => 'Anzahl Bestellungen, gruppiert nach Monat',
       'revenuebystores' => 'Umsatz in Euro, gruppiert nach Läden',
       'revenuebymerchants' => 'Umsatz in Euro, gruppiert nach Händlern',
       'revenuebyday' => 'Umsatz in Euro, gruppiert nach Wochentag',
+      'revenuebymonth' => 'Umsatz in Euro, gruppiert nach Monat',
       'feesbystores' => 'Lieferpauschale/Trinkgeld in Euro, gruppiert nach Läden'
     ];
 
@@ -116,6 +118,17 @@ AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY WEEKDAY(o.`date`)
 ORDER BY WEEKDAY(o.`date`) ASC
 SQL;
+            } else if ($report == 'numordersbymonth') {
+                $query = <<<SQL
+SELECT ELT( MONTH(o.`date`),
+'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember') AS `x`, COUNT(oi.`id`) as `y`
+FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
+WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
+GROUP BY MONTH(o.`date`)
+ORDER BY MONTH(o.`date`) ASC
+SQL;
             } else if ($report == 'revenuebystores') {
                 $query = <<<SQL
 SELECT s.`name` AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
@@ -148,6 +161,17 @@ WHERE oi.`direct_debit_done` = 1
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY WEEKDAY(o.`date`)
 ORDER BY WEEKDAY(o.`date`) ASC
+SQL;
+            } else if ($report == 'revenuebymonth') {
+                $query = <<<SQL
+SELECT ELT( MONTH(o.`date`),
+'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember') AS `x`, SUM(oi.`price` + oi.`fee`) as `y`
+FROM `order_items` oi
+LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
+WHERE oi.`direct_debit_done` = 1
+AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
+GROUP BY MONTH(o.`date`)
+ORDER BY MONTH(o.`date`) ASC
 SQL;
             } else if ($report == 'feesbystores') {
                 $query = <<<SQL
