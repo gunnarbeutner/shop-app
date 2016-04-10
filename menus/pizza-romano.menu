@@ -106,14 +106,14 @@ o Suppe: Meranersuppe @ 3,50
 
 o Suppe: Zwiebelsuppe @ 3,50
 
-o Pizza: Pizza Hamburger
+o Pizza: Hamburger
   d mit Hackfleischsauce, Zwiebeln
   i PizzaSizeNames
   o Größe: klein @ 7,20
   o Größe: groß @ 8,30
   o Größe: Familie @ 16,70
 
-o Pizza: Pizza Südtiroler
+o Pizza: Südtiroler
   d Tomatensoße, Mozzarella, Rucola, Parmaschinken, Parmesankäse
   i PizzaSizeNames
   o Größe: klein @ 8,20
@@ -127,12 +127,12 @@ o Pizza: Pizzabrot
   o Größe: groß @ 5,00
   o Größe: Familie @ 8,70
 
-o Pizza: Pizza Romano
+o Pizza: Romano
   d mit Tomatensoße, Käse, Schinken, Champignons, Salami, Oliven, Scharf
   o Größe: klein @ 7,20
     d ⌀ 26 cm
 
-o Pizza: Pizza Ufo
+o Pizza: Ufo
   d mit Tomatensoße, Käse, Spinat, frischeTomaten, Mozzarella (geschlossene Pizza)
   o Größe: klein @ 8,20
     d ⌀ 26 cm
@@ -397,7 +397,7 @@ o Pizza: Popeye
   o Größe: groß @ 8,10
   o Größe: Familie @ 14,90
 
-o Pizza: Pizza a la Chef
+o Pizza: A la Chef
   d Käse, Tomatensoße, Hähnchenbrust, frisches Gemüse, pikant
   i PizzaSizeNames
   o Größe: klein @ 7,90
@@ -425,7 +425,7 @@ o Pizza: Mexicana
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,40
 
-o Pizza: Pizza Sucuk
+o Pizza: Sucuk
   d Käse, Tomatensoße, Oliven, Sucuk, Pepperoni
   i PizzaSizeNames
   o Größe: klein @ 6,90
@@ -439,7 +439,7 @@ o Pizza: Pulcinella
   o Größe: groß @ 8,30
   o Größe: Familie @ 15,90
 
-o Pizza: Pizza Gyros
+o Pizza: Gyros
   d Putenfleisch oder Schweinefleisch, Zwiebeln, Tzatziki
   i PizzaSizeNames
   o Größe: klein @ 7,50
