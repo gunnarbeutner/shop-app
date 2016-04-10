@@ -1,0 +1,68 @@
+s Sofram
+
+o Döner: Döner
+  o Fleischsorte: Kalbfleisch @ 3,50
+  o Fleischsorte: Putenfleisch @ 3,00
+  o Fleischsorte: Vegetarisch @ 3,00
+    d mit Käse und Salat
+
+o Döner: Döner Spezial @ 3,90
+  d mit Käse
+  o Fleischsorte: Kalbfleisch
+  o Fleischsorte: Putenfleisch
+
+o Döner: Dönerbox @ 3,00
+  o Beilage: Ohne Reis/Pommes
+  o Beilage: Pommes
+  o Beilage: Reis
+  o Fleischsorte: Kalbfleisch
+  o Fleischsorte: Putenfleisch
+
+o Döner: Dürüm Döner
+  d im orientalischen Brot (Wrap)
+  o Fleischsorte: Kalbfleisch @ 3,90
+  o Fleischsorte: Putenfleisch @ 3,50
+
+o Dürüm: Dürüm
+  d im orientalischen Brot (Wrap)
+  o Fleischsorte: Adana @ 4,90
+    d Hackfleischspieß und Salat
+  o Fleischsorte: Hähnchen @ 4,50
+    d Hähnchenfleischspieß und Salat
+  o Fleischsorte: Lammfleisch @ 5,50
+    d Lammfleischspieß und Salat
+  o Fleischsorte: Urfa, Scharf @ 4,90
+    d Hackfleischspieß und Salat
+
+o Dürüm: Frikadellen @ 4,50
+  d im Dönerbrot
+
+o Nachtisch: Baklava @ 3,50
+
+o Nachtisch: Fırın Sütlaç @ 3,00
+
+o Nachtisch: Künefe @ 3,90
+
+o Nachtisch: Revani @ 1,50
+
+o Pide: Pide
+  o Belag: Champignons und Salat @ 4,90
+  o Belag: Dönerfleisch, Käse und Salat @ 5,50
+  o Belag: Gouda, Ei und Salat @ 4,90
+  o Belag: Hackfleisch (Kalb) und Salat @ 4,90
+  o Belag: Käse und Salat @ 4,90
+  o Belag: Käse, Knoblauchwurst und Salat @ 5,50
+  o Belag: Spinat, Käse und Salat @ 4,90
+  o Belag: Vegetarisch, mit Salat @ 4,90
+
+o Salat: Bauernsalat @ 3,90
+  d mit Gurken, Tomaten, Zwiebeln
+
+o Salat: Salat mit Hähnchenspieß @ 7,50
+
+o Salat: Salat mit Käse @ 4,90
+
+o Salat: Salat mit Lammspieß @ 8,50
+
+o Salat: Sofram-Spezial-Salat @ 5,90
+  d mit Gurken, Tomaten, Zwiebeln, Peperoni

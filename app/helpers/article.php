@@ -20,6 +20,7 @@
  */
 
 require_once('helpers/db.php');
+require_once('helpers/order.php');
 
 function find_articles($store_id, $q) {
 	global $shop_db;
@@ -52,8 +53,9 @@ function get_articles($store_id) {
 	$query = <<<QUERY
 SELECT a.`id`, a.`title`, a.`description`, a.`price`, a.`article_group_id`, a.`parent_article_id`
 FROM `articles` a
+LEFT JOIN `article_groups` ag ON ag.`id`=a.`article_group_id`
 WHERE a.`store_id` = ${store_quoted}
-ORDER BY `title` ASC
+ORDER BY ag.`yorder`, ag.`title`, a.`title` ASC
 QUERY;
 
 	$articles = [];
@@ -191,4 +193,39 @@ VALUES
 QUERY;
 
     $shop_db->query($query);
+
+    return $shop_db->lastInsertId();
 }
+
+function remove_article($article_id) {
+    global $shop_db;
+
+    $article_quoted = $shop_db->quote($article_id);
+
+    $query = <<<QUERY
+DELETE FROM articles WHERE id = ${article_quoted}
+QUERY;
+
+    $shop_db->query($query);
+}
+
+function new_article_group($title, $description, $required, $yorder) {
+    global $shop_db;
+
+    $title_quoted = $shop_db->quote($title);
+    $description_quoted = $shop_db->quote($description);
+    $required_quoted = $shop_db->quote($required);
+    $yorder_quoted = $shop_db->quote($yorder);
+
+    $query = <<<QUERY
+INSERT INTO article_groups
+(title, description, required, yorder)
+VALUES
+(${title_quoted}, ${description_quoted}, ${required_quoted}, ${yorder_quoted})
+QUERY;
+
+    $shop_db->query($query);
+
+    return $shop_db->lastInsertId();
+}
+

@@ -1,0 +1,76 @@
+s Kuhmuhne
+
+t BurgerOptions
+  x Belag: Avocado @ 1,00
+  x Belag: Bacon @ 1,00
+  x Belag: Cheddar-Käse @ 1,00
+  x Belag: Guacamole @ 1,50
+  x Belag: Jalapenos
+  x Belag: ohne Tomaten
+  x Belag: ohne Zwiebeln
+  x Belag: Röstzwiebeln @ 0,50
+  x Belag: Spiegelei @ 1,00
+  x Belag: Ziegenkäse @ 2,00
+  o Garstufe: medium
+  o Garstufe: rare
+  o Garstufe: well done
+  x Beilage: Beilagensalat @ 3,20
+  x Beilage: extra Patty @ 4,00
+  x Beilage: Fritten @ 2,90
+  x Beilage: Fritten aus Süßkartoffeln + Sour Cremé @ 3,90
+
+o Burger: Big Mama @ 9,00
+  d Rindfleisch-Patty, Schinken, Röstzwiebeln, BBQ-Sauce,  Lolo Rosso Salat, Tomaten, Zwiebeln und frisch gebackene Brötchen  
+  i BurgerOptions
+
+o Burger: Cheeseburger @ 7,50
+  d Rindfleisch-Patty mit Cheddar-Käse, Lolo Rosso Salat, Tomaten, Zwiebeln, Kuhmuhne Burger Sauce und frisch gebackene Brötchen
+  i BurgerOptions
+
+o Burger: Fat Trucker @ 8,50
+  d Rindfleisch-Patty, Bacon ,Spiegelei, Lollo Rosso Salat, Tomaten, Zwiebeln, Kuhmuhne Burger Sauce und frisch gebackene Brötchen
+  i BurgerOptions
+
+o Burger: Hamburger @ 7,00
+  d Rindfleisch-Patty, Lollo Rosso Salat, Tomaten, Zwiebeln, Kuhmuhne Burger Sauce und frisch gebackene Brötchen
+  i BurgerOptions
+
+o Burger: Heart Attack @ 11,50
+  d 2x Rindfleisch-Patty, doppelt Käse, Chili,  Lollo Rosso Salat, Tomaten, Zwiebeln, Kuhmuhne Burger Sauce und frisch gebackene Brötchen
+  i BurgerOptions
+
+o Burger: Karma Burger @ 8,70
+  d Wildreis-Patty, Guacamole,  Lollo Rosso Salat, Tomaten, Zwiebeln, Kuhmuhne Burger Sauce und frisch gebackene Brötchen
+  i BurgerOptions
+
+o Burger: Mexi @ 8,50
+  d Rindfleisch-Patty, Guacamole und in Olivenöl gebratene Avocadoscheiben,  Lollo Rosso Salat, Tomaten, Zwiebeln, Kuhmuhne Burger Sauce und frisch gebackene Brötchen
+  i BurgerOptions
+
+o Burger: Trüffel Burger @ 13,90
+  d Rindfleisch-Patty mit gehobeltem Trüffel,  Lollo Rosso Salat, Tomaten, Zwiebeln, Kuhmuhne Burger Sauce und frisch gebackene Brötchen
+  i BurgerOptions
+
+o Burger: Ziegen Peter @ 8,50
+  d Karamellisiertes Ziegenkäse-Patty mit Feigensenf, Veggie,  Lollo Rosso Salat, Tomaten, Zwiebeln, Kuhmuhne Burger Sauce und frisch gebackene Brötchen
+  i BurgerOptions
+
+o Salat: Gambas Salat @ 15,90
+  d Frische Gambas in feinee Kräutermarinade mit Avocadocreme und Franks Hummer-Mayo. Dazu geröstetes Brot und  Balsamico Essig & Öl Dressing
+
+o Salat: Ziegen Peter Brot Salat @ 10,90
+  d Tomaten-Brot-Salat mit frisch gehacktem Rosmarin, Thymian, Petersilie. Kräutern. Dazu gratinierter Ziegenkäse mit getr. Tomaten und Feigensenf und Balsamico Essig & Öl Dressing
+
+o Beilage: Beilagensalat @ 3,20
+
+o Beilage: Pommes Frittes @ 2,90
+
+o Beilage: Pommes Frittes aus Süßkartoffeln + Sour Cream @ 3,90
+
+o Dip: Fabis Fabulous Sour Cream @ 1,00
+
+o Dip: Jalapeno-Thymian Salsa @ 1,00
+
+o Dip: Knoblauch Rosmarin Limetten Mayo @ 1,00
+
+o Dip: Smokey BBQ Lousiana Style @ 1,00

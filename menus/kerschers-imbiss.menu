@@ -1,0 +1,139 @@
+s Kerschers Imbiss
+
+t BeilageOptions
+  o Beilage: Beilagensalat
+  o Beilage: Portion Bratkartoffeln
+  o Beilage: Portion Kartoffelsalat
+  o Beilage: Portion Nudeln mit Bratensoße
+  o Beilage: Portion Pommes
+  o Beilage: Sauerkraut, Portion
+
+t WurstOptions
+  o Wurst: Bockwurst
+  o Wurst: Bratwurst
+
+o Fleischspieße, Currywurst, Bratwurst: 2 Original Fränkische Bratwürste mit Kraut und Brot @ 4,50
+
+o Fleischspieße, Currywurst, Bratwurst: 3 Original Fränkische Bratwürste mit Kraut @ 5,50
+
+o Fleischspieße, Currywurst, Bratwurst: Bockwurst im Brötchen @ 3,00
+
+o Fleischspieße, Currywurst, Bratwurst: Bockwurst mit Beilage @ 5,00
+  i BeilageOptions
+
+o Fleischspieße, Currywurst, Bratwurst: Currywurst mit Beilage @ 5,50
+  i WurstOptions
+  i BeilageOptions
+
+o Fleischspieße, Currywurst, Bratwurst: Currywurst mit Brötchen @ 3,50
+  i WurstOptions
+  x Röstzwiebeln: mit Röstzwiebeln
+
+o Fleischspieße, Currywurst, Bratwurst: Fleischkäse im Brötchen @ 2,20
+
+o Fleischspieße, Currywurst, Bratwurst: Fleischkäse mit Beilage @ 4,50
+  i BeilageOptions
+  x Spiegeleier: 2 Spiegeleier @ 1,00
+
+o Fleischspieße, Currywurst, Bratwurst: Fleischküchle im Brötchen mit Röstzwiebeln @ 2,20
+
+o Fleischspieße, Currywurst, Bratwurst: Fleischküchle im Sandwich mit Sauce, Salat, Tomate & Zwiebeln @ 3,50
+
+o Fleischspieße, Currywurst, Bratwurst: Fleischküchle mit Beilage
+  i BeilageOptions
+  o Menge: ein Stück @ 4,50
+  o Menge: zwei Stück @ 6,00
+
+o Fleischspieße, Currywurst, Bratwurst: Fleischspieß mit Beilage @ 7,00
+  i BeilageOptions
+
+o Fleischspieße, Currywurst, Bratwurst: Fleischspieß mit Brötchen @ 5,00
+
+o Fleischspieße, Currywurst, Bratwurst: große Bratwurst nach Thüringer Art im Brötchen @ 3,00
+
+o Fleischspieße, Currywurst, Bratwurst: große Bratwurst nach Thüringer Art mit Beilage @ 5,00
+  i BeilageOptions
+
+o Fleischspieße, Currywurst, Bratwurst: Hausgemachte Fleischsülze mit Bratkartoffeln @ 6,00
+  d nicht in den Wintermonaten
+
+o Fleischspieße, Currywurst, Bratwurst: Hausgemachte Fleischsülze mit Brot @ 4,50
+  d nicht in den Wintermonaten
+
+o Fleischspieße, Currywurst, Bratwurst: Original Fränkische Bratwurst im Brötchen
+  o Menge: ein Stück @ 2,00
+  o Menge: zwei Stück @ 3,00
+
+o Salat: Beilagensalat @ 2,50
+
+o Salat: Bratkartoffeln mit Salat @ 6,00
+
+o Salat: Salatteller
+  o Größe: groß @ 6,00
+  o Größe: normal @ 4,50
+
+o Schnitzel & Fisch: Cordon-Bleu vom Schwein mit Beilage @ 7,50
+  i BeilageOptions
+
+o Schnitzel & Fisch: Cordon-Bleu-Sandwich mit Sauce, Salat, Tomate & Zwiebeln @ 6,00
+
+o Schnitzel & Fisch: Fischfilet mit Beilage & Remoulade @ 7,50
+  i BeilageOptions
+
+o Schnitzel & Fisch: Fischfilet-Sandwich mit Remoulade, Salat und Tomate & Zwiebeln @ 6,00
+
+o Schnitzel & Fisch: Hähnchenschnitzel mit Beilage @ 6,00
+  i BeilageOptions
+
+o Schnitzel & Fisch: Hähnchenschnitzel-Sandwich mit Sauce, Salat, Tomate & Zwiebeln @ 4,50
+
+o Schnitzel & Fisch: Schnitzel (paniert) mit Beilage @ 7,50
+  i BeilageOptions
+
+o Schnitzel & Fisch: Schnitzel im Brötchen mit Röstzwiebeln @ 5,00
+
+o Schnitzel & Fisch: Schnitzel-Sandwich mit Sauce, Salat, Tomate & Zwiebeln
+  o Größe: klein @ 4,00
+  o Größe: normal @ 6,00
+
+o Steak & Co.: 3 Spiegeleier mit Bratkartoffeln @ 4,50
+
+o Steak & Co.: Hackbraten mit Beilage @ 5,50
+  i BeilageOptions
+
+o Steak & Co.: Hähnchenbruststeak mit Beilage @ 6,00
+  i BeilageOptions
+
+o Steak & Co.: Halssteak (ca. 200g) im Brötchen mit Röstzwiebeln @ 4,50
+
+o Steak & Co.: Halssteak (ca. 200g) mit Beilage & Röstzwiebeln @ 6,50
+  i BeilageOptions
+
+o Steak & Co.: Steak-Sandwich mit Käse, BBQ-Sauce, Salat & Zwiebeln @ 5,50
+
+o Tagesgericht: Gulasch mit Nudeln @ 5,50
+  d nur Montag und Freitag
+
+o Tagesgericht: Hähnchenkeule mit Kartoffelsalat @ 4,50
+  d nur Montag
+
+o Tagesgericht: Schäufele mit Kloß @ 7,50
+  d nur Donnerstag
+
+o Tagesgericht: Schweinebraten mit Kloß @ 6,50
+  d nur Dienstag
+
+o Tagesgericht: Spagetti Bolognese @ 5,50
+  d nur Mittwoch
+
+o Beilage: Beilagensalat @ 2,50
+
+o Beilage: Portion Bratkartoffeln @ 3,00
+
+o Beilage: Portion Kartoffelsalat @ 3,00
+
+o Beilage: Portion Nudeln mit Bratensoße @ 3,00
+
+o Beilage: Portion Pommes @ 2,50
+
+o Beilage: Sauerkraut, Portion @ 2,50

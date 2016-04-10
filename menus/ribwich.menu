@@ -1,0 +1,37 @@
+s RibWich
+
+t BurgerOptions
+  x Belag: Jalapeños
+  x Belag: Süße Gurken
+  x Belag: Zwiebeln
+  x Soße: BBQ-Sauce
+
+o Burger: LC Cup
+  d LowCarb, ohne Bun
+  i BurgerOptions
+  o Größe: halbe Portion @ 3,70
+  o Größe: normale Portion @ 6,10
+
+o Burger: RibWich
+  d geräucherte Schweinerippe auf RibWich-Bun
+  i BurgerOptions
+  o Größe: halbe Portion @ 4,20
+  o Größe: normal @ 7,90
+
+o Burger: TurkeyDOG @ 4,00
+  d geräucherte Putenwürstchen auf 1/2 RibWich-Bun
+  i BurgerOptions
+
+o Nachtisch: Doritos @ 1,50
+  o Chipsart: Chilli Heatwave
+  o Chipsart: Cool Original
+  o Chipsart: Tangy Cheese
+
+o Nachtisch: Oreos @ 1,50
+
+o Nachtisch: Reese's Cups @ 1,50
+
+o Nachtisch: Skittles @ 1,50
+
+o Salat: Coleslaw @ 2,30
+  d Kraut und Karotten mit hausgemachtem Dressing

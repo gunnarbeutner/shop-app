@@ -1,0 +1,597 @@
+s Saigon 2
+
+o Ente: Vịt chua ngọt
+  d 304; knuspr. Ente mit Gemüse und süß-sauer-Soße
+  o Größe: klein @ 10,42
+  o Größe: normal @ 13,90
+
+o Ente: Vịt nấu Càri
+  d 302; knuspr. Ente m Curry, Gemüse, Pilzen, verfeinert mit Kokosmilch  und Cashew-Kernen (scharf)
+  o Größe: klein @ 10,87
+  o Größe: normal @ 14,50
+
+o Ente: Vịt nướng Càri
+  d 305; knuspr. Ente mit Gemüse, Brocoli, Curry, Kokosmilch (scharf); Soße wird extra serviert
+  o Größe: klein @ 10,87
+  o Größe: normal @ 14,50
+
+o Ente: Vịt nướng Sốt Đậu Phộng
+  d 308; knuspr. gegrillte Ente mit Gemüse und  Erdnusssoße
+  o Größe: klein @ 10,42
+  o Größe: normal @ 13,90
+
+o Ente: Vịt Rôti
+  d 303; (Spezialität des Hauses)
+  o Größe: klein @ 11,17
+  o Größe: normal @ 14,90
+
+o Ente: Vịt xào Thập cẩm
+  d 301; knuspr.  Ente m Gemüse, Pilzen
+  o Größe: klein @ 10,27
+  o Größe: normal @ 13,70
+
+o Ente: Vịt xào Xả Nghệ
+  d 306; knusprig gegrillte Ente mit Zitronengras,  Curcuma, Pilzen, Gemüse, Sellerie,  (pikant)
+  o Größe: klein @ 10,50
+  o Größe: normal @ 14,00
+
+o Ente: Vịt xào Xả Ớt
+  d 307; knusprig gegrillte Ente mit Zitronengras, Peperoni,  Sellerie und Gemüse,  (scharf)
+  o Größe: klein @ 10,50
+  o Größe: normal @ 14,00
+
+o Extrawünsche: gebr. Nudeln mit Ei @ 3,10
+  d 841
+
+o Extrawünsche: gebr. Reis mit Knoblauch und Ei @ 3,10
+  d 840
+
+o Extrawünsche: gedämpfter Reis @ 2,10
+  d 483
+
+o Extrawünsche: gekochte Reisnudeln @ 2,20
+  d 844
+
+o Häppchen: Ba món Thịt Nướng @ 4,70
+  d 127; Rindfleischspieße gegrillt mit 5 speziellen Gewürzen <> Hühnerspieße gegrillt mit Barbecue <> Garnelenspieße gegrillt mit Curry, verfeinert mit Erdnuss; Serviert m. Asia Kräutern und Tamarinde-Soße
+
+o Häppchen: Bánh Phồng Tôm @ 2,20
+  d 124; Crab chips
+
+o Häppchen: Bốn món ăn chơi @ 9,40
+  d 126; für 2 Personen; Panierte Garnelen  <>  Hühnerfleisch mit Barbecue-Spießen  <>  Rindfleisch gerollt mit Lốp-Blätter <> Frittierte Mehltaschen gefüllt Krabben und Hühnerfleisch; Serviert m. Asia Kräutern, Fischsoße u. Chili for chicken-Soße
+
+o Häppchen: Chả Giò @ 3,20
+  d 120; Vietnam - Frühlingsrolle  m. Fleisch, Gemüse, Soße
+
+o Häppchen: Chả Giò Cua @ 3,30
+  d 121; Vietnam - Frühlingsrolle  m. Krebsleisch, Soße
+
+o Häppchen: Gỏi Cuốn @ 4,20
+  d 122; Vietnam - Sommerrolle m. Schweinefleisch ......  Krabben,  Reisnudeln, Schaloten, Kräutern  in Reispapier, Soße
+
+o Häppchen: Hoành Thánh chiên @ 3,30
+  d 129; Frit. Mehltaschen gefüllt, Soße
+
+o Häppchen: Tôm lăn Bột @ 4,30
+  d 128; Panierte Garnelen, Asia Kräutern, Soße
+
+o Hühnerfleisch: Càri Gà
+  d 206; Hühnerbrust gebraten mit Curry,  Kokosmilch, Pilzen, Gemüse und Erdnüsse (scharf)
+  o Größe: klein @ 8,17
+  o Größe: normal @ 10,90
+
+o Hühnerfleisch: Gà lăn Bột
+  d 212; Hühnerbrust knusprig paniert (ohne Gemüse) serviert mit separater Soße
+  o Größe: klein @ 7,65
+  o Größe: normal @ 10,20
+
+o Hühnerfleisch: Gà nướ ng Nước Dừa
+  d 201; Hühnerbrust in Kokosmilch, gegrillt m. Gemüse, Erdnüsse und Fischsoße
+  o Größe: klein @ 8,40
+  o Größe: normal @ 11,20
+
+o Hühnerfleisch: Gà nướng Sốt Đậu Phộng
+  d 211; Hühnerbrust gegrillt mit Gemüse, serviert mit Erdnuss-Soße
+  o Größe: klein @ 8,40
+  o Größe: normal @ 11,20
+
+o Hühnerfleisch: Gà nướng Vỉ chua ngọt
+  d 205; Hühnerbrust gegrillt mit Gemüse, serviert mit süß-sauer-Soße
+  o Größe: klein @ 8,40
+  o Größe: normal @ 11,20
+
+o Hühnerfleisch: Gà xào Chao
+  d 207; Hühnerbrust m Gemüse, Sojakäse, Pilzen, verfeinert mit Kokosmilch (pikant)
+  o Größe: klein @ 8,10
+  o Größe: normal @ 10,80
+
+o Hühnerfleisch: Gà xào Chua ngọt
+  d 204; Hühnerbrust m Ananas, Tomaten, Gurken, Sellerie (Pikant)
+  o Größe: klein @ 7,35
+  o Größe: normal @ 9,80
+
+o Hühnerfleisch: Gà xào Gừng
+  d 209; Hühnerbrust mit Ingwer, Knoblauch, Zwiebeln (scharf)
+  o Größe: klein @ 8,02
+  o Größe: normal @ 10,70
+
+o Hühnerfleisch: Gà xào Lăn
+  d 203; Hühnerbrust  gebraten mit Gemüse, Pilzen, Glasnudeln, Zitronengras, Curcuma, Kokosmilch, Erdnüsse
+  o Größe: klein @ 8,10
+  o Größe: normal @ 10,80
+
+o Hühnerfleisch: Gà xào Rau
+  d 210; gebr. Hühnerbrust m Gemüse, Pilzen
+  o Größe: klein @ 7,50
+  o Größe: normal @ 10,00
+
+o Hühnerfleisch: Gà xào Xả Nghệ
+  d 202; Hühnerbrust gebraten mit Curcuma, Zitronengras, Sellerie, Pilzen und Gemüse (pikant)
+  o Größe: klein @ 8,02
+  o Größe: normal @ 10,70
+
+o Hühnerfleisch: Gà xào Xả Ớt
+  d 208; Hühnerbrust gebraten mit Gemüse, Pilzen, Zitronengras,  Sellerie,  Peperoni (scharf)
+  o Größe: klein @ 8,02
+  o Größe: normal @ 10,70
+
+o Meeresfrüchte: Cá chiên Xả Nghệ
+  d 509; Fischfilet gegrillt mit Zitronengras mit Gemüse, Erdnuss-Soße
+  o Größe: klein @ 10,27
+  o Größe: normal @ 13,70
+
+o Meeresfrüchte: Càri Cá
+  d 508; Fischfilet in Curry-Kokosmilch, verfeinert mit Gemüse, Erdnüsse (scharf)
+  o Größe: klein @ 9,37
+  o Größe: normal @ 12,50
+
+o Meeresfrüchte: Càri Tôm
+  d 504; gebr. Königsgarnelen in Curry-Kokosmilch mit Pilzen, Gemüse und Cashew-Kerne verfeinert (scharf)
+  o Größe: klein @ 11,77
+  o Größe: normal @ 15,70
+
+o Meeresfrüchte: Càri Đồ Biển
+  d 513; Garnelen,  Fischfilet, Muscheln in Curry-Kokosmilch, Gemüse, Erdnüsse (scharf)
+  o Größe: klein @ 10,50
+  o Größe: normal @ 14,00
+
+o Meeresfrüchte: Cơm Chiên Nồi Đất
+  d 502; gebr. Reis mit Ei, Meeresfrüchte, Schweinefleisch, Hühnerfleisch, Gemüse,  und Soße (Pikant)
+  o Größe: klein @ 9,37
+  o Größe: normal @ 12,50
+
+o Meeresfrüchte: Mực Xả Nghệ
+  d 515; gebr.  Tintenfisch mit Zitronengras, Curcuma, Sellerie, Pilzen, Gemüse (pikant)
+  o Größe: klein @ 9,00
+  o Größe: normal @ 12,00
+
+o Meeresfrüchte: Mực Xào Khóm
+  d 507; Gebr. Tintenfisch m Sellerie, Ananas, Tomaten, Gurken in süß-sauer-scharf-Soße (scharf)
+  o Größe: klein @ 9,00
+  o Größe: normal @ 12,00
+
+o Meeresfrüchte: Mực Xào Xả Ớt
+  d 514; gebr. Tintenfisch mit Zitronengras, Peperoni, Pilzen, Sellerie und Gemüse (scharf)
+  o Größe: klein @ 9,00
+  o Größe: normal @ 12,00
+
+o Meeresfrüchte: Mỳ Xào Tôm
+  d 505; gebr. Nudeln mit Garnelen, Ei, Gemüse, Schalotten, Sojakeimlingen
+  o Größe: klein @ 9,00
+  o Größe: normal @ 12,00
+
+o Meeresfrüchte: Tôm nướng
+  d 511; Riesengarnelen gegrillt, abgeschmeckt mit Zitronengras.  
+  o Größe: klein @ 12,75
+  o Größe: normal @ 17,00
+
+o Meeresfrüchte: Tôm Rim
+  d 501; Königsgarnelen in eigen. Saft geschmort mit Gemüse, serviert in Tontopf (Pikant)
+  o Größe: klein @ 11,77
+  o Größe: normal @ 15,70
+
+o Meeresfrüchte: Đồ Biển nướng
+  d 503; Grillplatte mit Gemüse und einer Variation aus: Fischfilet, Königsgarnelen, Muscheln, Tintenfisch, Soße
+  o Größe: klein @ 11,70
+  o Größe: normal @ 15,60
+
+o Meeresfrüchte: Đồ Biển rim
+  d 506; Meeresfrüchte-Variation aus Garnelen, Muscheln, Tintenfisch, Fischfilet, Gemüse mit Curcuma-Kokosmilch
+  o Größe: klein @ 10,50
+  o Größe: normal @ 14,00
+
+o Mittagsangebot: Càri @ 6,80
+  d M6; gebratenes Gemüse mit Curry, Kokosmilch, Fleisch oder Garnele und Reis - scharf
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+  o Fleischsorte: Hühnerfleisch
+  o Fleischsorte: Rindfleisch @ 0,70
+  o Fleischsorte: Schweinefleisch
+  o Fleischsorte: Tintenfisch @ 0,70
+
+o Mittagsangebot: Càri Chay (Mittagsangebot) @ 5,50
+  d M18; gebratenes Gemüse mit Curry, Tofu, Kokos und Reis - scharf
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Càri Vịt @ 7,90
+  d M15; knusprige Ente mit Gemüse, Curry, Kokosmilch und Reis - scharf
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Chay Xả Nghệ @ 5,50
+  d M19; gebratenes Gemüse mit Zitronengras, Curcuma, Tofu und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Cơm Rang @ 5,50
+  d M2; gebratener Reis mit Ei und Gemüse, Fleischsorte nach Wahl
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+  o Fleischsorte: Hühnerfleisch
+  o Fleischsorte: Rindfleisch @ 1,00
+  o Fleischsorte: Schweinefleisch
+
+o Mittagsangebot: Gà kho Gừng @ 6,00
+  d M10; gebratenes Hühnerfleisch mit Zwiebeln, Ingwer, Lauch und Reis - scharf
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Gà Lăn Bột Chiên @ 6,80
+  d M22; panierte Hühnerbrust mit süß-saurer Sauce und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Heo Kho Tiêu (Mittagsangebot) @ 7,00
+  d M9; gebratenes Schweinefleisch mit Knoblauch, Pfeffer, Lauch, Zwiebeln und Reis - scharf
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Mì Xào @ 5,50
+  d M1; gebratene Nudeln mit Ei, Gemüse und Fleischsorte nach Wahl
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+  o Fleischsorte: Hühnerfleisch
+  o Fleischsorte: Rindfleisch @ 1,00
+  o Fleischsorte: Schweinefleisch
+
+o Mittagsangebot: Mì xào Chay @ 5,50
+  d M21; gebratene Nudeln mit Gemüse, Ei und Tofu
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Vịt xào Lăn @ 7,90
+  d M14; knusprige Ente mit Gemüse, Kokosmilch, Zitronengras, Curcuma, Erdnüssen und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Vịt xào Rau @ 7,80
+  d M11; knusprige Ente mit verschiedenem Gemüse und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Vịt xào Xả Nghệ (Mittagsangebot) @ 7,90
+  d M13; knusprige Ente mit Gemüse, Zitronengras, Curcuma und Reis - pikant
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Vịt xào Xả Ớt (Mittagsangebot) @ 7,90
+  d M12; knusprige Ente mit Gemüse, Zitronengras, Peperoni und Reis - scharf
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Xào chua ngọt @ 5,80
+  d M4; mit gebratenem Sellerie, Ananas, Gurken, süß-saurer Sauce, Fleischsorte nach Wahl und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+  o Fleischsorte: Hühnerfleisch
+  o Fleischsorte: Rindfleisch @ 1,00
+  o Fleischsorte: Schweinefleisch
+
+o Mittagsangebot: Xào Lăn @ 6,20
+  d M5; gebratenes Gemüse mit Kokosmilch, Zitronengras, Curcuma, Erdnüssen, Fleischsorte nach Wahl und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+  o Fleischsorte: Hühnerfleisch
+  o Fleischsorte: Rindfleisch @ 1,00
+  o Fleischsorte: Schweinefleisch
+
+o Mittagsangebot: Xào Xả Nghệ @ 6,00
+  d M7; gebratenes Gemüse mit Zitronengras, Curcuma, Fleisch oder Fisch und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+  o Fleischsorte: Hühnerfleisch
+  o Fleischsorte: Rindfleisch @ 1,00
+  o Fleischsorte: Schweinefleisch
+  o Fleischsorte: Tintenfisch @ 1,00
+
+o Mittagsangebot: Xào Xả Ớt @ 6,00
+  d M8; gebratenes Gemüse mit Zitronengras, Fleisch oder Fisch und Reis - scharf
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+  o Fleischsorte: Hühnerfleisch
+  o Fleischsorte: Rindfleisch @ 1,00
+  o Fleischsorte: Schweinefleisch
+  o Fleischsorte: Tintenfisch @ 1,00
+
+o Mittagsangebot: Đồ Chay Xả Ớt @ 5,50
+  d M20; gebratenes Gemüse mit Zitronengras, Peperoni, Tofu und Reis - scharf
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Đồ Chay Xào @ 5,50
+  d M16; gebratenes Gemüse mit Tofu und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Đồ Chay Xào Lăn @ 5,50
+  d M17; gebratenes Gemüse mit Kokosmilch, Zitronengras, Curcuma, Erdnüssen, Tofu und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+
+o Mittagsangebot: Đồ Xào @ 5,80
+  d M3; gebratenes Gemüse mit Fleischsorte nach Wahl und Reis
+  o Beilage: Frühlingsrollen
+  o Beilage: Suppe
+  o Fleischsorte: Hühnerfleisch
+  o Fleischsorte: Rindfleisch @ 1,00
+  o Fleischsorte: Schweinefleisch
+
+o Nachtisch: Banane in Klebereis gedämpft umwickelt in Bananenblatt @ 2,50
+  d 337
+
+o Nachtisch: Banane in Klebereistaschen m Erdnuss, Kokosmilch @ 3,80
+  d 336
+
+o Nachtisch: Banane in Kokosmilch, Perlsago und Erdnuss @ 3,50
+  d 335
+
+o Nachtisch: gebackene Banane m. Honig, Vanilleeis u. Erdnuss  @ 3,30
+  d 334
+
+o Reis- & Nudelgerichte: Bún Bò Huế
+  d 444; Spezialität  aus Huế; große Reisnudelnsuppe  m Rindfleisch, Zitronengras, Kräutern, Spezialgewürze (sehr scharf)
+  o Größe: klein @ 6,45
+  o Größe: normal @ 8,80
+
+o Reis- & Nudelgerichte: Cơm Chiên Gà
+  d 832; gebr. Reis mit Hühnerfleisch, Gemüse, Ei
+  o Größe: klein @ 7,35
+  o Größe: normal @ 9,80
+
+o Reis- & Nudelgerichte: Cơm Chiên Rau
+  d 831; gebr. Reis mit Gemüse und Ei
+  o Größe: klein @ 6,60
+  o Größe: normal @ 8,80
+
+o Reis- & Nudelgerichte: Cơm Chiên Tôm
+  d 833; gebr. Reis  mit Garnelen, Gemüse, Ei
+  o Größe: klein @ 9,00
+  o Größe: normal @ 12,00
+
+o Reis- & Nudelgerichte: Hủ Tiếu Xào Rau
+  d 836; gebr. Bandreisnudeln  m Gemüse, Ei
+  o Größe: klein @ 6,67
+  o Größe: normal @ 8,90
+
+o Reis- & Nudelgerichte: Hủ Tiếu Xào Thịt Bò
+  d 837; gebr. Bandreisnudeln mit Rindfleisch, Gemüse,  Ei
+  o Größe: klein @ 8,17
+  o Größe: normal @ 10,90
+
+o Reis- & Nudelgerichte: Mì Xào Gà
+  d 835; gebr. Nudeln mit Hühnerfleisch, Gemüse,  Ei
+  o Größe: klein @ 7,35
+  o Größe: normal @ 9,80
+
+o Reis- & Nudelgerichte: Mì Xào Rau
+  d 834; gebr. Nudeln mit Gemüse, Schalotten, Ei
+  o Größe: klein @ 6,60
+  o Größe: normal @ 8,80
+
+o Reis- & Nudelgerichte: Phở Bò
+  d 666; Spezialität aus Hà Nội; große Reisnudelnsuppe  m Rindfleisch, Zimt, Sternanis, Kräutern
+  o Größe: klein @ 6,45
+  o Größe: normal @ 8,60
+
+o Rindfleisch: Bò nướng  Vỉ
+  d 401; gegrilltes Rindfleisch mit Zitronengras serviert mit Reisnudeln, asiatischen Kräutern und Fisch-Soße
+  o Größe: klein @ 9,37
+  o Größe: normal @ 12,50
+
+o Rindfleisch: Bò Nướng Vỉ Xá Xíu
+  d 405; gegrilltes Rindfleisch  mit asiatischen Barbecue-Gewürzen; Beilage: Reisnudeln, asiatischen Kräutern und Fisch-Soße
+  o Größe: klein @ 9,37
+  o Größe: normal @ 12,50
+
+o Rindfleisch: Bò Saté
+  d 406; Rindfleisch m Gemüse, Pilzen, verfeinert mit Kokosmilch-Saté-Soße
+  o Größe: klein @ 8,40
+  o Größe: normal @ 11,20
+
+o Rindfleisch: Bò Xào Cần
+  d 408; gebr. Rindfleisch m Sellerie, frische Ananas in süß-sauer-Soße
+  o Größe: klein @ 8,02
+  o Größe: normal @ 10,70
+
+o Rindfleisch: Bò Xào Lăn
+  d 403; Rindfleisch m Zitronengras, Curcuma, Erdnüsse, Pilzen, Glasnudeln, Kokosmilch
+  o Größe: klein @ 8,40
+  o Größe: normal @ 11,20
+
+o Rindfleisch: Bò Xào Xả Nghệ
+  d 409; gebr. Rindfleisch mit Zitronengras, Sellerie, Curcuma, Pilzen, Gemüse (pikant)
+  o Größe: klein @ 8,18
+  o Größe: normal @ 10,90
+
+o Rindfleisch: Bò Xào Xả Ớt
+  d 402; Rindfleisch m Zitronengras, Peperoni, Sellerie, Pilzen und Gemüse (scharf)
+  o Größe: klein @ 8,25
+  o Größe: normal @ 11,00
+
+o Rindfleisch: Bún Bò
+  d 407; Rindfleisch m Zitronengras, Erdnüsse, Zwiebeln, serviert mit Reisnudeln, Kräutern,  Fisch-Soße
+  o Größe: klein @ 8,40
+  o Größe: normal @ 11,20
+
+o Rindfleisch: Càri Bò
+  d 404; Rindfleisch m Gemüse, Curry, Kokosmilch, Erdnüsse, Pilzen (scharf)
+  o Größe: klein @ 8,40
+  o Größe: normal @ 11,20
+
+o Salat: Bò Bóp Thấu @ 3,90
+  d 102; Rindfleischsalat mit Sellerie, Asia Kräutern, Sojakeimlingen, Peperoni und Erdnuss, scharf
+
+o Salat: Gỏi Bún Tầu @ 4,50
+  d 106; Glasnudelnsalat mit Sellerie, Tintenfisch,  Asia Kräutern und  Erdnuss, (scharf)
+
+o Salat: Gỏi Gà @ 3,50
+  d 104; Hühnerfleischsalat mit Weißkohl, Karotten,  Asia Kräutern und Erdnuss
+
+o Salat: Sàlách Bò @ 3,90
+  d 103; Rindfleischsalat mit Eisbergsalat, Tomaten, Gurken, Asia Kräuter, Erdnuss,  (Pikant)
+
+o Schweinefleisch: Bún Chả
+  d 610; gegrilltes Schweinefleisch traditionelles   Essen aus Vietnam serviert mit Reisnudeln, Salat, Kräutern, Fisch-Soße
+  o Größe: klein @ 8,40
+  o Größe: normal @ 11,20
+
+o Schweinefleisch: Bún Chả Giò
+  d 603; Vietnam Frühlingsrolle serviert mit Reisnudeln, Kräutern, Sojakeimlingen und Fisch-Soße
+  o Größe: klein @ 7,12
+  o Größe: normal @ 9,50
+
+o Schweinefleisch: Heo Kho Tiêu
+  d 604; gebr. Schweinefleisch mit Knoblauch, Pfeffer, Lauch, Zwiebeln (scharf )
+  o Größe: klein @ 7,72
+  o Größe: normal @ 10,30
+
+o Schweinefleisch: Heo nướng Mè
+  d 602; gegrilltes Schweinefleisch mit Sesamsamen, serviert mit Reisnudeln, Kräutern, Fisch-Soße
+  o Größe: klein @ 8,25
+  o Größe: normal @ 11,00
+
+o Schweinefleisch: Heo Nướng Xá Xíu
+  d 601; gegrilltes Schweinefleisch in Barbecue-Gewürze mit Gemüse, serviert mit Reisnudeln, asiatischen Kräutern, süß-sauer- Fisch-Soße
+  o Größe: klein @ 8,62
+  o Größe: normal @ 11,50
+
+o Schweinefleisch: Heo Xào Lăn
+  d 607; gebr. Schweinefleisch m. Gemüse, Zitronengras,  Pilzen, Glasnudeln, Erdnuss in Curcuma-Kokos-Soße
+  o Größe: klein @ 8,02
+  o Größe: normal @ 10,70
+
+o Schweinefleisch: Heo Xào Rau
+  d 605; gebr. Schweinefleisch mit verschiedenen Gemüsen
+  o Größe: klein @ 7,50
+  o Größe: normal @ 10,00
+
+o Schweinefleisch: Heo Xào Thơm
+  d 606; gebr. Schweinefleisch m Sellerie, Ananas, Gurken, Tomaten in Süß-Sauer-Soße
+  o Größe: klein @ 7,72
+  o Größe: normal @ 10,30
+
+o Schweinefleisch: Heo Xào Xả Nghệ
+  d 609; gebr. Schweinefleisch mit Zitronengras, Sellerie, Curcuma,  Pilzen, Gemüse (pikant)
+  o Größe: klein @ 7,87
+  o Größe: normal @ 10,50
+
+o Schweinefleisch: Heo Xào Xả Ớt
+  d 608; gebr. Schweinefleisch mit Zitronengras, Sellerie, Peperoni,  Pilzen, Gemüse (scharf)
+  o Größe: klein @ 7,87
+  o Größe: normal @ 10,50
+
+o Spezialitäten: Bò nướng  Lá Lốt cuốn Bánh Tráng @ 13,60
+  d 711; Rinderhackfleisch in Lốp-Blätter gewickelt und gegrillt
+
+o Spezialitäten: Đồ Biển cuốn Bánh Tráng @ 15,80
+  d 710; gegrillte Königsgarnelen mit Tintenfisch, Rindfleisch, Muscheln, Fischfilet, Gemüse und Zitronengras verfeinert - auf Eisenplatte
+
+o Suppe: Bún Bò Huế (Suppe) @ 3,80
+  d 4; Reisnudelnsuppe mit Rindfleisch, Zitronengras, Spezialgewürze, Kräutern,  sehr scharf
+
+o Suppe: Canh chua Cá @ 3,20
+  d 2; Fischsuppe mit Asia Kräutern,Tomaten, Ananas, Sojakeimlingen in Tamarindebrühe,  scharf
+
+o Suppe: Canh chua nước Dừa @ 3,80
+  d 11; Garnelensuppe mit Kokosmilch, Tomaten, Ananas, Sojakeimlingen, Asia Kräutern, scharf
+
+o Suppe: Canh chua Thịt Bò @ 3,20
+  d 1; Rindfleischsuppe m. Asia Kräutern, Tomaten, Ananas, Sojakeimlingen in Tamarindebrühe, scharf
+
+o Suppe: Canh chua Tôm @ 3,70
+  d 3; Garnelensuppe mit Asia Kräutern, Tomaten, Ananas, Sojakeimlingen in Tamarindebrühe,  scharf
+
+o Suppe: HỦ TIẾU @ 3,80
+  d 7; Bandreisnudelnsuppe mit Garnelen, Schweinefleisch, Schaloten, Koriander
+
+o Suppe: Miến Gà @ 3,20
+  d 9; Glasnudelnsuppe mit Hühnerfleisch, Morcheln, Strohpilz, Koriander
+
+o Suppe: Mỳ Tôm Thịt @ 3,80
+  d 8; Nudelnsuppe mit Garnelen, Schweinefleisch, Schaloten, Koriander
+
+o Suppe: PHỞ @ 3,60
+  d 6; Bandreisnudelnsuppe mit Rindfleisch, abgeschmeckt mit Zimt, Sternanis und Kräutern
+
+o Suppe: Sủi Cảo @ 3,20
+  d 10; Mehltaschensuppe gefüllt mit Krabben, Morcheln,  verfeinert mit Koriander
+
+o Vegetarisch: Bún Chả giò Chay
+  d 811; Frittierte veg. Frühlingsrolle mit Reisnudeln, asiatischen Kräutern serviert mit Soja-Soße
+  o Größe: klein @ 6,67
+  o Größe: normal @ 8,90
+
+o Vegetarisch: Càri Chay
+  d 813; Vegetarisches Cury mit Tofu,  Pilzen, Gemüse, Erdnuss in Kokosmilch (scharf)
+  o Größe: klein @ 7,87
+  o Größe: normal @ 10,50
+
+o Vegetarisch: Giá xào Gừng
+  d 825; gebr. Sojakeimling  mit Ingwer, Knoblauch (scharf)
+  o Größe: klein @ 6,45
+  o Größe: normal @ 8,60
+
+o Vegetarisch: Rau Xào Bún Tầu
+  d 814; gebr. Gemüse m Tofu, Glasnudeln
+  o Größe: klein @ 6,97
+  o Größe: normal @ 9,30
+
+o Vegetarisch: Rau xào Chao
+  d 819; gebr versch. Gemüse mit Tofu, Pilzen in Sojakäse-Kokosmilch-Soße
+  o Größe: klein @ 7,50
+  o Größe: normal @ 10,00
+
+o Vegetarisch: Rau xào Tương
+  d 818; gebr. versch. Gemüse mit Tofu, Pilzen, Peperoni in Bohnensoße und Kokosmilch (scharf)
+  o Größe: klein @ 7,50
+  o Größe: normal @ 10,00
+
+o Vegetarisch: Đồ Chay xào Lăn
+  d 816; gebr. versch. Gemüse mit Tofu, Zitronengras, Pilzen, Erdnuss, Glasnudeln, Curcuma in Kokosmilch
+  o Größe: klein @ 7,87
+  o Größe: normal @ 10,50
+
+o Vegetarisch: Đồ Chay xào Xả Ớt
+  d 817; gebr. versch. Gemüse mit, Tofu, Zitronengras, Pilzen, Sellerie, Peperoni (scharf)
+  o Größe: klein @ 7,12
+  o Größe: normal @ 9,50
+
+o Vorspeise: Canh Chua Chay @ 2,90
+  d 803; veg. Suppe m Tofu, sauer-scharf mit Ananas, Tomaten, Sojakeimling (scharf)
+
+o Vorspeise: Canh Chua Chay nước Dừa @ 3,20
+  d 802; veg. Suppe mit Kokosmilch, Tofu, Ananas, Tomaten, Sojakeimling (sauer-scharf)
+
+o Vorspeise: Canh Rau Chay @ 2,80
+  d 801; veg. Suppe m Gemüse, Pilzen
+
+o Vorspeise: Chả Giò Chay @ 2,90
+  d 809; veg. Frühlingsrolle mit Gemüse, Soße
+
+o Vorspeise: Gỏi cuốn Chay @ 3,80
+  d 808; Rolle mit Kohlrabi, Karotten, Tofu, Kräutern im Reispapier mit Fisch-Soße
+
+o Vorspeise: Salách Chay @ 3,10
+  d 807; Eisbergsalat, Gurken, Tomaten mit Kräutern, Erdnüsse (pikant)

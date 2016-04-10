@@ -1,0 +1,414 @@
+s Joey's Pizza
+
+t DipOptions
+  x Dip: Aioli @ 0,99
+    d 80 mL-Becher
+  x Dip: Knoblauch-Dip @ 0,99
+    d 80 mL-Becher
+  x Dip: Kräuterremoulade @ 0,99
+    d 80 mL-Becher
+
+t PastaOptions
+  o Nudelart: Penne
+  o Nudelart: Spaghetti
+
+t PizzaCommonOptions
+  o Größe: Classic
+    d ⌀ 25 cm
+  o Größe: Medium
+    d ⌀ 28 cm
+  o Größe: Large
+    d ⌀ 32 cm
+  x Weitere Zutaten: Ananas @ 0,99
+  x Weitere Zutaten: Bacon @ 1,49
+  x Weitere Zutaten: Balsamico-Creme @ 0,99
+  x Weitere Zutaten: Basilikum-Pesto @ 0,99
+  x Weitere Zutaten: Broccoli @ 0,99
+  x Weitere Zutaten: Bruschetta-Mix @ 0,99
+  x Weitere Zutaten: Champignons @ 0,99
+  x Weitere Zutaten: Cherrytomaten @ 1,49
+  x Weitere Zutaten: Chilisalami @ 1,49
+  x Weitere Zutaten: Curry-Sauce @ 0,99
+  x Weitere Zutaten: Dänische Gurken @ 0,99
+  x Weitere Zutaten: Dänische Remoulade @ 0,99
+  x Weitere Zutaten: Ei, gekocht @ 0,99
+  x Weitere Zutaten: Frühlingszwiebeln @ 0,99
+  x Weitere Zutaten: Garnelen, Knob.-Öl mariniert@ 2,19
+  x Weitere Zutaten: Grana Padano D.O.P. @ 1,79
+  x Weitere Zutaten: Grüner Spargel @ 1,49
+  x Weitere Zutaten: Hinterschinken @ 1,49
+  x Weitere Zutaten: Hirtenkäse @ 1,79
+  x Weitere Zutaten: Hähnchenbrust @ 1,79
+  x Weitere Zutaten: Jalapeños (scharf) @ 0,99
+  x Weitere Zutaten: Käse-Mischung @ 1,79
+  x Weitere Zutaten: Knoblauch in Öl @ gratis
+  x Weitere Zutaten: Mailänder-Salami @ 1,79
+  x Weitere Zutaten: Mais @ 0,99
+  x Weitere Zutaten: Mozzarella @ 1,79
+  x Weitere Zutaten: Oliven @ 0,99
+  x Weitere Zutaten: Paprika @ 0,99
+  x Weitere Zutaten: Peperoni rot frisch @ 0,99
+  x Weitere Zutaten: Pizza Chilis @ gratis
+  x Weitere Zutaten: Pulled Beef @ 1,79
+  x Weitere Zutaten: Pute @ 1,79
+  x Weitere Zutaten: Rinderhack @ 1,49
+  x Weitere Zutaten: Rindersteakstreifen @ 1,79
+  x Weitere Zutaten: Rote Zwiebeln @ 0,99
+  x Weitere Zutaten: Rucola @ 1,49
+  x Weitere Zutaten: Röstzwiebeln @ 0,99
+  x Weitere Zutaten: Salami @ 1,49
+  x Weitere Zutaten: Sauce hollandaise @ 0,99
+  x Weitere Zutaten: Serranoschinken @ 1,79
+  x Weitere Zutaten: Sonnenblumenkerne @ 0,99
+  x Weitere Zutaten: Spinat @ 0,99
+  x Weitere Zutaten: Steakpfeffer @ gratis
+  x Weitere Zutaten: Thunfisch @ 1,79
+  x Weitere Zutaten: Tomaten @ 0,99
+  x Weitere Zutaten: Tomatenketchup @ 0,99
+  x Weitere Zutaten: Würstchen @ 1,49
+
+t PizzaTierSale
+  i PizzaCommonOptions
+  o Größe: Classic @ 5,99
+  o Größe: Large @ 9,49
+  o Größe: Medium @ 7,49
+
+t PizzaTier1
+  i PizzaCommonOptions
+  o Größe: Classic @ 6,49
+  o Größe: Medium @ 7,99
+  o Größe: Large @ 9,99
+
+t PizzaTier2
+  i PizzaCommonOptions
+  o Größe: Classic @ 7,49
+  o Größe: Medium @ 8,99
+  o Größe: Large @ 11,49
+
+t PizzaTier3
+  i PizzaCommonOptions
+  o Größe: Classic @ 8,99
+  o Größe: Medium @ 10,49
+  o Größe: Large @ 13,49
+
+t SalatOptions
+  o Dressing: American-Dressing
+  o Dressing: Balsamico-Honig-Dressing
+  o Dressing: Caesar's-Dressing
+  o Dressing: Joghurt-Limetten-Dressing
+  o Dressing: ohne Dressing
+
+t EisOptions100
+  o Größe: 100 mL @ 2,29
+  o Größe: 500 mL @ 6,49
+
+t EisOptions150
+  o Größe: 150 mL @ 2,99
+  o Größe: 500 mL @ 6,49
+
+o Baguette: Baguette Aloha @ 6,49
+  d Ananas, Hinterschinken, Gurken, Tomaten, Salatmix, Gouda. Unsere Empfehlung: Kräuterremoulade
+  i DipOptions
+
+o Baguette: Baguette Chili-Chicken @ 7,49
+  d Hähnchenbrustfilet, frische rote Peperoni (scharf), rote Zwiebeln, Gurken, Tomaten, Salatmix und Gouda. Unsere Empfehlung: Aioli
+  i DipOptions
+
+o Baguette: Baguette Countryside @ 6,49
+  d Hinterschinken, gekochtes Ei, Gurken, Tomaten, Salatmix und Gouda. Unsere Empfehlung: Kräuterremoulade
+  i DipOptions
+
+o Baguette: Baguette Serrano @ 7,49
+  d Serranoschinken, Rucola, Basilikum-Pesto, Grana Padano D.O.P., Tomaten und Mozzarella. Unsere Empfehlung: Aioli
+  i DipOptions
+
+o Baguette: Baguette Toscana @ 6,49
+  d Salami, pikante Chilisalami, Gurken, Tomaten, Salatmix und Gouda. Unsere Empfehlung: Knoblauch-Dip
+  i DipOptions
+
+o Mittagsangebot: Pasta India @ 5,99
+  d mit pikanter Curry-Sahnesauce, Paprika, Mais, frischen roten Peperoni (scharf) und Frühlingszwiebeln.
+  i PastaOptions
+
+o Mittagsangebot: Pasta Roma @ 5,99
+  d mit fruchtigem Tomatensahne-Pesto, zartem Hähnchenbrustfilet, fein gewürztem Blattspinat und fruchtigen Cherrytomaten
+  i PastaOptions
+
+o Mittagsangebot: Pasta Spinaci @ 7,49
+  d mit Sahnesauce, fein gewürztem Blattspinat und saftigem Hinterschinken
+  i PastaOptions
+
+o Mittagsangebot: Pizza Amsterdam
+  d mit Hähnchenbrustfilet, Broccoli-Röschen und Sauce hollandaise
+  i PizzaTierSale
+
+o Mittagsangebot: Pizza Bistro
+  d mit saftigem Hinterschinken, grünem Spargel und Sauce hollandaise
+  i PizzaTierSale
+
+o Mittagsangebot: Pizza Fino
+  d mit grünem Spargel gebacken. Anschließend mit Serranoschinken und gehobeltem Grana Padano D.O.P. belegt.
+  i PizzaTierSale
+
+o Mittagsangebot: Pizza Fuego
+  d mit Chilisalami, Mozzarella und feurigen Jalapeños.
+  i PizzaTierSale
+
+o Mittagsangebot: Pizza Paolo
+  d mit fruchtigen Tomaten, Sauce hollandaise, knusprigem Bacon. Dazu Pizza-Chilis zum selbst Schärfen.
+  i PizzaTierSale
+
+o Mittagsangebot: Pizza Sunny
+  d mit sonnengetrockneten Tomaten, Hähnchenbrustfilet und Mozzarella
+  i PizzaTierSale
+
+o Mittagsangebot: Pizza Verde
+  d mit Hirtenkäse, Tomaten, fein gewürztem Blattspinat und roten Zwiebeln. Unsere Empfehlung: mit Knoblauch bestellen
+  i PizzaTierSale
+
+o Mittagsangebot: Salat Caesar's @ 5,99
+  d Römersalat mit Cherrytomaten, gehobeltem Grana Padano D.O.P. und Croûtons. Dazu empfehlen wir Caesar's-Dressing
+  i SalatOptions
+
+o Mittagsangebot: Salat Pollo @ 5,99
+  d gemischter Salat mit Rucola, Tomaten, roten Zwiebeln, Paprika, Gurken, Hähnchenbrustfilet und Sonnenblumenkernen. Dazu empfehlen wir das Joghurt-Limetten-Dressing.
+  i SalatOptions
+
+o Monatsaktion: Pizza Brauhaus
+  d mit Dijon Senf-Sahnesauce, frischem Ei, roten Zwiebeln, dänischen Gurken und frischer Mettwurst. Anschließend mit Petersilie bestreut
+  i PizzaTier3
+
+o Monatsaktion: Pizza Spätzlestuben
+  d mit Schmand, Spätzle, extra Käse und Bacon. Nach dem Backen mit Röstzwiebeln und frischer Petersilie verfeinert
+  i PizzaTier2
+
+o Nachtisch: Eis Chocolate Fudge Brownie
+  d Schokoladen-Eiscreme mit Schokogebäckstücken.
+  i EisOptions150
+
+o Nachtisch: Eis Cookie Dough
+  d Vanilleeiscreme mit Schokochips-Plätzchenstücken.
+  i EisOptions150
+
+o Nachtisch: Eis Cookies & Cream
+  d Feinste, cremige Vanille-Eiscreme in Kombination mit leckeren Schokoladenkeks-Stückchen.
+  i EisOptions100
+
+o Nachtisch: Eis Fairly Nuts
+  d Karamell-Eiscreme mit Karamellsauce und Mandel-Crispies.
+  i EisOptions150
+
+o Nachtisch: Eis Mango & Raspberry
+  d Fruchtig exotisch und himmlisch erfrischend: Mango-Eiscreme durchzogen mit fruchtiger Himbeersauce.
+  i EisOptions100
+
+o Nachtisch: Eis Peanut Butter Cup
+  d Erdnussbutter-Eiscreme mit Erdnusscreme-Stückchen.
+  i EisOptions150
+
+o Nachtisch: Eis Strawberry Cheesecake
+  d Eine fruchtige Verschmelzung: feine Eiscreme mit frischer Erdbeersauce und Keksstückchen.
+  i EisOptions100
+
+o Nachtisch: Eis Vanilla Caramel Brownie
+  d Vanille-Eiscreme mit köstlicher Karamellsauce und den begehrten Schokokuchen-Stückchen, fein kombiniert.
+  i EisOptions100
+
+o Nachtisch: Erdbeer-Tiramisu @ 2,99
+  d Dessert mit Mascarpone Creme, Biskuit, Apfelragout und Zimt; 100g
+
+o Nachtisch: Muffin miss chocoholic @ 1,99
+  d Muffin mit Chocolate Chunks und cremigem Nuss-Nougat-Kern.
+
+o Nachtisch: Muffin mrs. crumbleberry @ 1,99
+  d Muffin mit aromatischen Blaubeeren und einer köstlichen Blaubeerfüllung (konserviert).
+
+o Nachtisch: Tiramisu
+  d Handgemacht, mit leckerer Mascarpone Creme, lockerem Biskuit sowie Kaffee und Kakao. Der verführerische, italienische Dessert-Klassiker.; 100g
+
+o Pasta: Pasta Alba @ 7,49
+  d mit Sahnesauce, saftigem Hinterschinken und frischen Champignons
+  i PastaOptions
+
+o Pasta: Pasta Arrabiata @ 6,99
+  d mit cremiger Tomatensauce, Knoblauch in Öl, Steakpfeffer, frische rote Peperoni (scharf), Cherrytomaten, Frühlingszwiebeln.
+  i PastaOptions
+
+o Pasta: Pasta Bistecca @ 8,49
+  d mit aromatischer Kräuterrahmsauce, saftigen Rindersteak-Streifen, grünem Spargel und fruchtigen Cherrytomaten. Mit Steakpfeffer verfeinert.
+  i PastaOptions
+
+o Pasta: Pasta Finessa @ 7,49
+  d mit Trüffel-Sahnesauce, frischen Champignons und gehobeltem Grana Padano D.O.P.
+  i PastaOptions
+
+o Pasta: Pasta Key West @ 8,49
+  d mit pikanter Tomaten-Sahnesauce, mit Knoblauch verfeinerten Vannamei Garnelen, Cherrytomaten, frischen Peperoni (scharf) und Frühlingszwiebeln.
+  i PastaOptions
+
+o Pasta: Pasta Mamma Leone @ 7,49
+  d mit Tomaten-Sahnesauce, Rinderhack, Cherrytomaten und Basilikum. Dazu Pizza-Chilis zum selbst schärfen
+  i PastaOptions
+
+o Pasta: Pasta Verdura @ 8,49
+  d mit in Asia-Chili-Sauce mariniertem Hähnchenbrustfilet, Cherrytomaten, Champignons, Paprika, Broccoli und Grana Padano D.O.P.. Mit Knoblauch- und Olivenöl verfeinert. Dazu Pizza-Chilis zum selbst Schärfen
+  i PastaOptions
+
+o Pizza: Pizza Athena
+  d mit fein gewürztem Blattspinat, Hirtenkäse und in den Teig eingebackenen Sonnenblumenkernen
+  i PizzaTier2
+
+o Pizza: Pizza Bombay
+  d mit Hähnchenbrustfilet, Ananas und Currysauce
+  i PizzaTier2
+
+o Pizza: Pizza Bruschetta
+  d mit Sahnesauce und extra viel Käse. Anschließend mit Bruschetta-Mix verfeinert.
+  i PizzaTier1
+
+o Pizza: Pizza Conchita
+  d mit BBQ-Sauce, Rinderhack, knusprigem Bacon, roten Zwiebeln und mildem Mozzarella
+  i PizzaTier3
+
+o Pizza: Pizza Crazy Dog
+  d mit Würstchen, dänischen Gurken, Tomatenketchup, dänischer Remoulade und Röstzwiebeln
+  i PizzaTier2
+
+o Pizza: Pizza Dutchman
+  d mit saftigem Hinterschinken, Tomaten, Broccoli-Röschen und Sauce Hollandaise.
+  i PizzaTier2
+
+o Pizza: Pizza Funghi
+  d mit frischen Champignons und Basilikum-Pesto
+  i PizzaTier1
+
+o Pizza: Pizza Gonzales
+  d mit BBQ-Sauce, zartem Hähnchenbrustfilet, fruchtigen Tomaten, Paprika, roten Zwiebeln, Mais und feurigen Jalapeños. Dazu Pizza-Chilis zum selbst Schärfen.
+  i PizzaTier3
+
+o Pizza: Pizza Gourmet
+  d mit herzhaften Rindersteak-Streifen, grünem Spargel, frischen Tomaten und Sauce Hollandaise, abgerundet mit würzigem Steakpfeffer.
+  i PizzaTier3
+
+o Pizza: Pizza Grüner Garten
+  d mit frischen Champignons, Blattspinat, Broccoli-Röschen, Paprikastreifen, sonnengetrockneten Tomaten und in den Teig eingebackenen Sonnenblumenkernen.
+  i PizzaTier2
+
+o Pizza: Pizza Italia
+  d mit Salami, Mozzarella, Tomaten und frischem Basilikum. Mit Basilikum-Pesto verfeinert
+  i PizzaTier2
+
+o Pizza: Pizza Lucca
+  d mit saftigem Hinterschinken, Salami und frischen Champignons
+  i PizzaTier2
+
+o Pizza: Pizza Lucifer
+  d mit Chilisalami, frischen Champignons und milden Peperoni
+  i PizzaTier2
+
+o Pizza: Pizza Margherita
+  d mit Tomaten und Mozzarella gebacken. Nach dem Backen mit frischem Basilikum verfeinert.
+  i PizzaTier1
+
+o Pizza: Pizza Mediterrana
+  d mit Tomaten und Mozzarella gebacken. Anschließend belegt mit Rucola, Serranoschinken, Balsamico-Creme und gehobeltem Grana Padano D.O.P.
+  i PizzaTier3
+
+o Pizza: Pizza Milanese
+  d mit mildem Mozzarella und grünen Manzanilla Oliven gebacken. Anschließend mit hauchfeiner Mailänder Salami und Bruschetta-Mix verfeinert.
+  i PizzaTier3
+
+o Pizza: Pizza Napoletana
+  d mit frischen Tomaten und Mozzarella gebacken, anschließend mit frischem Basilikum und gehobeltem Grana Padano D.O.P. belegt und mit Basilikum-Pesto verfeinert.
+  i PizzaTier3
+
+o Pizza: Pizza New Orleans
+  d mit BBQ-Sauce, roten Zwiebeln, fruchtiger Ananas und zartem Pulled Beef gebacken. Nach dem Backen mit Frühlingszwiebeln verfeinert.
+  i PizzaTier3
+
+o Pizza: Pizza Prosciutto
+  d mit saftigem Hinterschinken
+  i PizzaTier1
+
+o Pizza: Pizza Salami (traditionell)
+  d mit leckerer Salami
+  i PizzaTier1
+
+o Pizza: Pizza Salami Supreme
+  d mit extra viel Salami
+  i PizzaTier2
+
+o Pizza: Pizza Seaside
+  d Pizza Seaside mit fruchtigen Cherrytomaten, frischen Peperoni (scharf) und mit Knoblauch verfeinerten Vannamei Garnelen aus zertifizierter Zucht.
+  i PizzaTier3
+
+o Pizza: Pizza Spinacio
+  d mit fein gewürztem Blattspinat und gehacktem Knoblauch in Öl
+  i PizzaTier1
+
+o Pizza: Pizza Steak & Bacon
+  d mit Tomaten, herzhaften Rindersteak-Streifen, Bacon und Sauce hollandaise gebacken. Anschließend mit frischen Frühlingszwiebeln verfeinert.
+  i PizzaTier3
+
+o Pizza: Pizza Tuna
+  d mit extra viel Thunfisch und roten Zwiebeln
+  i PizzaTier2
+
+o Pizza: Pizza Waikiki
+  d mit saftigem Hinterschinken, fruchtiger Ananas und extra viel Käse
+  i PizzaTier2
+
+o Pizza-Brötchen: Pizza-Brötchen Hinterschinken und Käse
+  d 6 Stück
+  i DipOptions
+
+o Pizza-Brötchen: Pizza-Brötchen Chilisalami, Jalapeños und Käse @ 3,99
+  d 6 Stück.
+  i DipOptions
+
+o Pizza-Brötchen: Pizza-Brötchen ohne Füllung @ 2,49
+  d Leckere Pizza-Brötchen. 6 Stück.
+  i DipOptions
+
+o Pizza-Brötchen: Pizza-Brötchen Spinat und Hirtenkäse @ 3,99
+  d 6 Stück.
+  i DipOptions
+
+o Pizza-Brötchen: Pizza-Brötchen Thunfisch und Käse @ 3,99
+  d 6 Stück.
+  i DipOptions
+
+o Salat: Beilagensalat Mini @ 2,49
+  d kleiner Salat mit Joghurt-Limetten-Dressing
+
+o Salat: Salat Athena @ 6,99
+  d gemischter Salat mit Rucola, Paprika, roten Zwiebeln, Cherrytomaten, grünen Manzanilla-Oliven, würzigem Hirtenkäse. Unsere Empfehlung: Joghurt-Limetten-Dressing
+  i SalatOptions
+
+o Salat: Salat Caesar´s Chicken @ 7,99
+  d Römersalat mit Cherrytomaten, Hähnchenbrustfilet, gehobeltem Grana Padano D.O.P. und Croûtons. Unsere Empfehlung: Caesar’s-Dressing
+  i SalatOptions
+
+o Salat: Salat Evergreen @ 7,99
+  d gemischter Salat mit Rucola, Cherrytomaten, geräucherten Putenbrustscheiben, Champignons, Ei, Mais und Käse. Unsere Empfehlung: American-Dressing
+  i SalatOptions
+
+o Salat: Salat Gallo Verde @ 7,99
+  d gemischter Salat mit Rucola, Cherrytomaten, Mozzarella, in Basilikum-Pesto mariniertem Hähnchenbrustfilet, gebratenen Baconchips, Grana Padano D.O.P.. Unsere Empfehlung: Caesar’s-Dressing
+  i SalatOptions
+
+o Salat: Salat Green Garden Plus @ 5,99
+  d gemischter Salat mit Rucola, Frühlingszwiebeln, Cherrytomaten, Paprika, grünen Manzanilla-Oliven, Sonnenblumenkernen.
+  i SalatOptions
+
+o Salat: Salat Nizza @ 6,99
+  d gemischter Salat mit Rucola, Paprika, roten Zwiebeln, Cherrytomaten, grünen Manzanilla-Oliven, Thunfisch. Unsere Empfehlung: Balsamico-Honig-Dressing
+  i SalatOptions
+
+o Salat: Salat Rocco @ 7,99
+  d knackiger Rucola und gemischter Salat mit Serranoschinken, Grana Padano D.O.P., Mozzarella, Cherrytomaten, grünen Manzanilla-Oliven. Unsere Empfehlung: Balsamico-Honig-Dressing
+  i SalatOptions
+
+o Salat: Salat Rustico @ 7,99
+  d gemischter Salat mit Rucola, Cherrytomaten, Mozzarella-Kugeln, mit Knoblauch verfeinerten Vannamei Garnelen, gebratenen Baconchips, Grana Padano D.O.P.. Unsere Empfehlung: Caesar's-Dressing.
+  i SalatOptions

@@ -1,0 +1,366 @@
+s Pizza da Michele
+
+t DressingOptions
+  o Dressing: Essig-Öl-Dressing
+  o Dressing: Joghurt-Dressing
+  o Dressing: ohne Dressing
+
+t PizzaSizeNames
+  o Größe: Familie
+    d 32x48 cm
+  o Größe: klein
+    d ⌀ 22 cm
+  o Größe: mittel
+    d ⌀ 30 cm
+
+o Nachtisch: Tiramisu
+  d hausgemacht
+  o Größe: für 1 Person @ 3,50
+  o Größe: für 2 Personen @ 6,80
+
+o Pasta: Lasagne mit Bolognesesauce @ 6,00
+  d Schinken, Eiern, Erbsen, Sahne und Käse überbacken
+
+o Pasta: Rigatoni @ 5,50
+  d mit Bolognesesauce und Parmesan
+
+o Pasta: Rigatoni al Forno @ 6,00
+  d mit Bolognesesauce, Schinken, Erbsen und Käse überbacken
+
+o Pasta: Rigatoni Gorgonzola @ 6,00
+  d mit Gorgonzola und Sahne
+
+o Pasta: Spaghetti Bolognese @ 5,50
+  d mit Bolognesesauce und Parmesan
+
+o Pasta: Tortellini @ 6,00
+  d mit Käsefüllung, Sahnesauce, Schinken, Erbsen und Käse überbacken
+
+o Pasta: Tortellini al Forno @ 6,00
+  d mit Käsefüllung, Tomatensauce, Erben, Gorgonzola und Käse überbacken
+
+o Pasta: Tortellini Bolognese @ 6,00
+  d Tortellini mit Bolognesesauce und Käse überbacken
+
+o Pasta: Tortellini Carbonara @ 6,00
+  d mit Speck, Eiern, Knoblauch, Parmesan und Sahnesauce
+
+o Pasta: Vegetarische Lasagne @ 6,00
+  d mit Spinat, Ei, Tomatensauce, Sahne und Käse
+
+o Pizza: Calzone
+  d gefüllt mit Salami, Vorderschinken, Champignons und Peperoni
+  o Größe: klein @ 5,50
+    d ⌀ 22 cm
+  o Größe: mittel @ 7,75
+    d ⌀ 30 cm
+
+o Pizza: Pizza Artischocken
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Auberginen
+  d mit Gouda, Gorgonzola und Auberginen
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Broccoli
+  d mit Salami, Broccoli, Knoblauch und Parmesan
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,75
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Champignons
+  i PizzaSizeNames
+  o Größe: Familie @ 13,20
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,75
+
+o Pizza: Pizza Chef
+  d mit Sardellen, Kapern und Zwiebeln, scharf
+  i PizzaSizeNames
+  o Größe: Familie @ 15,70
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 8,00
+
+o Pizza: Pizza Co-Co Bello
+  d mit Schinken und frischen Champignons
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 6,00
+  o Größe: mittel @ 7,00
+
+o Pizza: Pizza da Michele
+  d mit Olivenöl, Parmaschinken, Rucola und Parmesansplitter
+  i PizzaSizeNames
+  o Größe: Familie @ 16,20
+  o Größe: klein @ 6,00
+  o Größe: mittel @ 8,25
+
+o Pizza: Pizza Formaggi
+  d mit Gouda, Gorgonzola, Mozzarella und Parmesan
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Gorgonzola
+  i PizzaSizeNames
+  o Größe: Familie @ 13,20
+  o Größe: klein @ 5,00
+  o Größe: mittel @ 6,75
+
+o Pizza: Pizza Hamburger
+  d mit Rinderhackfleisch
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Hawaii
+  d mit Vorderschinken und Ananas
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Käse
+  d mit Tomatensauce und Gouda
+  i PizzaSizeNames
+  o Größe: Familie @ 11,70
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,25
+
+o Pizza: Pizza Knoblauch
+  i PizzaSizeNames
+  o Größe: Familie @ 13,20
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,75
+
+o Pizza: Pizza Meeresfrüchten
+  d mit Knoblauch und Parmesan
+  i PizzaSizeNames
+  o Größe: Familie @ 15,70
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 8,00
+
+o Pizza: Pizza Mexicana
+  d mit scharfer Salami, Zwiebeln, Bohnen und Mais
+  i PizzaSizeNames
+  o Größe: Familie @ 14,95
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,50
+
+o Pizza: Pizza mit scharfer Salami
+  i PizzaSizeNames
+  o Größe: Familie @ 14,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,25
+
+o Pizza: Pizza mit Thunfisch und Zwiebeln
+  i PizzaSizeNames
+  o Größe: Familie @ 15,70
+  o Größe: klein @ 6,00
+  o Größe: mittel @ 8,25
+
+o Pizza: Pizza mit Tomaten und Mozzarella
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Mozzarella
+  d mit Tomatensauce und Mozzarella
+  i PizzaSizeNames
+  o Größe: Familie @ 13,70
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,75
+
+o Pizza: Pizza O Sole Mio
+  d mit Vorderschinken, Paprika und Spiegelei
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Parmaschinken
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 6,00
+  o Größe: mittel @ 8,00
+
+o Pizza: Pizza Putenfleisch
+  i PizzaSizeNames
+  o Größe: Familie @ 16,20
+  o Größe: klein @ 6,50
+  o Größe: mittel @ 8,25
+
+o Pizza: Pizza Rucola
+  d mit Rucola, frischen Tomaten und Olivenöl
+  i PizzaSizeNames
+  o Größe: Familie @ 15,95
+  o Größe: klein @ 6,00
+  o Größe: mittel @ 8,25
+
+o Pizza: Pizza Sabine
+  d mit Hamburger und Sucuk
+  i PizzaSizeNames
+  o Größe: Familie @ 15,95
+  o Größe: klein @ 6,00
+  o Größe: mittel @ 8,25
+
+o Pizza: Pizza Salami
+  i PizzaSizeNames
+  o Größe: Familie @ 13,20
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 7,00
+
+o Pizza: Pizza Sardellen
+  i PizzaSizeNames
+  o Größe: Familie @ 15,70
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 8,25
+
+o Pizza: Pizza Shrimps
+  d mit Knoblauch und Parmesan
+  i PizzaSizeNames
+  o Größe: Familie @ 15,45
+  o Größe: klein @ 6,00
+  o Größe: mittel @ 8,00
+
+o Pizza: Pizza Spezial
+  d mit Vorderschinken. Salami, Paprika, Peperoni und Champignons
+  o Größe: Familie @ 14,95
+    d 32x48 cm
+  o Größe: klein @ 5,50
+    d ⌀ 22 cm
+  o Größe: mittel @ 7,50
+    d ⌀ 30 cm
+
+o Pizza: Pizza Spinat
+  d mit verrührtem Ei
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Sucuk
+  d mit türkischer Knoblauchwurst
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Thunfisch
+  i PizzaSizeNames
+  o Größe: Familie @ 14,45
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Tomaten
+  d mit frischen Tomaten
+  i PizzaSizeNames
+  o Größe: Familie @ 13,20
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,75
+
+o Pizza: Pizza Vegetaria
+  d mit Champignons, Peperoni, Artischocken, Oliven und Paprika
+  i PizzaSizeNames
+  o Größe: Familie @ 14,20
+  o Größe: klein @ 6,00
+  o Größe: mittel @ 7,50
+
+o Pizza: Pizza Vierjahreszeiten
+  d mit Vorderschinken, Peperoni, Champignons, Artischocken und Oliven
+  i PizzaSizeNames
+  o Größe: Familie @ 14,95
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,50
+
+o Pizza: Pizza Vorderschinken
+  i PizzaSizeNames
+  o Größe: Familie @ 13,20
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 7,00
+
+o Pizza: Pizza Zucchini
+  d mit Gouda, Gorgonzola und Zucchini
+  i PizzaSizeNames
+  o Größe: Familie @ 15,20
+  o Größe: klein @ 5,50
+  o Größe: mittel @ 7,75
+
+o Pizza: Pizza Zwiebeln
+  i PizzaSizeNames
+  o Größe: Familie @ 13,20
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,75
+
+o Pizza: Pizzabrot
+  d frisch aus dem Ofen mit Olivenöl und Kräutern
+  o Größe: 22 cm @ 3,50
+  o Größe: 30 cm @ 5,00
+
+o Salat: Eisbergsalat
+  i DressingOptions
+  o Größe: groß @ 4,50
+  o Größe: klein @ 3,00
+
+o Salat: Gemischter Salat
+  d Eisbergsalat mit Tomaten, Gurken, Ei und Zwiebeln
+  i DressingOptions
+  o Größe: groß @ 5,00
+  o Größe: klein @ 3,70
+
+o Salat: Gurkensalat
+  i DressingOptions
+  o Größe: groß @ 5,00
+  o Größe: klein @ 3,50
+
+o Salat: Puten-Salat
+  d mit warmen marinierten Putenstreifen, Eisbergsalat, Rucola, Tomaten und Gurken
+  i DressingOptions
+  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+
+o Salat: Salat de Michele
+  d Eisbergsalat mit Rucola, Tomaten, Gurken, Parmaschinken und Parmesansplitter
+  i DressingOptions
+  o Größe: groß @ 6,50
+  o Größe: klein @ 5,00
+
+o Salat: Salat Italia
+  d Eisbergsalat mit Rucola, Tomaten, Gurken, Zwiebeln, Ei, Schinken und Käse
+  i DressingOptions
+  o Größe: groß @ 6,00
+  o Größe: klein @ 4,30
+
+o Salat: Salat Mexicana
+  d Eisbergsalat mit Tomaten, Gurken, roten Bohnen, Mai, Peperoni und Zwiebeln
+  i DressingOptions
+  o Größe: groß @ 6,50
+  o Größe: klein @ 4,50
+
+o Salat: Shrimps Salat
+  d Eisbergsalat mit Tomaten und Gurken
+  i DressingOptions
+  o Größe: groß @ 6,50
+  o Größe: klein @ 5,50
+
+o Salat: Tomaten & Mozzarella Salat
+  d mit Basilikum und Olivenöl
+  i DressingOptions
+  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+
+o Salat: Tomatensalat
+  d mit Tomaten und Zwiebeln
+  i DressingOptions
+  o Größe: groß @ 5,50
+  o Größe: klein @ 3,50
