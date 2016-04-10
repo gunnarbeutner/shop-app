@@ -44,16 +44,16 @@ foreach (get_users() as $user_id => $user) {
 		}
 
 		$item_price = $item['price'];
-        $item_fee = bcmul(get_store_fee_multiplier($item['store_id'], false), $item['price']);
-        $item_rebate = bcmul(get_store_rebate_multiplier($item['store_id']), bcadd($item_price, $item_fee));
+        $item_fee = bcmul(get_store_fee_multiplier($item['store_id'], false), $item['price'], 10);
+        $item_rebate = bcmul(get_store_rebate_multiplier($item['store_id']), bcadd($item_price, $item_fee, 10), 10);
 
-        $amount = bcadd($amount, $item_price);
+        $amount = bcadd($amount, $item_price, 10);
 
         set_order_item_attr($item['id'], 'fee', $item_fee);
-        $amount = bcadd($amount, $item_fee);
+        $amount = bcadd($amount, $item_fee, 10);
 
         set_order_item_attr($item['id'], 'rebate', $item_rebate);
-        $amount = bcadd($amount, $item_rebate);
+        $amount = bcadd($amount, $item_rebate, 10);
 
         set_order_item_attr($item['id'], 'merchant_id', $stores[$item['store_id']]['merchant_id']);
 
@@ -62,12 +62,14 @@ foreach (get_users() as $user_id => $user) {
             if (!array_key_exists($rebate_user, $rebates)) {
                 $rebates[$rebate_user] = '0';
             }
-            $rebates[$rebate_user] = bcadd($rebates[$rebate_user], $item_rebate);
+            $rebates[$rebate_user] = bcadd($rebates[$rebate_user], $item_rebate, 10);
         }
 
 		$user_items[] = $item;
 	}
-	
+
+    $amount = bcadd($amount, '0');
+
 	if (bccomp($amount, '0') != 0) {
 		$item_names = [];
 		foreach ($user_items as $item) {
@@ -117,9 +119,11 @@ foreach ($stores as $store_id => $store) {
 			continue;
 		}
 		
-		$amount = bcadd($amount, $item['price']);
-        $amount = bcadd($amount, bcmul(get_store_fee_multiplier($store_id, false), $item['price']));
+		$amount = bcadd($amount, $item['price'], 10);
+        $amount = bcadd($amount, bcmul(get_store_fee_multiplier($store_id, false), $item['price'], 10), 10);
 	}
+
+    $amount = bcadd($amount, '0');
 	
 	if (bccomp($amount, '0') == 0)
 			continue;
