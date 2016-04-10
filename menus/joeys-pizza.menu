@@ -331,7 +331,7 @@ o Pizza-Brötchen: Pizza-Brötchen Thunfisch und Käse @ 3,99
   d 6 Stück.
   i DipOptions
 
-o Salat: Beilagensalat Mini @ 2,49
+o Salat: Salat Mini @ 2,49
   d kleiner Salat mit Joghurt-Limetten-Dressing
 
 o Salat: Salat Athena @ 6,99
@@ -348,10 +348,6 @@ o Salat: Salat Evergreen @ 7,99
 
 o Salat: Salat Gallo Verde @ 7,99
   d gemischter Salat mit Rucola, Cherrytomaten, Mozzarella, in Basilikum-Pesto mariniertem Hähnchenbrustfilet, gebratenen Baconchips, Grana Padano D.O.P.. Unsere Empfehlung: Caesar’s-Dressing
-  i SalatOptions
-
-o Salat: Salat Green Garden Plus @ 5,99
-  d gemischter Salat mit Rucola, Frühlingszwiebeln, Cherrytomaten, Paprika, grünen Manzanilla-Oliven, Sonnenblumenkernen.
   i SalatOptions
 
 o Salat: Salat Nizza @ 6,99

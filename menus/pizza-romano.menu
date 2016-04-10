@@ -27,7 +27,7 @@ o Vorspeise: Käseteller @ 7,00
 o Vorspeise: Antipasti Italiana @ 8,00
 
 o Vorspeise: Bruschetta (4 Stück) @ 4,00
-  d mit frischen Tomatenwürfel und Knoblauch
+  d mit frischen Tomatenwürfeln und Knoblauch
 
 o Vorspeise: Cáprese @ 7,00
   d mit frischen Tomaten, Mozzarella, Oliven, Basilikum
@@ -106,340 +106,340 @@ o Suppe: Meranersuppe @ 3,50
 
 o Suppe: Zwiebelsuppe @ 3,50
 
-o Pizza: Hamburger
+o Pizza: Pizza Hamburger
   d mit Hackfleischsauce, Zwiebeln
   i PizzaSizeNames
   o Größe: klein @ 7,20
   o Größe: groß @ 8,30
   o Größe: Familie @ 16,70
 
-o Pizza: Südtiroler
+o Pizza: Pizza Südtiroler
   d Tomatensoße, Mozzarella, Rucola, Parmaschinken, Parmesankäse
   i PizzaSizeNames
   o Größe: klein @ 8,20
   o Größe: groß @ 10,20
   o Größe: Familie @ 17,90
 
-o Pizza: Pizzabrot
+o Pizza: Pizza Pizzabrot
   d mit Knoblauch, Oregano
   i PizzaSizeNames
   o Größe: klein @ 3,70
   o Größe: groß @ 5,00
   o Größe: Familie @ 8,70
 
-o Pizza: Romano
+o Pizza: Pizza Romano
   d mit Tomatensoße, Käse, Schinken, Champignons, Salami, Oliven, Scharf
   o Größe: klein @ 7,20
     d ⌀ 26 cm
 
-o Pizza: Ufo
+o Pizza: Pizza Ufo
   d mit Tomatensoße, Käse, Spinat, frischeTomaten, Mozzarella (geschlossene Pizza)
   o Größe: klein @ 8,20
     d ⌀ 26 cm
   o Größe: groß @ 9,30
     d ⌀ 30 cm
 
-o Pizza: Marinara
+o Pizza: Pizza Marinara
   d Tomatensoße, Knoblauch, Oregano
   i PizzaSizeNames
   o Größe: klein @ 4,50
   o Größe: groß @ 5,80
   o Größe: Familie @ 11,90
 
-o Pizza: Margherita
+o Pizza: Pizza Margherita
   d Käse, Tomatensoße, Oregano
   i PizzaSizeNames
   o Größe: klein @ 5,40
   o Größe: groß @ 6,80
   o Größe: Familie @ 12,90
 
-o Pizza: Napoli
+o Pizza: Pizza Napoli
   d Käse, Tomatensoße, Sardellen
   i PizzaSizeNames
   o Größe: klein @ 6,40
   o Größe: groß @ 7,80
   o Größe: Familie @ 14,40
 
-o Pizza: Mafiosa
+o Pizza: Pizza Mafiosa
   d Käse, Tomatensoße, Oliven
   i PizzaSizeNames
   o Größe: klein @ 6,40
   o Größe: groß @ 7,30
   o Größe: Familie @ 13,40
 
-o Pizza: Prosciutto
+o Pizza: Pizza Prosciutto
   d Käse, Tomatensoße, Schinken
   i PizzaSizeNames
   o Größe: klein @ 6,40
   o Größe: groß @ 7,80
   o Größe: Familie @ 14,40
 
-o Pizza: Funghi
+o Pizza: Pizza Funghi
   d Käse, Tomatensoße, Champignons
   i PizzaSizeNames
   o Größe: klein @ 6,40
   o Größe: groß @ 7,80
   o Größe: Familie @ 14,40
 
-o Pizza: Salami
+o Pizza: Pizza Salami
   d Käse, Tomatensoße, Salami (mild)
   i PizzaSizeNames
   o Größe: klein @ 6,40
   o Größe: groß @ 7,80
   o Größe: Familie @ 14,40
 
-o Pizza: Prosciutto Funghi
+o Pizza: Pizza Prosciutto Funghi
   d Käse, Tomatensoße, Schinken, Champignons
   i PizzaSizeNames
   o Größe: klein @ 7,00
   o Größe: groß @ 8,30
   o Größe: Familie @ 14,90
 
-o Pizza: Diavola
+o Pizza: Pizza Diavola
   d Käse, Tomatensoße, Salsiccia (Salami scharf)
   i PizzaSizeNames
   o Größe: klein @ 7,20
   o Größe: groß @ 8,30
   o Größe: Familie @ 14,90
 
-o Pizza: Capriciosa
+o Pizza: Pizza Capriciosa
   d Käse, Tomatensoße, Schinken, Champignon, Artischocken
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 15,40
 
-o Pizza: Speziale
+o Pizza: Pizza Speziale
   d Käse, Tomatensoße, Schinken, Champignons, Pepperoni, Paprikaschoten, Salami
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,40
 
-o Pizza: Luna
+o Pizza: Pizza Luna
   d Käse, Tomatensoße, Schinken, Salami
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 14,90
 
-o Pizza: Stella
+o Pizza: Pizza Stella
   d Käse, Tomatensoße, Champignons, Salami
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 14,90
 
-o Pizza: Notte
+o Pizza: Pizza Notte
   d Käse, Tomatensoße, Schinken, Champignons, Salami
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 15,90
 
-o Pizza: Amore
+o Pizza: Pizza Amore
   d Käse, Tomatensoße, scharfe Salami, Knoblauch und Zwiebeln
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,40
 
-o Pizza: Hawaii
+o Pizza: Pizza Hawaii
   d Käse, Tomatensoße, Schinken, Ananas
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 15,40
 
-o Pizza: 4-Stagioni
+o Pizza: Pizza 4-Stagioni
   d Käse, Tomatensoße, Artischocken, Oliven, Schinken, Champignons
   i PizzaSizeNames
   o Größe: klein @ 7,20
   o Größe: groß @ 8,60
   o Größe: Familie @ 15,70
 
-o Pizza: Calzone
+o Pizza: Pizza Calzone
   d Käse, Tomatensoße, Schinken, Champigons und Salami
   o Größe: klein @ 7,20
     d ⌀ 26 cm
   o Größe: groß @ 8,80
     d ⌀ 30 cm
 
-o Pizza: Tiroler
+o Pizza: Pizza Tiroler
   d Käse, Tomatensoße, Bauchspeck, Oliven, Ei, Knoblauch
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 16,90
 
-o Pizza: Venezia
+o Pizza: Pizza Venezia
   d Käse, Tomatensoße, Salami, Champignons, Paprika, Thunfisch
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,90
 
-o Pizza: Gambaretti
+o Pizza: Pizza Gambaretti
   d Käse, Tomatensoße, Krabben, Petersilie, Knoblauch
   i PizzaSizeNames
   o Größe: klein @ 7,90
   o Größe: groß @ 9,30
   o Größe: Familie @ 16,90
 
-o Pizza: Frutti di Mare
+o Pizza: Pizza Frutti di Mare
   d Käse, Tomatensoße, Meeresfrüchte, Knoblauch
   i PizzaSizeNames
   o Größe: klein @ 7,90
   o Größe: groß @ 9,30
   o Größe: Familie @ 16,90
 
-o Pizza: Mais
+o Pizza: Pizza Mais
   d Käse, Tomatensofie, Paprikaschoten, Mais, Pepperoni
   i PizzaSizeNames
   o Größe: klein @ 6,70
   o Größe: groß @ 7,80
   o Größe: Familie @ 15,40
 
-o Pizza: Tonno
+o Pizza: Pizza Tonno
   d Käse, Tomatensoße, Thunfisch, Zwiebeln
   i PizzaSizeNames
   o Größe: klein @ 7,20
   o Größe: groß @ 8,80
   o Größe: Familie @ 15,40
 
-o Pizza: Vegetaria
+o Pizza: Pizza Vegetaria
   d Käse, Tomatensoße, Paprika, Peperoni, Champignons, Artischocken
   i PizzaSizeNames
   o Größe: klein @ 7,20
   o Größe: groß @ 8,60
   o Größe: Familie @ 16,20
 
-o Pizza: 4-Formaggi
+o Pizza: Pizza 4-Formaggi
   d 4 verschiedene Käsesorten, Tomatensoße
   i PizzaSizeNames
   o Größe: klein @ 7,90
   o Größe: groß @ 9,60
   o Größe: Familie @ 17,30
 
-o Pizza: Gorgonzola und Salami
+o Pizza: Pizza Gorgonzola und Salami
   d Salami Käse, Tomatensoße, Gorgonzola, Salsiccia (scharfe Salami)
   i PizzaSizeNames
   o Größe: klein @ 7,70
   o Größe: groß @ 9,60
   o Größe: Familie @ 17,00
 
-o Pizza: Trevisaner
+o Pizza: Pizza Trevisaner
   d Mozzarella, Tomatensoße, Radicchio, Parmesankäse, Salsiccia (scharfe Salami )
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,80
 
-o Pizza: Romana
+o Pizza: Pizza Romana
   d Tomatensoße, Sardellen, Kapern, Knoblauch
   i PizzaSizeNames
   o Größe: klein @ 6,50
   o Größe: groß @ 7,80
   o Größe: Familie @ 16,00
 
-o Pizza: Broccoli
+o Pizza: Pizza Broccoli
   d Mozzarella, Tomatensoße, Broccoli, Knoblauch, Parmesankäse
   i PizzaSizeNames
   o Größe: klein @ 6,70
   o Größe: groß @ 8,30
   o Größe: Familie @ 16,40
 
-o Pizza: Radicchio
+o Pizza: Pizza Radicchio
   d Mozzarella, Radicchio, Parmesankäse
   i PizzaSizeNames
   o Größe: klein @ 6,70
   o Größe: groß @ 8,10
   o Größe: Familie @ 15,90
 
-o Pizza: Griechischer Filoncino
+o Pizza: Pizza Griechischer Filoncino
   d (geschlossen ) Mozzarella, Spinat, Zwiebeln, Schafskäse
   o Größe: klein @ 7,40
     d ⌀ 26 cm
   o Größe: groß @ 8,80
     d ⌀ 30 cm
 
-o Pizza: Überraschung
+o Pizza: Pizza Überraschung
   i PizzaSizeNames
   o Größe: klein @ 8,40
   o Größe: groß @ 9,80
   o Größe: Familie @ 17,90
 
-o Pizza: Rucola
+o Pizza: Pizza Rucola
   d Mozzarella, Tomatensoße, fr. Tomaten, Parmesankäse, Ruccola
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,40
 
-o Pizza: Parma
+o Pizza: Pizza Parma
   d Mozzarella, Tomatensoße, Parmesankäse, Parmaschinken
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,90
 
-o Pizza: Melanzana
+o Pizza: Pizza Melanzana
   d Mozzarella, Tomatensoße, gegrillte Aubergine, Knoblauch, Parmesankäse, Basilikum
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,90
 
-o Pizza: Popeye
+o Pizza: Pizza Popeye
   d Käse, Tomatensoße, Parmesankäse, Spinat, Knoblauch
   i PizzaSizeNames
   o Größe: klein @ 6,60
   o Größe: groß @ 8,10
   o Größe: Familie @ 14,90
 
-o Pizza: A la Chef
+o Pizza: Pizza A la Chef
   d Käse, Tomatensoße, Hähnchenbrust, frisches Gemüse, pikant
   i PizzaSizeNames
   o Größe: klein @ 7,90
   o Größe: groß @ 9,30
   o Größe: Familie @ 17,90
 
-o Pizza: Nudelpizza
+o Pizza: Pizza Nudelpizza
   d Käse, Tomatensoße, Rigatoni
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 15,00
 
-o Pizza: Bio Pizza
+o Pizza: Pizza Bio Pizza
   d Mozzarella, Tomatensoße, frische Tomaten, Zucchini, Aubergine, Knoblauch
   i PizzaSizeNames
   o Größe: klein @ 8,40
   o Größe: groß @ 9,80
   o Größe: Familie @ 17,90
 
-o Pizza: Mexicana
+o Pizza: Pizza Mexicana
   d Käse, Tomatensoße, Hackfleisch, Mais, Zwiebel, Knoblauch, scharfe Bohnen
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,40
 
-o Pizza: Sucuk
+o Pizza: Pizza Sucuk
   d Käse, Tomatensoße, Oliven, Sucuk, Pepperoni
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 16,00
 
-o Pizza: Pulcinella
+o Pizza: Pizza Pulcinella
   d Mozzarella, Tomatensoße, Basilikum, frische Tomaten
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 15,90
 
-o Pizza: Gyros
+o Pizza: Pizza Gyros
   d Putenfleisch oder Schweinefleisch, Zwiebeln, Tzatziki
   i PizzaSizeNames
   o Größe: klein @ 7,50
@@ -710,7 +710,7 @@ o Auflauf: Hawaii-Auflauf @ 8,00
   d mit Schinken, Ananas und Sahnesoße
 
 o Auflauf: Spinat-Auflauf @ 8,00
-  d mit Sahne und EI
+  d mit Sahne und Ei
 
 o Auflauf: Puten-Auflauf @ 8,00
   d mit Hähnchenfleisch, Champignons und Sahnesoße
