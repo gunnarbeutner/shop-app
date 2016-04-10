@@ -37,13 +37,13 @@ o Vorspeise: Prosciutto di Parma con Melone @ 7,50
 o Vorspeise: Rindercarpaccio @ 8,50
 
 o Salat: Italienischer Salat
-  d Eisbergsalat , Schinken , Käse , Thunfisch , Ei , Zwiebeln , grüne Oliven , Tomaten , Karotten , Mais und Gurken
+  d Eisbergsalat, Schinken, Käse, Thunfisch, Ei, Zwiebeln, grüne Oliven, Tomaten, Karotten, Mais und Gurken
   i SalatOptions
   o Größe: klein @ 6,50
   o Größe: groß @ 7,50
 
 o Salat: Insalata Speziale
-  d Eisbergsalat , Parmaschinken , Mozzarella , grüne Oliven , Ei , Karotten , Gurken , Tomaten , Mais
+  d Eisbergsalat, Parmaschinken, Mozzarella, grüne Oliven, Ei, Karotten, Gurken, Tomaten, Mais
   i SalatOptions
   o Größe: klein @ 7,00
   o Größe: groß @ 8,00
@@ -189,7 +189,7 @@ o Pizza: Salami
   o Größe: Familie @ 14,40
 
 o Pizza: Prosciutto Funghi
-  d Käse,Tomatensoße, Schinken , Champignons
+  d Käse, Tomatensoße, Schinken, Champignons
   i PizzaSizeNames
   o Größe: klein @ 7,00
   o Größe: groß @ 8,30
@@ -203,21 +203,21 @@ o Pizza: Diavola
   o Größe: Familie @ 14,90
 
 o Pizza: Capriciosa
-  d Käse, Tomatensoße, Schinken , Champignon, Artischocken
+  d Käse, Tomatensoße, Schinken, Champignon, Artischocken
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 15,40
 
 o Pizza: Speziale
-  d Käse, Tomatensoße, Schinken , Champignons, Pepperoni, Paprikaschoten, Salami
+  d Käse, Tomatensoße, Schinken, Champignons, Pepperoni, Paprikaschoten, Salami
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,40
 
 o Pizza: Luna
-  d Käse, Tomatensoße, Schinken , Salami
+  d Käse, Tomatensoße, Schinken, Salami
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
@@ -231,49 +231,49 @@ o Pizza: Stella
   o Größe: Familie @ 14,90
 
 o Pizza: Notte
-  d Käse, Tomatensoße, Schinken , Champignons, Salami
+  d Käse, Tomatensoße, Schinken, Champignons, Salami
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 15,90
 
 o Pizza: Amore
-  d Käse, Tomatensoße, scharfe Salami , Knoblauch und Zwiebeln
+  d Käse, Tomatensoße, scharfe Salami, Knoblauch und Zwiebeln
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
   o Größe: Familie @ 16,40
 
 o Pizza: Hawaii
-  d Käse, Tomatensoße, Schinken , Ananas
+  d Käse, Tomatensoße, Schinken, Ananas
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 15,40
 
 o Pizza: 4-Stagioni
-  d Käse, Tomatensoße, Artischocken, Oliven, Schinken , Champignons
+  d Käse, Tomatensoße, Artischocken, Oliven, Schinken, Champignons
   i PizzaSizeNames
   o Größe: klein @ 7,20
   o Größe: groß @ 8,60
   o Größe: Familie @ 15,70
 
 o Pizza: Calzone
-  d Käse, Tomatensoße, Schinken , Champigons und Salami
+  d Käse, Tomatensoße, Schinken, Champigons und Salami
   o Größe: klein @ 7,20
     d ⌀ 26 cm
   o Größe: groß @ 8,80
     d ⌀ 30 cm
 
 o Pizza: Tiroler
-  d Käse,Tomatensoße, Bauchspeck, Oliven, Ei, Knoblauch
+  d Käse, Tomatensoße, Bauchspeck, Oliven, Ei, Knoblauch
   i PizzaSizeNames
   o Größe: klein @ 6,90
   o Größe: groß @ 8,30
   o Größe: Familie @ 16,90
 
 o Pizza: Venezia
-  d Käse, Tomatensoße, Salami , Champignons, Paprika, Thunfisch
+  d Käse, Tomatensoße, Salami, Champignons, Paprika, Thunfisch
   i PizzaSizeNames
   o Größe: klein @ 7,40
   o Größe: groß @ 8,80
@@ -493,7 +493,7 @@ o Geflügel: Fleischteller @ 16,50
   d mit vier verschiedenen Fleischsorten
 
 o Schweinefleisch: Saltimbocca alla Romana @ 12,50
-  d Schweinemedaillons mit Parmaschinken1 , Weinsauce und Salbei
+  d Schweinemedaillons mit Parmaschinken1, Weinsauce und Salbei
 
 o Schweinefleisch: Scaloppine Funghi @ 12,50
   d Schweinemedaillons mit Champignons und Sahnesauce
@@ -520,7 +520,7 @@ o Spaghetti: Spaghetti aglio olio @ 6,40
   i BeilageOptions
 
 o Spaghetti: Spaghetti della Casa @ 6,80
-  d mit Schinken1 , Champignons, Hackfleischsauce und Sahne verfeinert
+  d mit Schinken, Champignons, Hackfleischsauce und Sahne verfeinert
   i BeilageOptions
 
 o Spaghetti: Spaghetti alla Carbonara @ 6,30
@@ -581,19 +581,19 @@ o Nudeln al Forno: Canneloni al Forno @ 7,00
   d Nudelrolle mit Fleischfüllung, Hackfleischsauce und Käse überbacken
 
 o Nudeln al Forno: Gnocchi al Forno @ 6,70
-  d mit Schinken1 , Champignons, Hackfleischsauce und Käse überbacken
+  d mit Schinken, Champignons, Hackfleischsauce und Käse überbacken
 
 o Nudeln al Forno: Rigatoni al Forno @ 7,10
-  d mit Schinken1 , Champignons, Hackfleischsoße und Käse überbacken
+  d mit Schinken, Champignons, Hackfleischsoße und Käse überbacken
 
 o Nudeln al Forno: Spaghetti al Forno @ 7,00
-  d mit Schinken1 , Champignons, Hackfleischsoße und Käse überbacken
+  d mit Schinken, Champignons, Hackfleischsoße und Käse überbacken
 
 o Nudeln al Forno: Kawatani al Forno @ 7,40
-  d (drei Nudelsorten) mit Schinken1 , Champignons, Bolognesesoße, Sahne und Käse
+  d (drei Nudelsorten) mit Schinken, Champignons, Bolognesesoße, Sahne und Käse
 
 o Nudeln al Forno: Tagliatelle al Forno @ 7,00
-  d mit Schinken1 , Champignon, Bolognese und Sahnesoße
+  d mit Schinken, Champignon, Bolognese und Sahnesoße
 
 o Nudeln al Forno: Canneloni al Forno @ 7,50
   d mit Spinat- und Ricottafüllung
@@ -620,7 +620,7 @@ o Penne: Penne alla Panna @ 6,50
   d mit Schinken-Sahnesauce
 
 o Penne: Penne Carbonara @ 6,40
-  d mit Schinken1 und Sahnesauce
+  d mit Schinken und Sahnesauce
 
 o Penne: Penne Gemüse @ 7,30
   d mit frischem Gemüse, Mozzarella und Tomatensauce
@@ -638,13 +638,13 @@ o Tortellini: Tortellini Napoli @ 5,70
   d mit Tomatensauce
 
 o Tortellini: Tortellini Panna @ 6,60
-  d mit Schinken1 und Sahnesauce
+  d mit Schinken und Sahnesauce
 
 o Tortellini: Tortellini al Gorgonzola @ 7,20
   d mit Käse und Sahnesauce
 
 o Tortellini: Tortellini Primavera @ 7,20
-  d mit Schinken1 , Champignons, Erbsen und Cognacsauce
+  d mit Schinken, Champignons, Erbsen und Cognacsauce
 
 o Tortellini: Tortellini Vier Käsesorten @ 7,20
   d vier Käsesorten mit Sahnesauce
@@ -665,7 +665,7 @@ o Tagliatelle: Tagliatelle Gorgonzola @ 7,20
   d mit Käse und Sahnesauce
 
 o Tagliatelle: Tagliatelle Panna @ 6,50
-  d mit Schinken1 und Sahnesauce
+  d mit Schinken und Sahnesauce
 
 o Tagliatelle: Tagliatelle Funghi @ 7,00
   d mit frischen Champignons und Sahnesauce
@@ -698,7 +698,7 @@ o Gnocchi: Gnocchi all Arrabbiata @ 6,10
   d mit frischen Tomaten, Knoblauch, scharf und Tomatensauce
 
 o Gnocchi: Gnocchi alla Panna @ 6,50
-  d mit Schinken1 und Sahnesauce
+  d mit Schinken und Sahnesauce
 
 o Gnocchi: Gnocchi alla Bolognese @ 6,50
   d mit Hackfleischsauce
