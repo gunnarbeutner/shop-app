@@ -1,0 +1,873 @@
+s Pizza Romano
+
+t SalatOptions
+  o Dressing: Balsamico mit Olivenöl
+  o Dressing: hausgemachtes Senfdressing
+  o Dressing: italienisches Dressing
+  o Dressing: Joghurtdressing
+  o Dressing: ohne Dressing
+
+t BeilageOptions
+  o Beilage: Kroketten
+  o Beilage: Pommes frites
+
+t PizzaSizeNames
+  o Größe: klein
+    d ⌀ 26 cm
+  o Größe: groß
+    d ⌀ 30 cm
+  o Größe: Familie
+    d 49 cm x 32 cm
+
+o Vorspeise: Antipasti Verdure @ 7,50
+
+o Vorspeise: Käseteller @ 7,00
+  d mit verschiedenen Käsesorten
+
+o Vorspeise: Antipasti Italiana @ 8,00
+
+o Vorspeise: Bruschetta (4 Stück) @ 4,00
+  d mit frischen Tomatenwürfel und Knoblauch
+
+o Vorspeise: Cáprese @ 7,00
+  d mit frischen Tomaten, Mozzarella, Oliven, Basilikum
+
+o Vorspeise: Prosciutto di Parma con Melone @ 7,50 
+
+o Vorspeise: Rindercarpaccio @ 8,50
+
+o Salat: Italienischer Salat
+  d Eisbergsalat , Schinken , Käse , Thunfisch , Ei , Zwiebeln , grüne Oliven , Tomaten , Karotten , Mais und Gurken
+  i SalatOptions
+  o Größe: klein @ 6,50
+  o Größe: groß @ 7,50
+
+o Salat: Insalata Speziale
+  d Eisbergsalat , Parmaschinken , Mozzarella , grüne Oliven , Ei , Karotten , Gurken , Tomaten , Mais
+  i SalatOptions
+  o Größe: klein @ 7,00
+  o Größe: groß @ 8,00
+
+o Salat: Insalata Frutti di Mare
+  d Grünsalat, Meeresfrüchte, Tomaten, Gurken, Karotten, grüne Oliven
+  i SalatOptions
+  o Größe: klein @ 7,00
+  o Größe: groß @ 8,00
+
+o Salat: Insalata Mista
+  d Grünsalat, Gurken, Tomaten, Karotten, Mais
+  i SalatOptions
+  o Größe: klein @ 4,00
+  o Größe: groß @ 5,00
+
+o Salat: Insalata Ruccola
+  d Ruccola, frische Tomaten, frischer Parmesankäse
+  i SalatOptions
+  o Größe: klein @ 6,00
+  o Größe: groß @ 7,00
+
+o Salat: Insalata di Pomodoro
+  d Tomatensalat mit Zwiebeln
+  i SalatOptions
+  o Größe: klein @ 4,00
+  o Größe: groß @ 5,00
+
+o Salat: Insalata di Cetrioli
+  d Gurkensalat mit Zwiebeln
+  i SalatOptions
+  o Größe: klein @ 3,50
+  o Größe: groß @ 4,50
+
+o Salat: Insalata Primavera
+  d Schafskäse, frische Tomaten, Zwiebeln, Oregano, Basilikum, Oliven, Knoblauch
+  i SalatOptions
+  o Größe: klein @ 6,50
+  o Größe: groß @ 7,50
+
+o Salat: Grüner Salat
+  i SalatOptions
+  o Größe: klein @   3,50
+  o Größe: groß @ 4,50
+
+o Salat: Thunfischsalat
+  i SalatOptions
+  d Eisbergsalat, Tomaten, Gurken, Zwiebel
+  o Größe: klein @   6,50
+  o Größe: groß @ 7,50
+
+o Suppe: Zuppa di Pomodoro @ 3,50
+  d Tomatensuppe
+
+o Suppe: Minestrone @ 3,50
+  d Gemüsesuppe
+
+o Suppe: Meranersuppe @ 3,50
+  d Weißweinsahnesauce und Ei
+
+o Suppe: Zwiebelsuppe @ 3,50
+
+o Pizza: Pizza Hamburger
+  d mit Hackfleischsauce, Zwiebeln
+  i PizzaSizeNames
+  o Größe: klein @ 7,20
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 16,70
+
+o Pizza: Pizza Südtiroler
+  d Tomatensoße, Mozzarella, Rucola, Parmaschinken, Parmesankäse
+  i PizzaSizeNames
+  o Größe: klein @ 8,20
+  o Größe: groß @ 10,20
+  o Größe: Familie @ 17,90
+
+o Pizza: Pizzabrot
+  d mit Knoblauch, Oregano
+  i PizzaSizeNames
+  o Größe: klein @ 3,70
+  o Größe: groß @ 5,00
+  o Größe: Familie @ 8,70
+
+o Pizza: Pizza Romano
+  d mit Tomatensoße, Käse, Schinken, Champignons, Salami, Oliven, Scharf
+  o Größe: klein @ 7,20
+    d ⌀ 26 cm
+
+o Pizza: Pizza Ufo
+  d mit Tomatensoße, Käse, Spinat, frischeTomaten, Mozzarella (geschlossene Pizza)
+  o Größe: klein @ 8,20
+    d ⌀ 26 cm
+  o Größe: groß @ 9,30
+    d ⌀ 30 cm
+
+o Pizza: Marinara
+  d Tomatensoße, Knoblauch, Oregano
+  i PizzaSizeNames
+  o Größe: klein @ 4,50
+  o Größe: groß @ 5,80
+  o Größe: Familie @ 11,90
+
+o Pizza: Margherita
+  d Käse, Tomatensoße, Oregano
+  i PizzaSizeNames
+  o Größe: klein @ 5,40
+  o Größe: groß @ 6,80
+  o Größe: Familie @ 12,90
+
+o Pizza: Napoli
+  d Käse, Tomatensoße, Sardellen
+  i PizzaSizeNames
+  o Größe: klein @ 6,40
+  o Größe: groß @ 7,80
+  o Größe: Familie @ 14,40
+
+o Pizza: Mafiosa
+  d Käse, Tomatensoße, Oliven
+  i PizzaSizeNames
+  o Größe: klein @ 6,40
+  o Größe: groß @ 7,30
+  o Größe: Familie @ 13,40
+
+o Pizza: Prosciutto
+  d Käse, Tomatensoße, Schinken
+  i PizzaSizeNames
+  o Größe: klein @ 6,40
+  o Größe: groß @ 7,80
+  o Größe: Familie @ 14,40
+
+o Pizza: Funghi
+  d Käse, Tomatensoße, Champignons
+  i PizzaSizeNames
+  o Größe: klein @ 6,40
+  o Größe: groß @ 7,80
+  o Größe: Familie @ 14,40
+
+o Pizza: Salami
+  d Käse, Tomatensoße, Salami (mild)
+  i PizzaSizeNames
+  o Größe: klein @ 6,40
+  o Größe: groß @ 7,80
+  o Größe: Familie @ 14,40
+
+o Pizza: Prosciutto Funghi
+  d Käse,Tomatensoße, Schinken , Champignons
+  i PizzaSizeNames
+  o Größe: klein @ 7,00
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 14,90
+
+o Pizza: Diavola
+  d Käse, Tomatensoße, Salsiccia (Salami scharf)
+  i PizzaSizeNames
+  o Größe: klein @ 7,20
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 14,90
+
+o Pizza: Capriciosa
+  d Käse, Tomatensoße, Schinken , Champignon, Artischocken
+  i PizzaSizeNames
+  o Größe: klein @ 6,90
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 15,40
+
+o Pizza: Speziale
+  d Käse, Tomatensoße, Schinken , Champignons, Pepperoni, Paprikaschoten, Salami
+  i PizzaSizeNames
+  o Größe: klein @ 7,40
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 16,40
+
+o Pizza: Luna
+  d Käse, Tomatensoße, Schinken , Salami
+  i PizzaSizeNames
+  o Größe: klein @ 6,90
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 14,90
+
+o Pizza: Stella
+  d Käse, Tomatensoße, Champignons, Salami
+  i PizzaSizeNames
+  o Größe: klein @ 6,90
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 14,90
+
+o Pizza: Notte
+  d Käse, Tomatensoße, Schinken , Champignons, Salami
+  i PizzaSizeNames
+  o Größe: klein @ 7,40
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 15,90
+
+o Pizza: Amore
+  d Käse, Tomatensoße, scharfe Salami , Knoblauch und Zwiebeln
+  i PizzaSizeNames
+  o Größe: klein @ 7,40
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 16,40
+
+o Pizza: Hawaii
+  d Käse, Tomatensoße, Schinken , Ananas
+  i PizzaSizeNames
+  o Größe: klein @ 6,90
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 15,40
+
+o Pizza: 4-Stagioni
+  d Käse, Tomatensoße, Artischocken, Oliven, Schinken , Champignons
+  i PizzaSizeNames
+  o Größe: klein @ 7,20
+  o Größe: groß @ 8,60
+  o Größe: Familie @ 15,70
+
+o Pizza: Calzone
+  d Käse, Tomatensoße, Schinken , Champigons und Salami
+  o Größe: klein @ 7,20
+    d ⌀ 26 cm
+  o Größe: groß @ 8,80
+    d ⌀ 30 cm
+
+o Pizza: Tiroler
+  d Käse,Tomatensoße, Bauchspeck, Oliven, Ei, Knoblauch
+  i PizzaSizeNames
+  o Größe: klein @ 6,90
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 16,90
+
+o Pizza: Venezia
+  d Käse, Tomatensoße, Salami , Champignons, Paprika, Thunfisch
+  i PizzaSizeNames
+  o Größe: klein @ 7,40
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 16,90
+
+o Pizza: Gambaretti
+  d Käse, Tomatensoße, Krabben, Petersilie, Knoblauch
+  i PizzaSizeNames
+  o Größe: klein @ 7,90
+  o Größe: groß @ 9,30
+  o Größe: Familie @ 16,90
+
+o Pizza: Frutti di Mare
+  d Käse, Tomatensoße, Meeresfrüchte, Knoblauch
+  i PizzaSizeNames
+  o Größe: klein @ 7,90
+  o Größe: groß @ 9,30
+  o Größe: Familie @ 16,90
+
+o Pizza: Mais
+  d Käse, Tomatensofie, Paprikaschoten, Mais, Pepperoni
+  i PizzaSizeNames
+  o Größe: klein @ 6,70
+  o Größe: groß @ 7,80
+  o Größe: Familie @ 15,40
+
+o Pizza: Tonno
+  d Käse, Tomatensoße, Thunfisch, Zwiebeln
+  i PizzaSizeNames
+  o Größe: klein @ 7,20
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 15,40
+
+o Pizza: Vegetaria
+  d Käse, Tomatensoße, Paprika, Peperoni, Champignons, Artischocken
+  i PizzaSizeNames
+  o Größe: klein @ 7,20
+  o Größe: groß @ 8,60
+  o Größe: Familie @ 16,20
+
+o Pizza: 4-Formaggi
+  d 4 verschiedene Käsesorten, Tomatensoße
+  i PizzaSizeNames
+  o Größe: klein @ 7,90
+  o Größe: groß @ 9,60
+  o Größe: Familie @ 17,30
+
+o Pizza: Gorgonzola und Salami
+  d Salami Käse, Tomatensoße, Gorgonzola, Salsiccia (scharfe Salami)
+  i PizzaSizeNames
+  o Größe: klein @ 7,70
+  o Größe: groß @ 9,60
+  o Größe: Familie @ 17,00
+
+o Pizza: Trevisaner
+  d Mozzarella, Tomatensoße, Radicchio, Parmesankäse, Salsiccia (scharfe Salami )
+  i PizzaSizeNames
+  o Größe: klein @ 7,40
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 16,80
+
+o Pizza: Romana
+  d Tomatensoße, Sardellen, Kapern, Knoblauch
+  i PizzaSizeNames
+  o Größe: klein @ 6,50
+  o Größe: groß @ 7,80
+  o Größe: Familie @ 16,00
+
+o Pizza: Broccoli
+  d Mozzarella, Tomatensoße, Broccoli, Knoblauch, Parmesankäse
+  i PizzaSizeNames
+  o Größe: klein @ 6,70
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 16,40
+
+o Pizza: Radicchio
+  d Mozzarella, Radicchio, Parmesankäse
+  i PizzaSizeNames
+  o Größe: klein @ 6,70
+  o Größe: groß @ 8,10
+  o Größe: Familie @ 15,90
+
+o Pizza: Griechischer Filoncino
+  d (geschlossen ) Mozzarella, Spinat, Zwiebeln, Schafskäse
+  o Größe: klein @ 7,40
+    d ⌀ 26 cm
+  o Größe: groß @ 8,80
+    d ⌀ 30 cm
+
+o Pizza: Überraschung
+  i PizzaSizeNames
+  o Größe: klein @ 8,40
+  o Größe: groß @ 9,80
+  o Größe: Familie @ 17,90
+
+o Pizza: Rucola
+  d Mozzarella, Tomatensoße, fr. Tomaten, Parmesankäse, Ruccola
+  i PizzaSizeNames
+  o Größe: klein @ 7,40
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 16,40
+
+o Pizza: Parma
+  d Mozzarella, Tomatensoße, Parmesankäse, Parmaschinken
+  i PizzaSizeNames
+  o Größe: klein @ 7,40
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 16,90
+
+o Pizza: Melanzana
+  d Mozzarella, Tomatensoße, gegrillte Aubergine, Knoblauch, Parmesankäse, Basilikum
+  i PizzaSizeNames
+  o Größe: klein @ 7,40
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 16,90
+
+o Pizza: Popeye
+  d Käse, Tomatensoße, Parmesankäse, Spinat, Knoblauch
+  i PizzaSizeNames
+  o Größe: klein @ 6,60
+  o Größe: groß @ 8,10
+  o Größe: Familie @ 14,90
+
+o Pizza: Pizza a la Chef
+  d Käse, Tomatensoße, Hähnchenbrust, frisches Gemüse, pikant
+  i PizzaSizeNames
+  o Größe: klein @ 7,90
+  o Größe: groß @ 9,30
+  o Größe: Familie @ 17,90
+
+o Pizza: Nudelpizza
+  d Käse, Tomatensoße, Rigatoni
+  i PizzaSizeNames
+  o Größe: klein @ 6,90
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 15,00
+
+o Pizza: Bio Pizza
+  d Mozzarella, Tomatensoße, frische Tomaten, Zucchini, Aubergine, Knoblauch
+  i PizzaSizeNames
+  o Größe: klein @ 8,40
+  o Größe: groß @ 9,80
+  o Größe: Familie @ 17,90
+
+o Pizza: Mexicana
+  d Käse, Tomatensoße, Hackfleisch, Mais, Zwiebel, Knoblauch, scharfe Bohnen
+  i PizzaSizeNames
+  o Größe: klein @ 7,40
+  o Größe: groß @ 8,80
+  o Größe: Familie @ 16,40
+
+o Pizza: Pizza Sucuk
+  d Käse, Tomatensoße, Oliven, Sucuk, Pepperoni
+  i PizzaSizeNames
+  o Größe: klein @ 6,90
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 16,00
+
+o Pizza: Pulcinella
+  d Mozzarella, Tomatensoße, Basilikum, frische Tomaten
+  i PizzaSizeNames
+  o Größe: klein @ 6,90
+  o Größe: groß @ 8,30
+  o Größe: Familie @ 15,90
+
+o Pizza: Pizza Gyros
+  d Putenfleisch oder Schweinefleisch, Zwiebeln, Tzatziki
+  i PizzaSizeNames
+  o Größe: klein @ 7,50
+  o Größe: groß @ 8,40
+  o Größe: Familie @ 17,40
+
+o Aus Fluss & Meer: Calamaris vom Grill @ 11,50€
+  i BeilageOptions
+
+o Aus Fluss & Meer: Calamari Diavolo @ 11,00
+  d Kapern, Oliven, Zwiebeln, Knoblauch -scharf mit Tomatensauce
+  i BeilageOptions
+
+o Aus Fluss & Meer: Fischstäbchen @ 7,00
+  d mit Pommes
+  i BeilageOptions
+
+o Aus Fluss & Meer: Calamari fritti @ 9,50
+  d Tintenfisch gebacken
+  i BeilageOptions
+
+o Aus Fluss & Meer: Filetto di Sogliola @ 13,50
+  d Seezungenfilet gebacken
+  i BeilageOptions
+
+o Aus Fluss & Meer: Seezungenfilet @ 14,00
+  d mit Weißweinsauce
+  i BeilageOptions
+
+o Geflügel: Putenschnitzel paniert @ 10,50
+
+o Geflügel: Putenschnitzel Rahmsauce @ 11,50
+  d natur mit Rahmsauce
+
+o Geflügel: Putenschnitzel Paprikasauce @ 11,50
+  d natur mit Paprikasauce
+
+o Geflügel: Putenschnitzel Jägersauce @ 11,50
+  d natur mit Jägersauce
+
+o Geflügel: Putenschnitzel Pfeffersauce @ 11,50
+  d natur mit Pfeffersauce
+
+o Geflügel: Putenschnitzel Zigeunersauce @ 11,50
+  d natur mit Zigeunersauce
+
+o Geflügel: Putenschnitzel Champignonsauce @ 11,50
+  d natur mit Champignonsauce
+
+o Geflügel: Fleischteller @ 16,50
+  d mit vier verschiedenen Fleischsorten
+
+o Schweinefleisch: Saltimbocca alla Romana @ 12,50
+  d Schweinemedaillons mit Parmaschinken1 , Weinsauce und Salbei
+
+o Schweinefleisch: Scaloppine Funghi @ 12,50
+  d Schweinemedaillons mit Champignons und Sahnesauce
+
+o Schweinefleisch: Scaloppine Gorgonzola @ 12,50
+  d Schweinemedaillons mit Käse und Sahnesauce
+
+o Schweinefleisch: Scaloppine al Vino @ 12,50
+  d mit Weißweinsauce
+
+o Schweinefleisch: Scaloppine Marsala @ 12,50
+  d Schweinemedaillons in Marsalwei und Sahnesauce
+
+o Spaghetti: Spaghetti Napoli @ 5,50
+  d mit Tomatensoße
+  i BeilageOptions
+
+o Spaghetti: Spaghetti alla Bolognese @ 6,70
+  d mit Hackfleischsauce
+  i BeilageOptions
+
+o Spaghetti: Spaghetti aglio olio @ 6,40
+  d mit Knoblauch, Olivenöl, scharf, Petersilie, frische Tomaten
+  i BeilageOptions
+
+o Spaghetti: Spaghetti della Casa @ 6,80
+  d mit Schinken1 , Champignons, Hackfleischsauce und Sahne verfeinert
+  i BeilageOptions
+
+o Spaghetti: Spaghetti alla Carbonara @ 6,30
+  d mit Sahne, Schinken und Ei
+  i BeilageOptions
+
+o Spaghetti: Spaghetti Frutti di Mare @ 7,00
+  d mit Meeresfrüchten, Zwiebeln und Knoblauch
+  i BeilageOptions
+
+o Spaghetti: Spaghetti al Tonno @ 6,70
+  d mit Tomatensauce, Zwiebeln, Knoblauch und Thunfisch
+  i BeilageOptions
+
+o Spaghetti: Spaghetti al Pesto @ 6,60
+  d mit Knoblauch, Basilikum und Sahnesauce
+  i BeilageOptions
+
+o Spaghetti: Spaghetti Mare Monti @ 7,00
+  d mit Champignons, Meeresfrüchten
+  i BeilageOptions
+
+o Spaghetti: Spaghetti Gorgonzola @ 7,20
+  d mit Sahnesauce
+  i BeilageOptions
+
+o Spaghetti: Spagehtti Broccoli @ 6,70
+  d mit Sahnesauce
+  i BeilageOptions
+
+o Spaghetti: Spaghetti Vier Käsesorten @ 7,20
+  d vier Käsesorten und Sahnesauce
+  i BeilageOptions
+
+o Spaghetti: Spaghetti Matriciana @ 7,10
+  d mit Speck, Zwiebeln und Rosésauce
+  i BeilageOptions
+
+o Spaghetti: Spaghetti Gemüse @ 7,30
+  d mit frischem Gemüse, Mozzarella und Tomatensauce
+  i BeilageOptions
+
+o Spaghetti: Spagehtti Scampi @ 8,50
+  d mit Scampi
+  i BeilageOptions
+
+o Spaghetti: Spaghetti Krabben @ 7,50
+  d mit Krabben
+  i BeilageOptions
+
+o Nudeln al Forno: Tortellini al Forno @ 7,10
+  d mit Hackfleischsoße und Käse überbacken
+
+o Nudeln al Forno: Lasagne al Forno @ 7,10
+  d mit Hackfleisch und Käse überbacken
+
+o Nudeln al Forno: Canneloni al Forno @ 7,00
+  d Nudelrolle mit Fleischfüllung, Hackfleischsauce und Käse überbacken
+
+o Nudeln al Forno: Gnocchi al Forno @ 6,70
+  d mit Schinken1 , Champignons, Hackfleischsauce und Käse überbacken
+
+o Nudeln al Forno: Rigatoni al Forno @ 7,10
+  d mit Schinken1 , Champignons, Hackfleischsoße und Käse überbacken
+
+o Nudeln al Forno: Spaghetti al Forno @ 7,00
+  d mit Schinken1 , Champignons, Hackfleischsoße und Käse überbacken
+
+o Nudeln al Forno: Kawatani al Forno @ 7,40
+  d (drei Nudelsorten) mit Schinken1 , Champignons, Bolognesesoße, Sahne und Käse
+
+o Nudeln al Forno: Tagliatelle al Forno @ 7,00
+  d mit Schinken1 , Champignon, Bolognese und Sahnesoße
+
+o Nudeln al Forno: Canneloni al Forno @ 7,50
+  d mit Spinat- und Ricottafüllung
+
+o Penne: Penne Napoli @ 5,50
+  d mit Tomatensauce
+
+o Penne: Penne alla Bolognese @ 6,70
+  d mit Hackfleischsauce
+
+o Penne: Penne all Arabiata @ 6,70
+  d Tomatensauce, Knoblauch (scharf)
+
+o Penne: Penne all Tonno @ 6,70
+  d mit Thunfisch, Zwiebeln, Knoblauch und Tomatensauce
+
+o Penne: Penne al Gorgonzola @ 7,20
+  d mit Käse-Sahnesauce
+
+o Penne: Penne vier Käse @ 7,20
+  d mit Sahnesauce und vier Käsesorten
+
+o Penne: Penne alla Panna @ 6,50
+  d mit Schinken-Sahnesauce
+
+o Penne: Penne Carbonara @ 6,40
+  d mit Schinken1 und Sahnesauce
+
+o Penne: Penne Gemüse @ 7,30
+  d mit frischem Gemüse, Mozzarella und Tomatensauce
+
+o Penne: Penne Pute @ 8,50
+  d mit Putenstreifen, frischen Champignons und Rahmsauce
+
+o Penne: Penne Lachs @ 7,50
+  d mit Lachs und Sahnesauce
+
+o Penne: Penne Hähnchen @ 7,50
+  d mit Hähnchenfilet, Sahne und Rahmsauce
+
+o Tortellini: Tortellini Napoli @ 5,70
+  d mit Tomatensauce
+
+o Tortellini: Tortellini Panna @ 6,60
+  d mit Schinken1 und Sahnesauce
+
+o Tortellini: Tortellini al Gorgonzola @ 7,20
+  d mit Käse und Sahnesauce
+
+o Tortellini: Tortellini Primavera @ 7,20
+  d mit Schinken1 , Champignons, Erbsen und Cognacsauce
+
+o Tortellini: Tortellini Vier Käsesorten @ 7,20
+  d vier Käsesorten mit Sahnesauce
+
+o Tortellini: Tortellini alla Bolognese @ 6,70
+  d mit Hackfleischsauce
+
+o Tagliatelle: Tagliatelle alla Bolognese @ 6,70
+  d mit Hackfleischsauce
+
+o Tagliatelle: Tagliatelle Napoli @ 5,50
+  d mit Tomatensauce
+
+o Tagliatelle: Tagliatelle Romana @ 6,70
+  d mit Sardellen, Knoblauch, Kapern und Tomatensauce
+
+o Tagliatelle: Tagliatelle Gorgonzola @ 7,20
+  d mit Käse und Sahnesauce
+
+o Tagliatelle: Tagliatelle Panna @ 6,50
+  d mit Schinken1 und Sahnesauce
+
+o Tagliatelle: Tagliatelle Funghi @ 7,00
+  d mit frischen Champignons und Sahnesauce
+
+o Tagliatelle: Tagliatelle Gemüse @ 7,30
+  d mit frischem Gemüse, Mozzarella und Tomatensauce
+
+o Tagliatelle: Tagliatelle Salmone @ 7,50
+  d mit frischem Lachs
+
+o Tagliatelle: Tagliatelle Spinat @ 6,80
+  d mit Spinat und Sahnesauce
+
+o Tagliatelle: Tagliatelle @ 8,50
+  d mit Steinpilzen
+
+o Gnocchi: Gnocchi Napoli @ 5,50
+  d mit Tomatensauce
+
+o Gnocchi: Gnocchi al Pesto @ 6,60
+  d mit Knoblauch, Basilikum und Sahnesauce
+
+o Gnocchi: Gnocchi Gorgonzola @ 7,00
+  d mit Sahnesauce und Gorgonzola
+
+o Gnocchi: Gnocchi Vier Käse @ 7,00
+  d mit Sahnesauce
+
+o Gnocchi: Gnocchi all Arrabbiata @ 6,10
+  d mit frischen Tomaten, Knoblauch, scharf und Tomatensauce
+
+o Gnocchi: Gnocchi alla Panna @ 6,50
+  d mit Schinken1 und Sahnesauce
+
+o Gnocchi: Gnocchi alla Bolognese @ 6,50
+  d mit Hackfleischsauce
+
+o Auflauf: Vegetarisch-Auflauf @ 8,00
+  d mit frischem Gemüse und Tomaten-Sahnesoße
+
+o Auflauf: Hawaii-Auflauf @ 8,00
+  d mit Schinken, Ananas und Sahnesoße
+
+o Auflauf: Spinat-Auflauf @ 8,00
+  d mit Sahne und EI
+
+o Auflauf: Puten-Auflauf @ 8,00
+  d mit Hähnchenfleisch, Champignons und Sahnesoße
+
+o Auflauf: Gyros-Auflauf @ 8,00
+  d mit Sahnesoße
+
+o Auflauf: Lachs-Auflauf @ 8,00
+  d mit frischen Kräutern und Tomaten-Sahnesoße
+
+o Schnitzel: Schnitzel Wiener Art @ 9,50
+  d Schnitzel vom Schwein paniert
+  i BeilageOptions
+
+Schweineschnitzel Bolognense @ 12,50
+  d mit Bolognese und Käse überbacken
+  i BeilageOptions
+
+o Schnitzel: Schnitzel Rahmsauce @ 9,50
+  d Rahmschnitzel mit Rahmsoße
+  i BeilageOptions
+
+o Schnitzel: Schnitzel Jägersauce @ 9,50
+  d mit Jägersauce und Champignons
+  i BeilageOptions
+
+o Schnitzel: Schnitzel Zigeunersauce @ 10,00
+  d mit Zigeunersauce, Champignons, Zwiebeln und Paprika
+  i BeilageOptions
+
+o Schnitzel: Schnitzel Paprikasauce @ 9,50
+  d mit Paprikasauce und frische Paprika
+  i BeilageOptions
+
+o Schnitzel: Tiroler Schnitzel natur @ 11,00
+  d mit Spiegelei und Bauchspeck
+  i BeilageOptions
+
+o Steak: Schweinesteak Rahmsauce @ 13,50
+  d gegrillt mit Rahmsauce
+  i BeilageOptions
+
+o Steak: Schweinesteak Paprikasauce @ 13,50
+  d gegrillt mit Paprikasauce
+  i BeilageOptions
+
+o Steak: Schweinesteak Jägersauce @ 13,50
+  d gegrillt mit Jägersauce
+  i BeilageOptions
+
+o Steak: Schweinesteak Pfeffersauce @ 13,50
+  d gegrillt mit Pfeffersauce
+  i BeilageOptions
+
+o Steak: Schweinesteak Zigeunersauce @ 13,50
+  d gegrillt mit Zigeunersauce
+  i BeilageOptions
+
+o Steak: Schweinesteak Champignonsauce @ 13,50
+  d gegrillt mit Champignonsauce
+  i BeilageOptions
+
+o Steak: Schweinesteak Hawaii @ 13,50
+  d mit Käse und Ananas
+  i BeilageOptions
+
+o Fleischgerichte: Cordon Bleu @ 11,00
+  d gefülltes Fleisch von Schwein mit Vorderschinken1 und Käse paniert
+  i BeilageOptions
+
+o Fleischgerichte: Cordon Bleu Italienischer Art @ 13,50
+  d gefülltes Fleisch von Schwein mit Vorderschinken1 und Käse paniert mit Champignon, Erbsen und Paprikasoße
+  i BeilageOptions
+
+o Fleischgerichte: Cordon Bleu Champignonsauce @ 13,00
+  d mit Champignonsauce
+  i BeilageOptions
+
+o Fleischgerichte: Cordon Bleu Rahmsauce @ 13,00
+  d mit Rahmssauce
+  i BeilageOptions
+
+o Fleischgerichte: Cordon Bleu Paprikasauce @ 13,00
+  d mit Paprikasauce
+  i BeilageOptions
+
+o Fleischgerichte: Cordon Bleu Jägersauce @ 13,00
+  d mit Jägersauce
+  i BeilageOptions
+
+o Fleischgerichte: Cordon Bleu Pfeffersauce @ 13,00
+  d mit Pfeffersauce
+  i BeilageOptions
+
+o Fleischgerichte: Cordon Bleu Zigeunersauce @ 13,00
+  d mit Zigeunersauce
+  i BeilageOptions
+
+o Fleischgerichte: Schweinelende Rahmsauce @ 12,50
+  d mit Rahmsauce
+  i BeilageOptions
+
+o Fleischgerichte: Schweinelende Paprikasauce @ 12,50
+  d mit Paprikasauce
+  i BeilageOptions
+
+o Fleischgerichte: Schweinelende Pfeffersauce @ 12,50
+  d mit Pfeffersauce
+  i BeilageOptions
+
+o Fleischgerichte: Schweinelende Jägersauce @ 12,50
+  d mit Jägersauce
+  i BeilageOptions
+
+o Fleischgerichte: Schweinelende Zigeunersauce @ 12,50
+  d mit Zigeunersauce
+  i BeilageOptions
+
+o Fleischgerichte: Schweinelende Champignonsauce @ 12,50
+  d mit Champignonsauce
+  i BeilageOptions
+
+o Kindermenü: Pommes frites mit Käse überbacken @ 4,00
+
+o Kindermenü: Kinderschnitzel vom Schwein @ 5,00
+  d mit Pommes Frites
+
+o Kindermenü: Kleine Spaghetti @ 3,80
+  d mit Fleisch- oder Tomatensoße
+  o Sauce: Fleischsauce
+  o Sauce: Tomatensauce
+
+o Kindermenü: Pommes frites @ 2,50
+  d mit Ketchup
+
+o Kindermenü: Pizza Alf @ 4,00
+  d Schinken, Salami
+
+o Kindermenü: Portion Kroketten @ 3,00
+
+o Nachtisch: Ben & Jerry´s @ 9,50
+  d 500ml
+
+o Nachtisch: Tiramisu @ 4,00
+  d hausgemacht
+
+o Nachtisch: Tartufo Bianco @ 3,70
+
+o Nachtisch: Tartufo Nero @ 3,70
+
+o Nachtisch: Pannacotta @ 3,80
+  d hausgemacht mit Erdbeersoße
+
+o Omelett: Omelett natur @ 4,50
+
+o Omelett: Omelett mit Schinken und Champignons @ 5,50
+
+o Omelett: Omelett mit frischen Tomaten und Erbsen @ 5,50
+
+
