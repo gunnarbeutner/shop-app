@@ -19,53 +19,6 @@ t PizzaCommonOptions
     d ⌀ 28 cm
   o Größe: Large
     d ⌀ 32 cm
-  x Weitere Zutaten: Ananas @ 0,99
-  x Weitere Zutaten: Bacon @ 1,49
-  x Weitere Zutaten: Balsamico-Creme @ 0,99
-  x Weitere Zutaten: Basilikum-Pesto @ 0,99
-  x Weitere Zutaten: Broccoli @ 0,99
-  x Weitere Zutaten: Bruschetta-Mix @ 0,99
-  x Weitere Zutaten: Champignons @ 0,99
-  x Weitere Zutaten: Cherrytomaten @ 1,49
-  x Weitere Zutaten: Chilisalami @ 1,49
-  x Weitere Zutaten: Curry-Sauce @ 0,99
-  x Weitere Zutaten: Dänische Gurken @ 0,99
-  x Weitere Zutaten: Dänische Remoulade @ 0,99
-  x Weitere Zutaten: Ei, gekocht @ 0,99
-  x Weitere Zutaten: Frühlingszwiebeln @ 0,99
-  x Weitere Zutaten: Garnelen, Knob.-Öl mariniert@ 2,19
-  x Weitere Zutaten: Grana Padano D.O.P. @ 1,79
-  x Weitere Zutaten: Grüner Spargel @ 1,49
-  x Weitere Zutaten: Hinterschinken @ 1,49
-  x Weitere Zutaten: Hirtenkäse @ 1,79
-  x Weitere Zutaten: Hähnchenbrust @ 1,79
-  x Weitere Zutaten: Jalapeños (scharf) @ 0,99
-  x Weitere Zutaten: Käse-Mischung @ 1,79
-  x Weitere Zutaten: Knoblauch in Öl @ gratis
-  x Weitere Zutaten: Mailänder-Salami @ 1,79
-  x Weitere Zutaten: Mais @ 0,99
-  x Weitere Zutaten: Mozzarella @ 1,79
-  x Weitere Zutaten: Oliven @ 0,99
-  x Weitere Zutaten: Paprika @ 0,99
-  x Weitere Zutaten: Peperoni rot frisch @ 0,99
-  x Weitere Zutaten: Pizza Chilis @ gratis
-  x Weitere Zutaten: Pulled Beef @ 1,79
-  x Weitere Zutaten: Pute @ 1,79
-  x Weitere Zutaten: Rinderhack @ 1,49
-  x Weitere Zutaten: Rindersteakstreifen @ 1,79
-  x Weitere Zutaten: Rote Zwiebeln @ 0,99
-  x Weitere Zutaten: Rucola @ 1,49
-  x Weitere Zutaten: Röstzwiebeln @ 0,99
-  x Weitere Zutaten: Salami @ 1,49
-  x Weitere Zutaten: Sauce hollandaise @ 0,99
-  x Weitere Zutaten: Serranoschinken @ 1,79
-  x Weitere Zutaten: Sonnenblumenkerne @ 0,99
-  x Weitere Zutaten: Spinat @ 0,99
-  x Weitere Zutaten: Steakpfeffer @ gratis
-  x Weitere Zutaten: Thunfisch @ 1,79
-  x Weitere Zutaten: Tomaten @ 0,99
-  x Weitere Zutaten: Tomatenketchup @ 0,99
-  x Weitere Zutaten: Würstchen @ 1,49
 
 t PizzaTierSale
   i PizzaCommonOptions
