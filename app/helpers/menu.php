@@ -35,7 +35,7 @@ function _parse_menu_helper(&$parent, $lines, &$line_num = 0, $indent = 0) {
     $current = null;
 
     for (; $line_num < count($lines); $line_num++) {
-        $line = $lines[$line_num];
+        $line = rtrim($lines[$line_num]);
         if (preg_match('/^ *#/', $line) || preg_match('/^ *$/', $line)) {
             continue;
         }
@@ -69,7 +69,7 @@ function _parse_menu_helper(&$parent, $lines, &$line_num = 0, $indent = 0) {
         }
 
         if (preg_match('/^ *[a-zA-Z]+ *(.*)$/', $line, $matches)) {
-            $args = $matches[1];
+            $args = trim($matches[1]);
         } else {
             $args = '';
         }
