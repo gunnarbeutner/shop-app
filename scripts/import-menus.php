@@ -26,5 +26,9 @@ require_once('helpers/menu.php');
 foreach (glob(__DIR__ . '/../menus/*.menu') as $path) {
     $menu = file_get_contents($path);
     $tree = parse_menu($menu);
+    if ($tree === false) {
+        echo 'Failed to parse menu: ' . $path . "\n";
+        continue;
+    }
     import_menu($tree);
 }

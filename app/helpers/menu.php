@@ -82,6 +82,12 @@ function _parse_menu_helper(&$parent, $lines, &$line_num = 0, $indent = 0) {
             }
 
             $tokens = explode(':', $args, 2);
+
+            if (count($tokens) < 2) {
+                echo 'Missing article name in line ' . ($line_num + 1) . ' (' . $line . ")\n";
+                return false;
+            }
+
             $item_group = trim($tokens[0]);
 
             $tokens = explode('@', $tokens[1]);
@@ -170,21 +176,23 @@ function _resolve_templates(&$tree) {
 function parse_menu($menu_decl) {
     $lines = explode("\n", $menu_decl);
     $tree = [];
-    _parse_menu_helper($tree, $lines);
+    if (!_parse_menu_helper($tree, $lines)) {
+        return false;
+    }
     if (!_resolve_templates($tree)) {
         return false;
     }
     return $tree;
 }
 
-function _find_or_create_article_group($name, $required) {
+function _find_or_create_article_group($name, $required, $has_parent) {
     foreach (get_article_groups() as $group_id => $group) {
         if ($group['title'] == $name && $group['required'] == $required) {
             return $group['id'];
         }
     }
 
-    if ($required) {
+    if (!$has_parent) {
         $yorder = 1;
     } else {
         $yorder = 2;
@@ -217,7 +225,7 @@ function _import_menu_helper($store_id, &$parent, $old_articles, &$completed) {
         }
 
         $required = ($new_article['type'] == 'o');
-        $article_group_id = _find_or_create_article_group($new_article['group'], $required);
+        $article_group_id = _find_or_create_article_group($new_article['group'], $required, $parent_article_id !== null);
 
         if (array_key_exists('description', $new_article)) {
             $description = $new_article['description'];
