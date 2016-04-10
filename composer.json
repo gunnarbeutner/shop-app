@@ -36,7 +36,6 @@
      "components/handlebars.js": "~3.0",
      "atlassian/aui": "5.8.13",
      "dompdf/dompdf": "0.7.*",
-     "mbostock/d3": "3.5.*",
-     "vakata/jstree": "3.3.*"
+     "mbostock/d3": "3.5.*"
   }
 }
