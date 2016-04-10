@@ -7,7 +7,7 @@ t DressingOptions
 
 t PizzaSizeNames
   o Größe: Familie
-    d 32x48 cm
+    d 32 cm x 48 cm
   o Größe: klein
     d ⌀ 22 cm
   o Größe: mittel
@@ -235,12 +235,10 @@ o Pizza: Pizza Shrimps
 
 o Pizza: Pizza Spezial
   d mit Vorderschinken. Salami, Paprika, Peperoni und Champignons
+  i PizzaSizeNames
   o Größe: Familie @ 14,95
-    d 32x48 cm
   o Größe: klein @ 5,50
-    d ⌀ 22 cm
   o Größe: mittel @ 7,50
-    d ⌀ 30 cm
 
 o Pizza: Pizza Spinat
   d mit verrührtem Ei
