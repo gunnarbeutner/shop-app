@@ -1,0 +1,157 @@
+s Holzofenpizza Pietro
+
+t SalatOptions
+  o Dressing: Essig und Öl
+  o Dressing: Joghurtdressing
+  o Dressing: ohne Dressing
+
+o Pizza: Pizza Margherita @ 6,50
+  d Tomaten und Mozzarella
+
+o Pizza: Pizza Salame @ 7,50
+  d Tomaten, Mozzarella und Salami
+
+o Pizza: Pizza Prosciutto @ 7,50
+  d Tomaten, Mozzarella und Hinterschinken
+
+o Pizza: Pizza Funghi @ 7,50
+  d Tomaten, Mozzarella und Champignons
+
+o Pizza: Pizza Speciale @ 8,50
+  d Tomaten, Mozzarella, Hinterschinken, Salami, Champignons und Zwiebeln
+
+o Pizza: Pizza Palinuro @ 8,50
+  d Tomaten, Gorgonzola, Hinterschinken und Peperoni
+
+o Pizza: Pizza Marinara @ 7,00
+  d Tomaten, Mozzarella, Oregano und Knoblauch
+
+o Pizza: Pizza Capricciosa @ 8,50
+  d Tomaten, Mozzarella, Hinterschinken, Artischocken, Oliven und Champignons
+
+o Pizza: Pizza Hawaii @ 8,50
+  d Tomaten, Mozzarella, Hinterschinken und Ananas
+
+o Pizza: Pizza Quattro Stagioni @ 8,50
+  d Tomaten, Mozzarella, Hinterschinken, Salami, Champignons und Artischocken
+
+o Pizza: Pizza Calzone @ 8,00
+  d Gefülte Pizzatasche mit Tomaten, Mozzarella und Salami
+
+o Pizza: Pizza Amalfi @ 8,50
+  d Tomaten, Mozzarella, Thunfisch, Zwiebeln und Knoblauch
+
+o Pizza: Pizza Sorrentina @ 8,00
+  d Tomaten, Mozzarella, Sardellen, Kapern und Oregano
+
+o Pizza: Pizza Calabrese @ 8,50
+  d Tomaten, Mozzarella, Salsiccia und Oliven
+
+o Pizza: Pizza Pavarotti @ 8,00
+  d Tomaten, Mozzarella, Hinterschinken, Zwiebeln, Knoblauch (Scharf)
+
+o Pizza: Pizza Bruschetta @ 8,00
+  d Frisch gewürfelte Tomaten, Olivenöl, Knoblauch, Oregano und Basilikum
+
+o Pizza: Pizza Del Nonno @ 8,00
+  d Frische Eier, Zwiebeln, Mozarella, Speck und Parmesan
+
+o Pizza: Pizza Frutti di Mare @ 9,50
+  d Tomaten, Mozzarella und verschiedene Meeresfrüchte
+
+o Pizza: Pizza Chef @ 9,00
+  d Tomaten, Mozzarella, Parmaschinken und Rucolasalat
+
+o Pizza: Pizza Catastrofica @ 9,50
+  d Tomaten, Mozzarella, Hinterschinken, Salami, Champignons, Artischocken, Oliven, Paprika und Ei
+
+o Pizza: Pizza Bacio @ 8,00
+  d Frische Tomaten, Büffelmozzarella, Paprika und Spargeln
+
+o Pizza: Pizza Saporita @ 8,50
+  d Tomatensoße, Spinat, Sardellen, Kapern, Pinienkerne und Mozzarella
+
+o Pizza: Pizza Contadina @ 9,00
+  d Auberginen, Tomatenscheiben, Mozzarella und Oregano
+
+o Pizza: Pizza Delicata @ 8,50
+  d Tomatenwürfel, Mozzarella, Muscheln, Knoblauch, Oliven und Basilikum
+
+o Pizza: Pizza Vegetaria @ 9,00
+  d Tomaten, Mozzarella, Paprika, Spinat, frische Champignons, Broccoli, Oliven und Artischocken
+
+o Pizza: Pizza 4 Käse @ 8,50
+  d Tomaten und vier verschiedene Käsesorten
+
+o Pizza: Pizza Ciccio @ 9,00
+  d Tomaten, Mozzarella, Hinterschinken, Salami, Champignons, Zwiebeln und Knoblauch (Scharf)
+
+o Pizza: Pizza Violetta @ 8,50
+  d Tomaten, Mozzarella, Parmaschinken und Parmesansplitter
+
+o Pizza: Pizzabrot @ 3,50
+
+o Pizza: Pizza Jumbo @ 9,00
+  d Spinat, Büffelmozzarella, Kirschtomaten, Gorgonzola
+
+o Pizza: Pizza Garnelen @ 10,00
+  d Riesengarnelen, Kirschtomaten, Rucolasalat, Mozzarella
+
+o Pizza: Pizza Integrale "Rustica" @ 9,00
+  d Mozzarella, frische Tomaten, Rucolasalat, Parmesansplitter
+
+o Pizza: Pizza Integrale "Tradizionale" @ 10,00
+  d Mozzarella, frische Tomaten, Rucolasalat, Parmaschinken und Parmesansplitter
+
+o Pasta: Penne Arrabbiata @ 8,00
+  d Frische Tomaten, Knoblauch, Öl, Basilikum (Scharf)
+
+o Pasta: Rigatoni Pietro @ 9,50
+  d Delikate Soße mit Gorgonzola, Sahne, Rucolasalat und Parmesansplitter
+
+o Pasta: Rigatoni Gorgonzola @ 8,50
+  d Mit Gorgonzolasahnesoße
+
+o Pasta: Sogno di Picasso @ 9,50
+  d Spaghetti mit Garnelen, scharfen Peperoni, Kirschtomaten, Knoblauch und Olivenöl
+
+o Pasta: Spaghetti Bolognese @ 8,50
+  d Hackfleisch mit ausschließlich Rindfleisch
+
+o Pasta: Rigatoni Bolognese @ 8,50
+  d Hackfleisch mit ausschließlich Rindfleisch
+
+o Pasta: Lasagne Della Casa @ 9,00
+  d Bolognese mit Rindfleisch, Mozzarella, Parmesan und Bechamellesoße
+
+o Vorspeise: Piatto da Antipasto @ 13,00
+  d Vorspeisenteller
+
+o Vorspeise: Rucola con Parmigiano @ 8,50
+  d Rucolasalat mit Parmesansplitter
+
+o Vorspeise: Caprese @ 7,50
+  d Mozzarella und Tomatenscheiben mit frischen Basilicoblättern
+
+o Salat: Insalata di Pomodoro @ 6,50
+  d Tomatensalat
+  i SalatOptions
+
+o Salat: Insalata Verde @ 5,50
+  d Grüner Salat
+  i SalatOptions
+
+o Salat: Insalata Mista @ 6,50
+  d Gemischter Salat
+  i SalatOptions
+
+o Salat: Piccola Insalata "Italia" @ 8,50
+  d Kleiner italienischer Salat mit Thunfisch, Käse, Oliven, Peperoni, Hinterschinken, Mais, Artischocken, Eier, Rucolasalat und Zwiebeln
+  i SalatOptions
+
+o Salat: Grande Insalata "Italia" @ 10,00
+  d Großer italienischer Salat mit grünem Salat, Gurken, Tomaten, Thunfisch, Käse, Oliven, Peperoni, Hinterschinken, Mais, Artischocken, Eier, Rucolasalat und Zwiebeln
+  i SalatOptions
+
+o Nachtisch: Tiramisu @ 5,00
+  d Italienische Spezialität; hausgemacht
