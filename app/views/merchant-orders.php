@@ -94,6 +94,7 @@ foreach ($params['stores'] as $store_id => $store) {
     <th id="table-article">Beschreibung</th>
     <th id="table-price">Preis (&euro;)</th>
 <?php if ($format != 'pdf') { ?>
+    <th>Zuletzt bearbeitet</th>
     <th>Lastschrift</th>
     <th>Aktionen</th>
 <?php } ?>
@@ -124,6 +125,7 @@ HTML;
 
 			if ($format != 'pdf') {
 				$html .= <<<HTML
+    <td>%s</td>
     <td>%s</td>
     <td>%s</td>
 HTML;
@@ -168,7 +170,7 @@ HTML;
 			printf($html,
 				htmlentities($item['user_email']), htmlentities($item['user_name']),
 				htmlentities($item['title']), format_number($item['price']),
-				$direct_debit_status, $order_buttons);
+				htmlentities($item['modified']), $direct_debit_status, $order_buttons);
 		}
 
 		$sum_fee = bcmul(get_store_fee_multiplier($store_id, false), $sum);

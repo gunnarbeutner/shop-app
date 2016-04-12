@@ -72,6 +72,7 @@ CREATE TABLE `order_items` (
   `fee` decimal(12,5) NOT NULL DEFAULT '0',
   `rebate` decimal(12,5) NOT NULL DEFAULT '0',
   `merchant_id` int(11) DEFAULT NULL,
+  `modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
