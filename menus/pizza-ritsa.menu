@@ -31,20 +31,20 @@ o Pasta: Nudeln - Tomaten @ 4,50
 o Pizza: Pizza Bolognese
   d mit frischen Tomaten, Hackfleisch, Feta und roten Zwiebeln
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Brokkoli
   d mit frischen Tomaten und Gorgonzola
   i PizzaSizeNames
-  o Größe: klein @ 4,00
+  o Größe: klein @ 4,50
   o Größe: mittel @ 5,50
   o Größe: groß @ 6,00
 
 o Pizza: Pizza Calzone
   d mit Salami, Schinken, Peperoni, Artischocken und Ei
-  o Größe: groß @ 6,50
+  o Größe: groß @ 7,00
     d ⌀ 30 cm
 
 o Pizza: Pizza Champignons
@@ -64,16 +64,16 @@ o Pizza: Pizza Hawaii
 o Pizza: Pizza Hellas
   d mit Salami, frischen Champignons, schwarzen Oliven, roten Zwiebeln und Feta
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Hot
   d mit Rawit-Chillies, Peperoni, Salami, Schinken, frischen Champignons und Knoblauch
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Knoblauch
   d mit frischem Knoblauch
@@ -91,14 +91,14 @@ o Pizza: Pizza Margherita
 o Pizza: Pizza Meeresfrüchte
   d mit Meeresfrüchten, roten Zwiebeln und Knoblauch
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Mix
   d mit Salami, Schinken und frischen Champignons
   i PizzaSizeNames
-  o Größe: klein @ 4,00
+  o Größe: klein @ 4,50
   o Größe: mittel @ 5,50
   o Größe: groß @ 6,00
 
@@ -112,9 +112,9 @@ o Pizza: Pizza Mozzarella
 o Pizza: Pizza Orient
   d mit Knoblauchwurst, Peperoni, schwarzen Oliven, frischen Paprika und roten Zwiebeln
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Paprika
   d mit frischen Paprika
@@ -127,9 +127,9 @@ o Pizza: Pizza Puten
   d mit Putenschinken, frische Champignons, frische Paprika und Mozzarella
   i PizzaSizeNames
   x Belag: ohne Paprika mit Pepperoni
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Rucola
   d mit Schinken, schwarzen Oliven, Rucola-Salat, Mozzarella und geriebenem Parmesan
@@ -162,23 +162,23 @@ o Pizza: Pizza Schafskäse
 o Pizza: Pizza Schinken
   d mit Schinken
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,00
-  o Größe: groß @ 5,50
+  o Größe: klein @ 3,50
+  o Größe: mittel @ 4,50
+  o Größe: groß @ 5,00
 
 o Pizza: Pizza Sonne
   d mit Salami, Schinken, frischen Champignons, Ei
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Spezial
   d mit Salami, Schinken, Peperoni, frischen Champignons und Artischocken
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Spinat
   d mit Spinat und Feta
@@ -197,16 +197,16 @@ o Pizza: Pizza Tonos
 o Pizza: Pizza Vegetaria
   d mit frischen Champignons, schwarzen Oliven, frischen Paprika, Mais und Peperoni
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Vier Jahreszeiten
   d mit Schinken, Peperoni, frischen Paprika, Artischocken und frischen Champignons
   i PizzaSizeNames
-  o Größe: klein @ 4,00
-  o Größe: mittel @ 5,50
-  o Größe: groß @ 6,00
+  o Größe: klein @ 4,50
+  o Größe: mittel @ 6,00
+  o Größe: groß @ 6,50
 
 o Pizza: Pizza Vier Käsesorten
   d mit Gouda, Edamer, Mozzarella und Feta
@@ -266,8 +266,8 @@ o Salat: Thunfisch-Salat
   o Größe: normal @ 3,50
   o Größe: groß @ 4,50
 
-o Salat: Melitzanosalat @ 2,00
+o Salat: Melitzanosalat @ 2,20
   d Auberginensalat
 
-o Salat: Tirosalata @ 2,00
+o Salat: Tirosalata @ 2,70
   d Schafskäsesalat
