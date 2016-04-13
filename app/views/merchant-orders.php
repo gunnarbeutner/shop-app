@@ -85,20 +85,23 @@ foreach ($params['stores'] as $store_id => $store) {
 <?php } ?>
 </p>
 
-<table class="aui zebra" id="stores">
-  <tr>
+<table class="aui aui-table-sortable zebra" id="stores">
+  <thead>
+    <tr>
 <?php if ($format == 'pdf') { ?>
-    <td id="table-checkbox">&nbsp;</td>
+      <td id="table-checkbox">&nbsp;</td>
 <?php } ?>
-    <th id="table-user">Benutzer</th>
-    <th id="table-article">Beschreibung</th>
-    <th id="table-price">Preis (&euro;)</th>
+      <th id="table-user">Benutzer</th>
+      <th id="table-article">Beschreibung</th>
+      <th id="table-price">Preis (&euro;)</th>
 <?php if ($format != 'pdf') { ?>
-    <th>Zuletzt bearbeitet</th>
-    <th>Lastschrift</th>
-    <th>Aktionen</th>
+      <th>Zuletzt bearbeitet</th>
+      <th>Lastschrift</th>
+      <th class="aui-table-column-unsortable">Aktionen</th>
 <?php } ?>
- </tr>
+   </tr>
+  </thead>
+  <tbody>
 <?php
 		$sum = 0;
 		$sum_fee = 0;
@@ -113,21 +116,21 @@ HTML;
 
 			if ($format == 'pdf') {
 				$html .= <<<HTML
-    <td><div style="width: 18pt; height: 18pt; border: 1px solid #000;"></div></td>
+      <td><div style="width: 18pt; height: 18pt; border: 1px solid #000;"></div></td>
 HTML;
 			}
 			$html .= <<<HTML
-    <td title="%s">%s</td>
-    <td>%s</td>
-    <td>%s</td>
+      <td title="%s">%s</td>
+      <td>%s</td>
+      <td>%s</td>
 HTML;
 
 
 			if ($format != 'pdf') {
 				$html .= <<<HTML
-    <td>%s</td>
-    <td>%s</td>
-    <td>%s</td>
+      <td>%s</td>
+      <td>%s</td>
+      <td>%s</td>
 HTML;
 			}
 
@@ -176,6 +179,7 @@ HTML;
 		$sum_fee = bcmul(get_store_fee_multiplier($store_id, false), $sum);
 		$sum_rebate = bcmul(get_store_rebate_multiplier($store_id), bcadd($sum, $sum_fee));
 ?>
+  </tbody>
 </table>
 
 <p>Summe ohne Rabatte/Liefergeb&uuml;hr (&euro;): <?php echo format_number($sum); ?></p>
