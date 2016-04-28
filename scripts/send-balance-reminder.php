@@ -31,16 +31,16 @@ foreach ($users as $user_id => $user) {
 
     $balance = $ext_info['balance'];
 
-    if (bccomp($balance, '-15') >= 0)
-        continue;
-
     $first_name = explode(' ', $user['name'], 2)[0];
 
     $debt_formatted = format_number(bcmul($balance, '-1'), false);
 
     $days = (int)floor((time() - (int)$ext_info['last_positive']) / 86400);
 
-    if ($days < 3)
+    if ($days < 3 || bccomp($balance, '-5') > 0)
+        continue;
+
+    if (bccomp($balance, '-15') > 0 && $days < 7)
         continue;
 
     $message = <<<MESSAGE
