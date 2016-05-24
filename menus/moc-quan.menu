@@ -9,7 +9,7 @@ t Sauce
 t ToppingSpezial
   o Topping: Vegetarisch (Gemüse)
   o Topping: Tofu @ 0,70
-  o Topping: Hänchenfleisch @ 1,20
+  o Topping: Hähnchenfleisch @ 1,20
   o Topping: Rindfleisch @ 2,00
   o Topping: Garnelen @ 2,00
   o Topping: Ente @ 2,50
@@ -17,7 +17,7 @@ t ToppingSpezial
 t ToppingNudeln
   o Topping: Vegetarisch (Gemüse)
   o Topping: Tofu @ 1,30
-  o Topping: Hänchenfleisch @ 1,30
+  o Topping: Hähnchenfleisch @ 1,30
   o Topping: Rindfleisch @ 2,30
   o Topping: Garnelen @ 3,00
   o Topping: Ente @ 3,00
@@ -71,7 +71,7 @@ o Nudelgerichte: Udon-Nudeln Erdnuss-Kokos-Curry @ 6,50
 o Nudelgerichte: Udon-Nudeln Curry Pan @ 6,50
   i ToppingNudeln
 
-o Nudelgerichte: Udon-Nudeln Teryaki @ 6,50
+o Nudelgerichte: Udon-Nudeln Teriyaki @ 6,50
   i ToppingNudeln
 
 o Traditionell Vietnamesische Gerichte:  Bun Nam @ 7,90
@@ -98,7 +98,7 @@ o Saucen-Spezialitäten: Sot Spicy Mango Curry @ 6,50
 o Saucen-Spezialitäten: Sot Curry Pan @ 6,50
   i ToppingSpezial
 
-o Saucen-Spezialitäten: Sot Lemograss @ 6,50
+o Saucen-Spezialitäten: Sot Lemongrass @ 6,50
   i ToppingSpezial
 
 o Saucen-Spezialitäten: Sot Teriyaki @ 6,50
