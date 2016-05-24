@@ -1,0 +1,105 @@
+s Moc Quan
+
+t Sauce
+  o Sauce: Pfeffer-Koriandersauce
+  o Sauce: Süß-sauer Chillisauce
+  o Sauce: Erdnuss-Sauce
+  o Sauce: Süß-sauer Orangensauce
+
+t ToppingSpezial
+  o Topping: Vegetarisch (Gemüse)
+  o Topping: Tofu @ 0,70
+  o Topping: Hänchenfleisch @ 1,20
+  o Topping: Rindfleisch @ 2,00
+  o Topping: Garnelen @ 2,00
+  o Topping: Ente @ 2,50
+
+t ToppingNudeln
+  o Topping: Vegetarisch (Gemüse)
+  o Topping: Tofu @ 1,30
+  o Topping: Hänchenfleisch @ 1,30
+  o Topping: Rindfleisch @ 2,30
+  o Topping: Garnelen @ 3,00
+  o Topping: Ente @ 3,00
+  
+
+o Suppe & Salat: Tom Kha Gai @ 3,90
+
+o Suppe & Salat: Tom Yam Gun @ 4,50
+
+o Suppe & Salat: Tom Kha Tofu @ 3,90
+
+o Fingerfood: Frühlingsrollen @ 3,90
+
+o Fingerfood: Sommerrollen @ 3,90
+
+o Fingerfood: Vegetarische Mini-Frühlingsrollen @ 3,90
+
+o Nudelgerichte: Pho Xao @ 6,50
+  i ToppingNudeln
+
+o Nudelgerichte: Bun Xao @ 6,50
+  i ToppingNudeln
+
+o Nudelgerichte: Mien Xao @ 6,50
+  i ToppingNudeln
+
+o Nudelgerichte: Soba-Nudeln Vegetarisch @ 4,90
+  i Sauce
+
+o Nudelgerichte: Ga Chien Gion mit Soba-Nudeln @ 6,90
+  i Sauce
+
+o Nudelgerichte: Nudelgerichte: Ga Chien Gion Crispy mit Soba-Nudeln @ 6,90
+  i Sauce
+
+o Nudelgerichte: Vit Co Chien Gion mit Soba-Nudeln @ 8,90
+  i Sauce
+
+o Nudelgerichte: Soba-Nudeln Rindfleisch @ 8,90
+  i Sauce
+
+o Nudelgerichte: Soba-Nudeln Garnelen @ 8,90
+  i Sauce
+
+o Nudelgerichte: Udon-Nudeln Kokos-Curry @ 6,50
+  i ToppingNudeln
+
+o Nudelgerichte: Udon-Nudeln Erdnuss-Kokos-Curry @ 6,50
+  i ToppingNudeln
+
+o Nudelgerichte: Udon-Nudeln Curry Pan @ 6,50
+  i ToppingNudeln
+
+o Nudelgerichte: Udon-Nudeln Teryaki @ 6,50
+  i ToppingNudeln
+
+o Traditionell Vietnamesische Gerichte:  Bun Nam @ 7,90
+  x Extra: Tofu @ 1,30
+  x Extra: Rind @ 2,00
+
+o Traditionell Vietnamesische Gerichte: Bun Nem @ 7,90
+
+o Saucen-Spezialitäten: Sot Kokos Curry @ 6,50
+  i ToppingSpezial
+
+o Saucen-Spezialitäten: Sot Erdnuss Kokos Curry @ 6,50
+  i ToppingSpezial
+
+o Saucen-Spezialitäten: Sot Red Curry @ 6,50
+  i ToppingSpezial
+
+o Saucen-Spezialitäten: Sot Green Curry @ 6,50
+  i ToppingSpezial
+
+o Saucen-Spezialitäten: Sot Spicy Mango Curry @ 6,50
+  i ToppingSpezial
+
+o Saucen-Spezialitäten: Sot Curry Pan @ 6,50
+  i ToppingSpezial
+
+o Saucen-Spezialitäten: Sot Lemograss @ 6,50
+  i ToppingSpezial
+
+o Saucen-Spezialitäten: Sot Teriyaki @ 6,50
+  i ToppingSpezial
