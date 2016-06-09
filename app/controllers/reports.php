@@ -37,7 +37,7 @@ class ReportsController {
     ];
 
     public static function _conv_result($item) {
-        return [ 'x' => $item['x'], 'y' => (double)$item['y'] ];
+        return [ 'x' => $item['x'], 'y' => (double)bcadd($item['y'], 0) ];
     }
 
 	public function get() {
@@ -80,6 +80,7 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `stores` s ON s.`id`=oi.`store_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`store_id`
 ORDER BY `y` DESC
@@ -91,6 +92,7 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=o.`user_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY o.`user_id`
 ORDER BY `y` DESC
@@ -103,6 +105,7 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=oi.`merchant_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`merchant_id`
 ORDER BY `y` DESC
@@ -114,6 +117,7 @@ SELECT ELT(WEEKDAY(o.`date`)+1, 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY WEEKDAY(o.`date`)
 ORDER BY WEEKDAY(o.`date`) ASC
@@ -125,6 +129,7 @@ SELECT ELT( MONTH(o.`date`),
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY MONTH(o.`date`)
 ORDER BY MONTH(o.`date`) ASC
@@ -136,6 +141,7 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `stores` s ON s.`id`=oi.`store_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`store_id`
 ORDER BY `y` DESC
@@ -147,6 +153,7 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `users` u ON u.`id`=oi.`merchant_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`merchant_id`
 ORDER BY `y` DESC
@@ -158,6 +165,7 @@ SELECT ELT(WEEKDAY(o.`date`)+1, 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY WEEKDAY(o.`date`)
 ORDER BY WEEKDAY(o.`date`) ASC
@@ -169,6 +177,7 @@ SELECT ELT( MONTH(o.`date`),
 FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY MONTH(o.`date`)
 ORDER BY MONTH(o.`date`) ASC
@@ -180,6 +189,7 @@ FROM `order_items` oi
 LEFT JOIN `orders` o ON o.`id`=oi.`order_id`
 LEFT JOIN `stores` s ON s.`id`=oi.`store_id`
 WHERE oi.`direct_debit_done` = 1
+AND oi.`merchant_id` IS NOT NULL
 AND o.`date` BETWEEN ${date_begin_quoted} AND ${date_end_quoted}
 GROUP BY oi.`store_id`
 HAVING `y` > 0
