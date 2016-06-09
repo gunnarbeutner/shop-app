@@ -96,12 +96,14 @@ foreach ($params['stores'] as $store_id => $store) {
 		}
 	}
 
-	foreach ($params['ignored_order'] as $item) {
-		if ($item['store_id'] == $store_id) {
-            $item['ignored'] = true;
-			$items[] = $item;
-		}
-	}
+    if ($format != 'pdf') {
+    	foreach ($params['ignored_order'] as $item) {
+    		if ($item['store_id'] == $store_id) {
+                $item['ignored'] = true;
+    			$items[] = $item;
+    		}
+    	}
+    }
 
 	usort($items, 'cmp_item');
 
