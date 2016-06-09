@@ -54,10 +54,8 @@ if ($format == 'pdf') {
   }
 </style>
 <?php
-}
-
+} else {
 ?>
-
 <style type="text/css">
   td {
     position: relative;
@@ -72,7 +70,14 @@ if ($format == 'pdf') {
     border-bottom: 2px solid #111;
     width: 100%;
   }
+
+  tr.strikeout td {
+    background: #ff9966;
+  }
 </style>
+<?php
+}
+?>
 
 <h1>Auftragsliste</h1>
 
