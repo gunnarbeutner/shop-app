@@ -27,11 +27,6 @@ class MerchantordersController {
 	public function get() {
 		verify_user();
 
-		if (!get_user_attr(get_user_email(), 'merchant')) {
-			$params = [ 'message' => 'Zugriff verweigert.' ];
-			return [ 'error', $params ];
-		}
-		
 		$params = [
 			'order' => get_current_merchant_order(),
 			'stores' => get_stores()

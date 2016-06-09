@@ -94,7 +94,7 @@ foreach ($params['stores'] as $store_id => $store) {
       <th id="table-user">Benutzer</th>
       <th id="table-article">Beschreibung</th>
       <th id="table-price">Preis (&euro;)</th>
-<?php if ($format != 'pdf') { ?>
+<?php if ($format != 'pdf' && get_user_attr(get_user_email(), 'merchant')) { ?>
       <th>Zuletzt bearbeitet</th>
       <th>Lastschrift</th>
       <th class="aui-table-column-unsortable">Aktionen</th>
@@ -114,7 +114,7 @@ foreach ($params['stores'] as $store_id => $store) {
   <tr>
 HTML;
 
-			if ($format == 'pdf') {
+			if ($format == 'pdf' && get_user_attr(get_user_email(), 'merchant')) {
 				$html .= <<<HTML
       <td><div style="width: 18pt; height: 18pt; border: 1px solid #000;"></div></td>
 HTML;
@@ -126,7 +126,7 @@ HTML;
 HTML;
 
 
-			if ($format != 'pdf') {
+			if ($format != 'pdf' && get_user_attr(get_user_email(), 'merchant')) {
 				$html .= <<<HTML
       <td>%s</td>
       <td>%s</td>
@@ -199,7 +199,7 @@ HTML;
 	}
 }
 
-	if ($format != 'pdf') {
+	if ($format != 'pdf' && get_user_attr(get_user_email(), 'merchant')) {
 		if (get_order_status()) {
 ?>
   <form class="aui" method="post" action="/app/order-status" style="display: inline;">
