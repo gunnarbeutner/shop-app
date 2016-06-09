@@ -58,6 +58,22 @@ if ($format == 'pdf') {
 
 ?>
 
+<style type="text/css">
+  td {
+    position: relative;
+    padding: 5px 10px;
+  }
+
+  tr.strikeout td:before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-bottom: 2px solid #111;
+    width: 100%;
+  }
+</style>
+
 <h1>Auftragsliste</h1>
 
 <?php
@@ -67,15 +83,23 @@ function cmp_item($a, $b) {
 
 foreach ($params['stores'] as $store_id => $store) {
 	$items = [];
+
 	foreach ($params['order'] as $item) {
 		if ($item['store_id'] == $store_id) {
+            $item['ignored'] = false;
 			$items[] = $item;
 		}
 	}
 
+	foreach ($params['ignored_order'] as $item) {
+		if ($item['store_id'] == $store_id) {
+            $item['ignored'] = true;
+			$items[] = $item;
+		}
+	}
 
 	usort($items, 'cmp_item');
-	
+
 	if (count($items) > 0 && (!isset($_REQUEST['store']) || $_REQUEST['store'] == $store['id'])) {
 ?>
 <p>
@@ -108,10 +132,12 @@ foreach ($params['stores'] as $store_id => $store) {
 		$sum_rebate = 0;
 
 		foreach ($items as $item) {
-			$sum = bcadd($sum, $item['price']);
+            if (!$item['ignored']) {
+    			$sum = bcadd($sum, $item['price']);
+            }
 
 			$html = <<<HTML
-  <tr>
+  <tr class="%s">
 HTML;
 
 			if ($format == 'pdf' && get_user_attr(get_user_email(), 'merchant')) {
@@ -171,6 +197,7 @@ HTML;
 			}
 
 			printf($html,
+                $item['ignored'] ? "strikeout" : "",
 				htmlentities($item['user_email']), htmlentities($item['user_name']),
 				htmlentities($item['title']), format_number($item['price']),
 				htmlentities($item['modified']), $direct_debit_status, $order_buttons);

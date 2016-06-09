@@ -545,7 +545,7 @@ function get_best_store() {
 	return $best_store_id;
 }
 
-function get_current_merchant_order() {
+function get_current_merchant_order($ignored = false) {
 	global $shop_db;
 
 	$store_status = get_store_status();
@@ -576,17 +576,24 @@ QUERY;
 		$user_id = $user['user_id'];
 		$user_email = $user['user_email'];
 		
-		$user_order = get_current_order($user_id);
-		
+		$user_order = get_current_order($user_id, $ignored);
+
+    	$found_user_items = false;
+        $ignored_order = false;
+
 		foreach (get_normalized_store_priorities($user_order['id']) as $prio_info) {
 			$store_id = $prio_info['store_id'];
 			$status = $store_status[$store_id];
 
-			if ($status != 'guaranteed' && $status != 'probably') {
+            $order_status = $status == 'guaranteed' || $status == 'probably';
+
+			if (!$ignored && !$order_status) {
 				continue;
 			}
-			
-			$found_user_items = false;
+
+            if ($found_user_items || !$order_status) {
+                $ignored_order = true;
+            }
 
 			$amount = 0;
 
@@ -596,12 +603,14 @@ QUERY;
 				}
 
 				if ($item['user_email'] == $user_email) {
-					$order[] = $item;
+                    if (($ignored && $ignored_order) || !$ignored) {
+    					$order[] = $item;
+                    }
 					$found_user_items = true;
 				}
 			}
 			
-			if ($found_user_items) {
+			if (!$ignored && $found_user_items) {
 				break;
 			}
 		}

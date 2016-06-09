@@ -28,6 +28,7 @@ class MerchantordersController {
 		verify_user();
 
 		$params = [
+            'ignored_order' => get_current_merchant_order(true),
 			'order' => get_current_merchant_order(),
 			'stores' => get_stores()
 		];
