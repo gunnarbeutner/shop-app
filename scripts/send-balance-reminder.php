@@ -43,6 +43,8 @@ foreach ($users as $user_id => $user) {
     if (bccomp($balance, '-15') > 0 && $days < 7)
         continue;
 
+    $adjinfo = adjust_credit_limit($user['email']);
+
     $message = <<<MESSAGE
 Hallo ${first_name}!
 
@@ -53,6 +55,24 @@ IBAN: ${ext_info['tgt_iban']}
 Kreditinstitut: ${ext_info['tgt_org']}
 Verwendungszweck: ${ext_info['tgt_reference']}
 MESSAGE;
+
+    if ($adjinfo['adjusted']) {
+        $limit_formatted = format_number($adjinfo['credit_limit'], false);
+
+        $message .= <<<MESSAGE
+
+
+Da du bereits über einen längeren Zeitraum deine Schulden nicht bezahlt hast, wurde dein Dispolimit heute auf ${limit_formatted} EUR angepasst.
+MESSAGE;
+    } else if ($adjinfo['next_credit_limit_adjustment'] !== null) {
+        $adj_date_formatted = date('d.m.Y', $adjinfo['next_credit_limit_adjustment']);
+
+        $message .= <<<MESSAGE
+
+
+Am ${adj_date_formatted} wird dein Dispolimit herabgesetzt, insofern bis dahin keine Zahlung erfolgt ist.
+MESSAGE;
+    }
 
     send_jabber_message($user['email'], mb_convert_encoding($message, 'iso-8859-1'));
 }

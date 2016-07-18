@@ -128,6 +128,28 @@ function get_user_ext_info($email) {
 	return json_decode($json, true);
 }
 
+function adjust_credit_limit($email) {
+	$fields = [
+		'email' => $email
+	];
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, SHOP_BANK_URL . '/app/adjust-limits?' . http_build_query($fields));
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+	curl_setopt($ch, CURLOPT_USERPWD, SHOP_BANK_USER . ':' . SHOP_BANK_PASSWORD);
+	$json = curl_exec($ch);
+	
+	$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	
+	if ($status < 200 || $status > 299) {
+		return false;
+	}
+
+	return json_decode($json, true);
+}
+
 function send_jabber_message($email, $message) {
     $jid = get_user_attr($email, 'jid');
     $request = xmlrpc_encode_request("notify", array($jid, $message));
