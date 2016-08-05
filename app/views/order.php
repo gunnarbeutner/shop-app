@@ -110,7 +110,7 @@ require_once('helpers/article.php');
             $items[] = [ 'title' => 'Rabatt (' . $store['rebate_percent'] . '%)', 'price' => $rebate, 'protected' => true ];
         }
 
-        if (bccomp($insurance_fee, '0') != 0) {
+        if (bccomp($sum, '0') != 0 && bccomp($insurance_fee, '0') != 0) {
             $sum = bcadd($sum, $insurance_fee);
             $items[] = [ 'title' => 'Servicegebühr', 'price' => $insurance_fee, 'protected' => true ];
         }
