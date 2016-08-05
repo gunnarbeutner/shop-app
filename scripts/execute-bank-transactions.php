@@ -34,6 +34,9 @@ $stores = get_stores();
 $transfer_items = [];
 $rebates = [];
 
+$insurance_fee = get_insurance_fee();
+$insurance_sum = 0;
+
 foreach (get_users() as $user_id => $user) {
 	$amount = 0;
 	$user_items = [];
@@ -68,7 +71,13 @@ foreach (get_users() as $user_id => $user) {
 		$user_items[] = $item;
 	}
 
+    if (bccomp($amount, '0') != 0) {
+        $amount = bcadd($amount, $insurance_fee);
+        $insurance_sum = bcadd($insurance_sum, $insurance_fee);
+    }
+
     $amount = bcadd($amount, '0');
+	$from = $user['email'];
 
 	if (bccomp($amount, '0') != 0) {
 		$item_names = [];
@@ -76,7 +85,6 @@ foreach (get_users() as $user_id => $user) {
 			$item_names[] = $item['title'];
 		}
 		
-		$from = $user['email'];
 		$tx_reference = "Mittagsbestellung (" . implode('; ', $item_names) . ")";
 		
 		set_held_amount($from, 0);
@@ -133,4 +141,13 @@ foreach ($stores as $store_id => $store) {
 
 	echo "-> ${to} - ${amount} - ${tx_reference}\n";
 	execute_transfer($to, $amount, $tx_reference);
+}
+
+if (bccomp($insurance_sum, '0') != 0) {
+    $amount = $insurance_sum;
+    $to = SHOP_INSURANCE_USER;
+    $tx_reference = "Versicherungszahlung";
+
+    echo "-> ${to} - ${amount} - ${tx_reference}\n";
+    execute_transfer($to, $amount, $tx_reference);
 }

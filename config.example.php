@@ -21,3 +21,7 @@ const SHOP_BANK_USER = 'net-lunch-shop';
 const SHOP_BANK_PASSWORD = 'xxxx';
 
 const BANK_MAC_SECRET = 'xxxx';
+
+const SHOP_INSURANCE_USER = 'xxxx';
+const SHOP_INSURANCE_LIMIT = 'xxx';
+const SHOP_INSURANCE_PER_ORDER = 'xxx';

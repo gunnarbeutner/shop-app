@@ -740,3 +740,13 @@ QUERY;
 function get_store_rebate_multiplier($store_id) {
     return bcmul('-0.01', get_stores()[$store_id]['rebate_percent']);
 }
+
+function get_insurance_fee() {
+    $info = get_user_ext_info(SHOP_INSURANCE_USER);
+
+    if (bccomp($info['balance'], SHOP_INSURANCE_LIMIT) < 0) {
+        return SHOP_INSURANCE_PER_ORDER;
+    } else {
+        return '0';
+    }
+}

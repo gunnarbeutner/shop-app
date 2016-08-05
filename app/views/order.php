@@ -67,6 +67,8 @@ require_once('helpers/article.php');
 		$ids[] = $store['id'];
 	}
 
+    $insurance_fee = get_insurance_fee();
+
 	$index = 0;
 	foreach ($ids as $id) {
 		if (!$params['order_status'] && $id != $params['best_store']) {
@@ -106,6 +108,11 @@ require_once('helpers/article.php');
         $rebate = bcmul(get_store_rebate_multiplier($store['id']), $sum);
         if (bccomp($rebate, '0') != 0) {
             $items[] = [ 'title' => 'Rabatt (' . $store['rebate_percent'] . '%)', 'price' => $rebate, 'protected' => true ];
+        }
+
+        if (bccomp($insurance_fee, '0') != 0) {
+            $sum = bcadd($sum, $insurance_fee);
+            $items[] = [ 'title' => 'Servicegebühr', 'price' => $insurance_fee, 'protected' => true ];
         }
 
 		$index++;
