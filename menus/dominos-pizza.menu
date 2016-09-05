@@ -1,4 +1,4 @@
-s Joey's Pizza
+s Domino's Pizza
 
 t DipOptions
   x Dip: Aioli @ 0,99
@@ -127,14 +127,6 @@ o Mittagsangebot: Salat Pollo @ 5,99
   d gemischter Salat mit Rucola, Tomaten, roten Zwiebeln, Paprika, Gurken, Hähnchenbrustfilet und Sonnenblumenkernen. Dazu empfehlen wir das Joghurt-Limetten-Dressing.
   i SalatOptions
 
-o Monatsaktion: Pizza Brauhaus
-  d mit Dijon Senf-Sahnesauce, frischem Ei, roten Zwiebeln, dänischen Gurken und frischer Mettwurst. Anschließend mit Petersilie bestreut
-  i PizzaTier3
-
-o Monatsaktion: Pizza Spätzlestuben
-  d mit Schmand, Spätzle, extra Käse und Bacon. Nach dem Backen mit Röstzwiebeln und frischer Petersilie verfeinert
-  i PizzaTier2
-
 o Nachtisch: Eis Chocolate Fudge Brownie
   d Schokoladen-Eiscreme mit Schokogebäckstücken.
   i EisOptions150
@@ -207,61 +199,21 @@ o Pasta: Pasta Verdura @ 8,49
   d mit in Asia-Chili-Sauce mariniertem Hähnchenbrustfilet, Cherrytomaten, Champignons, Paprika, Broccoli und Grana Padano D.O.P.. Mit Knoblauch- und Olivenöl verfeinert. Dazu Pizza-Chilis zum selbst Schärfen
   i PastaOptions
 
-o Pizza: Pizza Athena
-  d mit fein gewürztem Blattspinat, Hirtenkäse und in den Teig eingebackenen Sonnenblumenkernen
-  i PizzaTier2
-
-o Pizza: Pizza Bombay
-  d mit Hähnchenbrustfilet, Ananas und Currysauce
-  i PizzaTier2
-
-o Pizza: Pizza Bruschetta
-  d mit Sahnesauce und extra viel Käse. Anschließend mit Bruschetta-Mix verfeinert.
-  i PizzaTier1
-
-o Pizza: Pizza Conchita
-  d mit BBQ-Sauce, Rinderhack, knusprigem Bacon, roten Zwiebeln und mildem Mozzarella
-  i PizzaTier3
-
-o Pizza: Pizza Crazy Dog
-  d mit Würstchen, dänischen Gurken, Tomatenketchup, dänischer Remoulade und Röstzwiebeln
-  i PizzaTier2
-
-o Pizza: Pizza Dutchman
-  d mit saftigem Hinterschinken, Tomaten, Broccoli-Röschen und Sauce Hollandaise.
-  i PizzaTier2
-
-o Pizza: Pizza Funghi
-  d mit frischen Champignons und Basilikum-Pesto
-  i PizzaTier1
-
-o Pizza: Pizza Gonzales
-  d mit BBQ-Sauce, zartem Hähnchenbrustfilet, fruchtigen Tomaten, Paprika, roten Zwiebeln, Mais und feurigen Jalapeños. Dazu Pizza-Chilis zum selbst Schärfen.
+o Pizza: Pizza Seaside
+  d Pizza Seaside mit fruchtigen Cherrytomaten, frischen Peperoni (scharf) und mit Knoblauch verfeinerten Vannamei Garnelen aus zertifizierter Zucht.
   i PizzaTier3
 
 o Pizza: Pizza Gourmet
   d mit herzhaften Rindersteak-Streifen, grünem Spargel, frischen Tomaten und Sauce Hollandaise, abgerundet mit würzigem Steakpfeffer.
   i PizzaTier3
 
-o Pizza: Pizza Grüner Garten
-  d mit frischen Champignons, Blattspinat, Broccoli-Röschen, Paprikastreifen, sonnengetrockneten Tomaten und in den Teig eingebackenen Sonnenblumenkernen.
-  i PizzaTier2
+o Pizza: Pizza Conchita
+  d mit BBQ-Sauce, Rinderhack, knusprigem Bacon, roten Zwiebeln und mildem Mozzarella
+  i PizzaTier3
 
-o Pizza: Pizza Italia
-  d mit Salami, Mozzarella, Tomaten und frischem Basilikum. Mit Basilikum-Pesto verfeinert
-  i PizzaTier2
-
-o Pizza: Pizza Lucca
-  d mit saftigem Hinterschinken, Salami und frischen Champignons
-  i PizzaTier2
-
-o Pizza: Pizza Lucifer
-  d mit Chilisalami, frischen Champignons und milden Peperoni
-  i PizzaTier2
-
-o Pizza: Pizza Margherita
-  d mit Tomaten und Mozzarella gebacken. Nach dem Backen mit frischem Basilikum verfeinert.
-  i PizzaTier1
+o Pizza: Pizza New Orleans
+  d mit BBQ-Sauce, roten Zwiebeln, fruchtiger Ananas und zartem Pulled Beef gebacken. Nach dem Backen mit Frühlingszwiebeln verfeinert.
+  i PizzaTier3
 
 o Pizza: Pizza Mediterrana
   d mit Tomaten und Mozzarella gebacken. Anschließend belegt mit Rucola, Serranoschinken, Balsamico-Creme und gehobeltem Grana Padano D.O.P.
@@ -271,45 +223,97 @@ o Pizza: Pizza Milanese
   d mit mildem Mozzarella und grünen Manzanilla Oliven gebacken. Anschließend mit hauchfeiner Mailänder Salami und Bruschetta-Mix verfeinert.
   i PizzaTier3
 
-o Pizza: Pizza Napoletana
-  d mit frischen Tomaten und Mozzarella gebacken, anschließend mit frischem Basilikum und gehobeltem Grana Padano D.O.P. belegt und mit Basilikum-Pesto verfeinert.
+o Pizza: Pizza Steak & Bacon
+  d mit Tomaten, herzhaften Rindersteak-Streifen, Bacon und Sauce hollandaise gebacken. Anschließend mit frischen Frühlingszwiebeln verfeinert.
   i PizzaTier3
 
-o Pizza: Pizza New Orleans
-  d mit BBQ-Sauce, roten Zwiebeln, fruchtiger Ananas und zartem Pulled Beef gebacken. Nach dem Backen mit Frühlingszwiebeln verfeinert.
+o Pizza: Pizza Cheesburger
+  d mit Rinderhack, roten Zwiebeln, dänischen Gurken, frischen Tomaten und würzigem Cheddar. Nach dem Backen mit Burgersauce verfeinert.
   i PizzaTier3
 
-o Pizza: Pizza Prosciutto
-  d mit saftigem Hinterschinken
-  i PizzaTier1
+o Pizza: Pizza Extravaganzza
+  d mit Tomatensauce, Käsemix Extra, Rinderhack, Prosciutto Cotto, Salami, Champignons, roten Zwiebeln, Paprika, grünen Oliven
+  i PizzaTier3
 
-o Pizza: Pizza Salami (traditionell)
-  d mit leckerer Salami
-  i PizzaTier1
+o Pizza: Pizza First Flame
+  d mit Crème fraiche, Käsemix, roten Zwiebeln, Hähnchenbrustfilet, Bacon und BBQ-Sauce 
+  i PizzaTier3
+
+o Pizza: Pizza BBQ Ranch
+  d mit BBQ-Sauce, Käsemix, Rinderhack, Salami, Hähnchenbrustfilet und Bacon
+  i PizzaTier3
+
+o Pizza: Pizza Chicken Club
+  d mit Tomatensauce, Käsemix, Rinderhack, Tomaten, roten Zwiebeln, Paprika, Hähnchenbrustfilet und Crème fraiche
+  i PizzaTier3
 
 o Pizza: Pizza Salami Supreme
   d mit extra viel Salami
   i PizzaTier2
 
-o Pizza: Pizza Seaside
-  d Pizza Seaside mit fruchtigen Cherrytomaten, frischen Peperoni (scharf) und mit Knoblauch verfeinerten Vannamei Garnelen aus zertifizierter Zucht.
-  i PizzaTier3
-
-o Pizza: Pizza Spinacio
-  d mit fein gewürztem Blattspinat und gehacktem Knoblauch in Öl
-  i PizzaTier1
-
-o Pizza: Pizza Steak & Bacon
-  d mit Tomaten, herzhaften Rindersteak-Streifen, Bacon und Sauce hollandaise gebacken. Anschließend mit frischen Frühlingszwiebeln verfeinert.
-  i PizzaTier3
+o Pizza: Pizza Athena
+  d mit fein gewürztem Blattspinat, Hirtenkäse und in den Teig eingebackenen Sonnenblumenkernen
+  i PizzaTier2
 
 o Pizza: Pizza Tuna
   d mit extra viel Thunfisch und roten Zwiebeln
   i PizzaTier2
 
+o Pizza: Pizza Lucifer
+  d mit Chilisalami, frischen Champignons und milden Peperoni
+  i PizzaTier2
+
+o Pizza: Pizza Bombay
+  d mit Hähnchenbrustfilet, Ananas und Currysauce
+  i PizzaTier2
+
+o Pizza: Pizza Lucca
+  d mit saftigem Hinterschinken, Salami und frischen Champignons
+  i PizzaTier2
+
 o Pizza: Pizza Waikiki
   d mit saftigem Hinterschinken, fruchtiger Ananas und extra viel Käse
   i PizzaTier2
+
+o Pizza: Pizza Italia
+  d mit Salami, Mozzarella, Tomaten und frischem Basilikum. Mit Basilikum-Pesto verfeinert
+  i PizzaTier2
+
+o Pizza: Pizza Crazy Dog
+  d mit Würstchen, dänischen Gurken, Tomatenketchup, dänischer Remoulade und Röstzwiebeln
+  i PizzaTier2
+
+o Pizza: Pizza Grüner Garten
+  d mit frischen Champignons, Blattspinat, Broccoli-Röschen, Paprikastreifen, sonnengetrockneten Tomaten und in den Teig eingebackenen Sonnenblumenkernen.
+  i PizzaTier2
+
+o Pizza: Pizza Dutchman
+  d mit saftigem Hinterschinken, Tomaten, Broccoli-Röschen und Sauce Hollandaise.
+  i PizzaTier2
+
+o Pizza: Pizza Sucuk
+  d mit würziger Sucuk, Hirtenkäse und grünen Oliven gebacken.
+  i PizzaTier2
+
+o Pizza: Pizza Salami
+  d mit leckerer Salami
+  i PizzaTier1
+
+o Pizza: Pizza Funghi
+  d mit frischen Champignons und Basilikum-Pesto
+  i PizzaTier1
+
+o Pizza: Pizza Prosciutto
+  d mit saftigem Hinterschinken
+  i PizzaTier1
+
+o Pizza: Pizza Bruschetta
+  d mit Sahnesauce und extra viel Käse. Anschließend mit Bruschetta-Mix verfeinert.
+  i PizzaTier1
+
+o Pizza: Pizza Margherita
+  d mit Tomaten und Mozzarella gebacken. Nach dem Backen mit frischem Basilikum verfeinert.
+  i PizzaTier1
 
 o Pizza-Brötchen: Pizza-Brötchen Hinterschinken und Käse
   d 6 Stück
