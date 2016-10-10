@@ -42,8 +42,8 @@ class OrderaddController {
 			return [ 'error', $params ];
 		}
 		
-		if (bccomp($price, 0) != 1) {
-			$params = [ 'message' => 'Der Betrag muss positiv sein.' ];
+		if (bccomp($price, 0) < 0) {
+			$params = [ 'message' => 'Der Betrag darf nicht negativ sein.' ];
 			return [ 'error', $params ];
 		}
 
