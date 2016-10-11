@@ -35,7 +35,7 @@ foreach ($users as $user_id => $user) {
 
     $debt_formatted = format_number(bcmul($balance, '-1'), false);
 
-    $days = (int)floor((time() - (int)$ext_info['last_above_shreshold']) / 86400);
+    $days = (int)floor((time() - (int)$ext_info['last_above_threshold']) / 86400);
 
     if ($days < 3 || bccomp($balance, '-5') > 0)
         continue;
