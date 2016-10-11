@@ -35,10 +35,10 @@ $bank_token = hash_hmac('sha256', ((int)time() - (int)time() % 86400) . $email, 
   <div class="aui-header aui-dropdown2-trigger-group" role="navigation">
     <div class="aui-header-inner">
       <div class="aui-header-primary">
+        <?php if ($format == 'html') { ?>
         <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
           <img src="<?php echo $app_url; ?>/images/<?php echo SHOP_LOGO; ?>" alt="<?php echo SHOP_BRAND; ?>" />
         </h1>
-        <?php if ($format == 'html') { ?>
         <ul class="aui-nav">
           <li>
             <a href="/app/order">

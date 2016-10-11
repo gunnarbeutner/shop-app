@@ -75,13 +75,12 @@ if ($format == 'pdf') {
     background: #ff9966;
   }
 </style>
-<?php
-}
-?>
 
 <h1>Auftragsliste</h1>
 
 <?php
+}
+
 function cmp_item($a, $b) {
 	return strcmp($a['title'], $b['title']);
 }
