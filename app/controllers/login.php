@@ -48,6 +48,8 @@ class LoginController {
 
 			if ($token != '' && $token == $utoken) {
 				$auth_ok = true;
+			} else {
+				$auth_ok = false;
 			}
 		}
 		
