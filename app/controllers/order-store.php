@@ -27,7 +27,7 @@ require_once('helpers/article.php');
 class OrderstoreController {
 	public function get() {
 		if (!get_order_status()) {
-			$params = [ 'message' => 'Bestelländerungenaktuell nicht mehr möglich.' ];
+			$params = [ 'message' => 'Bestelländerungen aktuell nicht mehr möglich.' ];
 			return [ 'error', $params ];
 		}
 
