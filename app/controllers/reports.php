@@ -45,11 +45,6 @@ class ReportsController {
 
 		verify_user();
 		
-		if (!get_user_attr(get_user_email(), 'merchant')) {
-			$params = [ 'message' => 'Zugriff verweigert.' ];
-			return [ 'error', $params ];
-		}
-
         $data = null;
 
         $report = $_REQUEST['report'];

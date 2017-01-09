@@ -60,14 +60,12 @@ $bank_token = hash_hmac('sha256', ((int)time() - (int)time() % 86400) . $email, 
               <span class="menu-text">Auftragsliste</span>
             </a>
           </li>
-          <?php if (get_user_attr(get_user_email(), 'merchant')) { ?>
           <li>
             <a href="/app/reports">
               <i class="fa fa-bar-chart menu-icon"></i>
               <span class="menu-text">Statistiken</span>
             </a>
           </li>
-		  <?php } ?>
         </ul>
       </div>
       <div class="aui-navgroup-secondary">
