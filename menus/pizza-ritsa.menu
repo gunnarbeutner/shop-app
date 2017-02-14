@@ -219,21 +219,21 @@ o Pizza: Pizza Vier Käsesorten
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
 
-o Pizza: Lachs
+o Pizza: Pizza Lachs
   d mit Räucherlachs, frischer Paprika, roten Zwiebeln
   i PizzaSizeNames
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
 
-o Pizza: Niko
+o Pizza: Pizza Niko
   d mit Fetakäse, roten Zwiebeln, Kapern, frischen Tomaten, Olivenöl, Oregano, frischem Basilikum
   i PizzaSizeNames
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
 
-o Pizza: Bacon
+o Pizza: Pizza Bacon
   d mit frischer Paprika, frischen Champignons, roten Zwiebeln und Bacon
   i PizzaSizeNames
   o Größe: klein @ 4,50
