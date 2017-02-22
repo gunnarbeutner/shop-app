@@ -75,11 +75,15 @@ class OrdereditController {
 
         $email = $_REQUEST['email'];
 
-        $uid = get_user_attr($email, 'id');
+        if ($email != '') {
+            $uid = get_user_attr($email, 'id');
 
-        if (!$uid) {
-            $params = [ 'message' => 'Ungültiger Benutzer.' ];
-            return [ 'error', $params ];
+            if (!$uid) {
+                $params = [ 'message' => 'Ungültiger Benutzer.' ];
+                return [ 'error', $params ];
+            }
+        } else {
+            $uid = get_user_id();
         }
 
         if ($uid != get_user_id() && !get_user_attr(get_user_email(), 'merchant')) {
@@ -121,7 +125,7 @@ class OrdereditController {
 
         $shop_db->query("COMMIT");
 
-        if ($uid != get_user_id) {
+        if ($uid != get_user_id()) {
 		    header('Location: /app/merchant-orders');
         } else {
     		header('Location: /app/order');
