@@ -28,6 +28,7 @@ function get_stores() {
 SELECT v.`id`, v.`name`, v.`description`, v.`merchant_id`, v.`min_order_count`, v.`min_order_volume`, v.`service_charge_amount`, v.`service_charge_description`, v.`status_message`, v.`rebate_percent`, v.`rebate_user_id`, v.`tracking_id`, m.`name` AS merchant_name, m.`email` AS merchant_email
 FROM `stores` v
 LEFT JOIN `users` m ON m.`id`=v.`merchant_id`
+WHERE `hidden`=0
 ORDER BY v.`id` ASC
 QUERY;
 	$stores = [];

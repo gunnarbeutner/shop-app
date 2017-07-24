@@ -149,6 +149,7 @@ CREATE TABLE `stores` (
   `rebate_percent` int(11) NOT NULL DEFAULT '0',
   `rebate_user_id` int(11) DEFAULT NULL,
   `tracking_id` varchar(16) NOT NULL DEFAULT '0',
+  `hidden` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_users_idx` (`merchant_id`),
   CONSTRAINT `fk_users` FOREIGN KEY (`merchant_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
