@@ -23,26 +23,26 @@ t PizzaCommonOptions
 t PizzaTierSale
   i PizzaCommonOptions
   o Größe: Classic @ 5,99
-  o Größe: Large @ 9,49
   o Größe: Medium @ 7,49
+  o Größe: Large @ 9,49
 
 t PizzaTier1
   i PizzaCommonOptions
-  o Größe: Classic @ 6,49
-  o Größe: Medium @ 7,99
-  o Größe: Large @ 9,99
+  o Größe: Classic @ 7,49
+  o Größe: Medium @ 8,99
+  o Größe: Large @ 10,99
 
 t PizzaTier2
   i PizzaCommonOptions
-  o Größe: Classic @ 7,49
-  o Größe: Medium @ 8,99
-  o Größe: Large @ 11,49
+  o Größe: Classic @ 8,49
+  o Größe: Medium @ 9,99
+  o Größe: Large @ 12,49
 
 t PizzaTier3
   i PizzaCommonOptions
-  o Größe: Classic @ 8,99
-  o Größe: Medium @ 10,49
-  o Größe: Large @ 13,49
+  o Größe: Classic @ 9,99
+  o Größe: Medium @ 11,49
+  o Größe: Large @ 14,49
 
 t SalatOptions
   o Dressing: American-Dressing
@@ -168,7 +168,7 @@ o Nachtisch: Muffin miss chocoholic @ 1,99
 o Nachtisch: Muffin mrs. crumbleberry @ 1,99
   d Muffin mit aromatischen Blaubeeren und einer köstlichen Blaubeerfüllung (konserviert).
 
-o Nachtisch: Tiramisu
+o Nachtisch: Tiramisu @ 2,99
   d Handgemacht, mit leckerer Mascarpone Creme, lockerem Biskuit sowie Kaffee und Kakao. Der verführerische, italienische Dessert-Klassiker.; 100g
 
 o Pasta: Pasta Alba @ 7,49
