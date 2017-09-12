@@ -36,11 +36,12 @@ QUERY;
 	return $users;
 }
 
-function set_held_amount($email, $amount) {
+function set_held_amount($email, $amount, $override_credit_limit = 20) {
 	$fields = [
 		'email' => $email,
 		'tag' => 'lunch-shop',
-		'amount' => $amount
+		'amount' => $amount,
+		'override_credit_limit' => $override_credit_limit
 	];
 	
 	$ch = curl_init();
