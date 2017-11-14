@@ -215,6 +215,8 @@ HTML;
   </tbody>
 </table>
 
+<p>Summe (&euro;): <?php echo format_number(bcadd($sum, $sum_fee)); ?></p>
+
 <p>Summe ohne Rabatte/Liefergeb&uuml;hr (&euro;): <?php echo format_number($sum); ?></p>
 
 <?php if (bccomp($sum_fee, '0') != 0) { ?>
