@@ -1,17 +1,17 @@
 s Sofram
 
 o Döner: Döner
-  o Fleischsorte: Kalbfleisch @ 3,50
-  o Fleischsorte: Putenfleisch @ 3,00
-  o Fleischsorte: Vegetarisch @ 3,00
+  o Fleischsorte: Kalbfleisch @ 3,90
+  o Fleischsorte: Putenfleisch @ 3,50
+  o Fleischsorte: Vegetarisch @ 3,50
     d mit Käse und Salat
 
-o Döner: Döner Spezial @ 3,90
+o Döner: Döner Spezial @ 4,50
   d mit Käse
   o Fleischsorte: Kalbfleisch
   o Fleischsorte: Putenfleisch
 
-o Döner: Dönerbox @ 3,00
+o Döner: Dönerbox @ 3,50
   o Beilage: Ohne Reis/Pommes
   o Beilage: Pommes
   o Beilage: Reis
@@ -20,8 +20,8 @@ o Döner: Dönerbox @ 3,00
 
 o Döner: Dürüm Döner
   d im orientalischen Brot (Wrap)
-  o Fleischsorte: Kalbfleisch @ 3,90
-  o Fleischsorte: Putenfleisch @ 3,50
+  o Fleischsorte: Kalbfleisch @ 4,50
+  o Fleischsorte: Putenfleisch @ 3,90
 
 o Dürüm: Dürüm
   d im orientalischen Brot (Wrap)
@@ -63,6 +63,3 @@ o Salat: Salat mit Hähnchenspieß @ 7,50
 o Salat: Salat mit Käse @ 4,90
 
 o Salat: Salat mit Lammspieß @ 8,50
-
-o Salat: Sofram-Spezial-Salat @ 5,90
-  d mit Gurken, Tomaten, Zwiebeln, Peperoni
