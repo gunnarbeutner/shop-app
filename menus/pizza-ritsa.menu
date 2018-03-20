@@ -19,6 +19,9 @@ t PizzaSizeNames
   o Größe: groß
     d ⌀ 30 cm
 
+t PizzaOptions
+  x Extras: ohne Backpapier
+
 o Pasta: Nudeln - Bolognese @ 4,50
   i PastaOptions
   
@@ -35,6 +38,7 @@ o Pasta: Nudeln - Spinat, Gorgonzola, Sahnesoße @ 4,50
 o Pizza: Pizza Bolognese
   d mit frischen Tomaten, Hackfleisch, Feta und roten Zwiebeln
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -42,6 +46,7 @@ o Pizza: Pizza Bolognese
 o Pizza: Pizza Brokkoli
   d mit frischen Tomaten und Gorgonzola
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -54,6 +59,7 @@ o Pizza: Pizza Calzone
 o Pizza: Pizza Champignons
   d mit frischen Champignons
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 3,50
   o Größe: mittel @ 5,00
   o Größe: groß @ 5,50
@@ -61,6 +67,7 @@ o Pizza: Pizza Champignons
 o Pizza: Pizza Hawaii
   d mit Schinken und Ananas
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,00
   o Größe: mittel @ 5,50
   o Größe: groß @ 6,00
@@ -68,6 +75,7 @@ o Pizza: Pizza Hawaii
 o Pizza: Pizza Hellas
   d mit Salami, frischen Champignons, schwarzen Oliven, roten Zwiebeln und Feta
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -75,6 +83,8 @@ o Pizza: Pizza Hellas
 o Pizza: Pizza Hot
   d mit Rawit-Chillies, Peperoni, Salami, Schinken, frischen Champignons und Knoblauch
   i PizzaSizeNames
+  i PizzaOptions
+  x Extras: ohne Chillis
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -82,12 +92,14 @@ o Pizza: Pizza Hot
 o Pizza: Pizza Knoblauch
   d mit frischem Knoblauch
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 3,50
   o Größe: mittel @ 5,00
   o Größe: groß @ 5,50
 
 o Pizza: Pizza Margherita
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 3,00
   o Größe: mittel @ 4,50
   o Größe: groß @ 5,00
@@ -95,6 +107,7 @@ o Pizza: Pizza Margherita
 o Pizza: Pizza Meeresfrüchte
   d mit Meeresfrüchten, roten Zwiebeln und Knoblauch
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -102,6 +115,7 @@ o Pizza: Pizza Meeresfrüchte
 o Pizza: Pizza Mix
   d mit Salami, Schinken und frischen Champignons
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -109,6 +123,7 @@ o Pizza: Pizza Mix
 o Pizza: Pizza Mozzarella
   d mit frischen Tomaten, Mozzarella und Basilikum
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,00
   o Größe: mittel @ 5,50
   o Größe: groß @ 6,00
@@ -116,6 +131,7 @@ o Pizza: Pizza Mozzarella
 o Pizza: Pizza Orient
   d mit Knoblauchwurst, Peperoni, schwarzen Oliven, frischen Paprika und roten Zwiebeln
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -123,6 +139,7 @@ o Pizza: Pizza Orient
 o Pizza: Pizza Paprika
   d mit frischen Paprika
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 3,50
   o Größe: mittel @ 5,00
   o Größe: groß @ 5,50
@@ -130,6 +147,7 @@ o Pizza: Pizza Paprika
 o Pizza: Pizza Puten
   d mit Putenschinken, frische Champignons, frische Paprika und Mozzarella
   i PizzaSizeNames
+  i PizzaOptions
   x Belag: ohne Paprika mit Pepperoni
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
@@ -138,6 +156,7 @@ o Pizza: Pizza Puten
 o Pizza: Pizza Rucola
   d mit Schinken, schwarzen Oliven, Rucola-Salat, Mozzarella und geriebenem Parmesan
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -145,6 +164,7 @@ o Pizza: Pizza Rucola
 o Pizza: Pizza Salami
   d mit Salami
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 3,50
   o Größe: mittel @ 5,00
   o Größe: groß @ 5,50
@@ -152,6 +172,7 @@ o Pizza: Pizza Salami
 o Pizza: Pizza Sardellen
   d mit Sardellen und Kapern
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,00
   o Größe: mittel @ 5,50
   o Größe: groß @ 6,00
@@ -159,6 +180,7 @@ o Pizza: Pizza Sardellen
 o Pizza: Pizza Schafskäse
   d mit Feta, frischen Tomaten und Oregano
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,00
   o Größe: mittel @ 5,50
   o Größe: groß @ 6,00
@@ -166,6 +188,7 @@ o Pizza: Pizza Schafskäse
 o Pizza: Pizza Schinken
   d mit Schinken
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 3,50
   o Größe: mittel @ 5,00
   o Größe: groß @ 5,50
@@ -180,6 +203,7 @@ o Pizza: Pizza Sonne
 o Pizza: Pizza Spezial
   d mit Salami, Schinken, Peperoni, frischen Champignons und Artischocken
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -187,6 +211,7 @@ o Pizza: Pizza Spezial
 o Pizza: Pizza Spinat
   d mit Spinat und Feta
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,00
   o Größe: mittel @ 5,50
   o Größe: groß @ 6,00
@@ -194,6 +219,7 @@ o Pizza: Pizza Spinat
 o Pizza: Pizza Tonos
   d mit Thunfisch und roten Zwiebeln
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,00
   o Größe: mittel @ 5,50
   o Größe: groß @ 6,00
@@ -201,6 +227,7 @@ o Pizza: Pizza Tonos
 o Pizza: Pizza Vegetaria
   d mit frischen Champignons, schwarzen Oliven, frischen Paprika, Mais und Peperoni
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -208,6 +235,7 @@ o Pizza: Pizza Vegetaria
 o Pizza: Pizza Vier Jahreszeiten
   d mit Schinken, Peperoni, frischen Paprika, Artischocken und frischen Champignons
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -215,6 +243,7 @@ o Pizza: Pizza Vier Jahreszeiten
 o Pizza: Pizza Vier Käsesorten
   d mit Gouda, Edamer, Mozzarella und Feta
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -222,6 +251,7 @@ o Pizza: Pizza Vier Käsesorten
 o Pizza: Pizza Lachs
   d mit Räucherlachs, frischer Paprika, roten Zwiebeln
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -229,6 +259,7 @@ o Pizza: Pizza Lachs
 o Pizza: Pizza Niko
   d mit Fetakäse, roten Zwiebeln, Kapern, frischen Tomaten, Olivenöl, Oregano, frischem Basilikum
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -236,6 +267,7 @@ o Pizza: Pizza Niko
 o Pizza: Pizza Bacon
   d mit frischer Paprika, frischen Champignons, roten Zwiebeln und Bacon
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 4,50
   o Größe: mittel @ 6,00
   o Größe: groß @ 6,50
@@ -243,6 +275,7 @@ o Pizza: Pizza Bacon
 o Pizza: Pizza Zwiebel
   d mit roten Zwiebeln
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 3,50
   o Größe: mittel @ 5,00
   o Größe: groß @ 5,50
@@ -250,6 +283,7 @@ o Pizza: Pizza Zwiebel
 o Pizza: Pizzabrot 1
   d mit Olivenöl und Oregano
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 2,50
   o Größe: mittel @ 3,50
   o Größe: groß @ 4,00
@@ -257,6 +291,7 @@ o Pizza: Pizzabrot 1
 o Pizza: Pizzabrot 2
   d mit Knoblauch, frischen Tomaten, Olivenöl und Oregano
   i PizzaSizeNames
+  i PizzaOptions
   o Größe: klein @ 3,00
   o Größe: mittel @ 4,50
   o Größe: groß @ 5,00
