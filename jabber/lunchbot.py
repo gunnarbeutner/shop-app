@@ -77,14 +77,17 @@ class LunchShopJabberBot(JabberBot):
 
         info = get_user_info(msg.getFrom().getStripped())
         balance = info['ext_info']['balance']
-        return u"Dein aktueller Kontostand beträgt %s Euro" % (format_price(balance))
+        return u"Dein aktueller Kontostand beträgt %s Euro." % (format_price(balance))
 
     @botcmd
     def deposit(self, msg, args):
         '''Liefert Informationen, wie Geld eingezahlt werden kann.'''
 
         info = get_user_info(msg.getFrom().getStripped())
-        uinfo = u"""Das Guthabenkonto kann per SEPA-Überweisung aufgeladen werden:
+        if info['ext_info']['tgt_iban'] is None:
+            uinfo = u"Du kannst dein Konto aufladen, indem du bei der Kasse Bargeld (Scheine) einzahlst."
+        else:
+            uinfo = u"""Das Guthabenkonto kann per SEPA-Überweisung aufgeladen werden:
 
 Kontoinhaber: %s
 IBAN: %s
