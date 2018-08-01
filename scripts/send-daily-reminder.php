@@ -82,7 +82,12 @@ QUERY;
 
 		$bank_info = <<<MESSAGE
 
-Dein Guthaben beträgt aktuell ${amount}€. Bitte überweise den fälligen Betrag an:
+Dein Guthaben beträgt aktuell ${amount}€.
+MESSAGE;
+
+       if ($ext_info['tgt_iban'] !== null) {
+            $bank_info .= <<<MESSAGE
+Bitte überweise den fälligen Betrag an:
 
 Kontoinhaber: ${ext_info['tgt_owner']}
 IBAN: ${ext_info['tgt_iban']}
@@ -90,6 +95,12 @@ Kreditinstitut: ${ext_info['tgt_org']}
 Verwendungszweck: ${ext_info['tgt_reference']}
 
 MESSAGE;
+        } else {
+            $bank_info .= <<<MESSAGE
+Bitte zahle den fälligen Betrag bei der Kasse ein.
+
+MESSAGE;
+        }
 	} else {
 		$bank_info = "";
 	}

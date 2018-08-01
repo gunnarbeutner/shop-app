@@ -49,13 +49,23 @@ foreach ($users as $user_id => $user) {
     $message = <<<MESSAGE
 Hallo ${first_name}!
 
-Du bist seit ${days} Tagen im Minus. Aktuell hast du ${debt_formatted} EUR Schulden. Bitte überweise das Geld baldmöglichst an:
+Du bist seit ${days} Tagen im Minus. Aktuell hast du ${debt_formatted} EUR Schulden.
+MESSAGE;
+
+    if ($ext_info['tgt_iban'] !== null) {
+        $message .= <<<MESSAGE
+Bitte überweise das Geld baldmöglichst an:
 
 Kontoinhaber: ${ext_info['tgt_owner']}
 IBAN: ${ext_info['tgt_iban']}
 Kreditinstitut: ${ext_info['tgt_org']}
 Verwendungszweck: ${ext_info['tgt_reference']}
 MESSAGE;
+    } else {
+        $message .= <<<MESSAGE
+Bitte zahle das Geld baldmöglichst bei der Kasse ein.
+MESSAGE;
+    }
 
     if ($adjinfo['adjusted']) {
         $limit_formatted = format_number($adjinfo['credit_limit'], false);
